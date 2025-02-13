@@ -1,0 +1,11 @@
+
+
+
+    RewriteEngine On
+
+    # Rediriger tout sauf les fichiers et répertoires existants vers index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    
+    RewriteRule ^(.*)$ public/index.php?url=$1 [QSA,L]
+
+
