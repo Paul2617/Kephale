@@ -10,7 +10,7 @@
         $username = "root";
         $password = "root";
         
-        self:: $bd = new PDO ("mysql:host=$host; dbname=$dbname;charset=utl8", "$username", "$password");
+        self:: $bd = new PDO ("mysql:host=$host; dbname=$dbname", "$username", "$password");
 
         self:: $bd->setAttribute (PDO::ATTR_ERMODE,  PDO::ERMODE_WARNING);
 
