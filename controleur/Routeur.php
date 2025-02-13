@@ -4,6 +4,12 @@ require_once ('../models/Model.php');
 
 class Routeur 
 {
+    public function __construct() {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+    }
+
     public function routePublic(){
          //Chargement automatique des class du doc models
             $url = '';
