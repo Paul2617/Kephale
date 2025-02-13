@@ -6,17 +6,6 @@ class Routeur
      
     public function routePublic(){
          //Chargement automatique des class du doc models
-         try {
-            spl_autoload_register(function($class){
-                $chemain = '../models/'.$class.'.php';
-                if(file_exists($chemain)){
-
-                }else{
-
-                    echo  $chemain;
-                }
-            });
-            
             $url = '';
              if(isset($_GET["url"])){
                 $url = explode('/', filter_var($_GET["url"], FILTER_SANITIZE_URL ));
@@ -28,19 +17,18 @@ class Routeur
                 $controleurDoc = "../controleur/".$controleurClass.".php";
                 if(file_exists($controleurDoc)){
                     require_once ($controleurDoc);
-
-                    $this->crtl = new $controleurClass($url);
                 }else{
-                    throw new \Exception("Page introuvable", 1);
+
+                    header ('Location: /Kephale/accueil'  );
                 }
+               
+
              }else{
-                echo 'Erreur 404';
+                echo 'pas url';
+                //header ('Location: Kephale/accueil' );
              }
             //code...
-         } catch (\Throwable $e) {
-            echo "";
-            $erreur = $e->getMessage();
-         }
+        
     }
 }
     ?>

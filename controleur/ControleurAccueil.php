@@ -1,8 +1,4 @@
 <?php
-class ControleurAccuei {
-    public function __construc(){
-        echo 'Controleur Accuil';
+  echo 'Controleur Accuil'.$controleur ;
 
-    }
-}
     ?>
