@@ -1,9 +1,9 @@
 <?php
+require_once ('../models/Model.php');
+
+
 class Routeur 
 {
-    private $crtl;
-    private $view;
-     
     public function routePublic(){
          //Chargement automatique des class du doc models
             $url = '';
@@ -17,12 +17,10 @@ class Routeur
                 $controleurDoc = "../controleur/".$controleurClass.".php";
                 if(file_exists($controleurDoc)){
                     require_once ($controleurDoc);
-                }else{
 
+                }else{
                     header ('Location: /Kephale/accueil'  );
                 }
-               
-
              }else{
                 echo 'pas url';
                 //header ('Location: Kephale/accueil' );
@@ -31,4 +29,5 @@ class Routeur
         
     }
 }
+
     ?>
