@@ -1,37 +1,21 @@
 <?php
+  // requet de tout une table
+   function recTable ( $bd, $table){
+    $rec =  $bd->prepare(' SELECT * FROM '.$table.' ORDER BY id desc ');
+    $rec->execute();
+    $data = $rec->fetch(PDO::FETCH_ASSOC);
 
-    abstract class Model
-    {
-        private static $bd;
+    return  $data;
+    $rec->closeCursor();
+}
 
-        private static function recbd (){
-        $host = "localhost";
-        $dbname = "kephale";
-        $username = "root";
-        $password = "root";
-        
-        self:: $bd = new PDO ("mysql:host=$host; dbname=$dbname", "$username", "$password");
+  // requet table en fonction de id
+function recTableId ($bd, $table, $id){
+    $rec =  $bd->prepare('SELECT * FROM '.$table.' WHERE id = ?');
+    $rec->execute(array($id));
+    $data = $rec->fetch(PDO::FETCH_ASSOC);
 
-        self:: $bd->setAttribute (PDO::ATTR_ERMODE,  PDO::ERMODE_WARNING);
-
-        }
-        protected function getbd(){
-            if(self:: $bd === null ){
-                self:: recbd ();
-                return self:: $bd ;
-            }
-        }
-        // requet de tout une table
-        protected function recTable ($table, $objt){
-            $this->getbd();
-            $var = [];
-            $rec =  self:: $bd->prepare('SELECT * FROM '.$table.' ORDER BY id desc ');
-            $rec->execute();
-            while ($data = $rec->fetche(PDO::FETCH_ASSOC)){
-                $var = new $objt($data);
-            }
-            return  $var;
-            $rec->closeCursor();
-        }
-    }
+    return  $data;
+    $rec->closeCursor();
+}
     ?>

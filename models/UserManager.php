@@ -1,22 +1,12 @@
 <?php
-function info_user ()
-{
-    $liste_produit = [
-        'id' =>  '1',
-        'id_boutique' =>  '2',
-        'type' =>  'Homme',
-        'img' =>  'img.jpg'
-    ] ;
-    $liste_articl = [
-        'id' =>  '139',
-        'id_boutique' =>  '382922',
-        'type' =>  'Homme_EJEJ',
-        'img' =>  'img.jpg'
-    ] ;
-    $url = [   $liste_produit ,    $liste_articl  ] ;
-    return $url ;
-}
+require_once ('../models/Model.php');
 
-$info_user = info_user ();
+$info_user = recTable ( $bd, 'utilisateur', '2');
+
+
+while ($result = $info_user->fetch(PDO::FETCH_ASSOC)){
+
+}
+var_dump ($info_user);
 
     ?>
