@@ -1,11 +1,14 @@
 <?php
+require_once ('../models/Cntbd.php');
+$Cntbd = new Cntbd();
+$bd = $Cntbd->bd();
+
+// count() pour compt
   // requet de tout une table
    function recTable ( $bd, $table){
     $rec =  $bd->prepare(' SELECT * FROM '.$table.' ORDER BY id desc ');
     $rec->execute();
-    $data = $rec->fetch(PDO::FETCH_ASSOC);
-
-    return  $data;
+    return  $rec->fetchAll(PDO::FETCH_ASSOC);
     $rec->closeCursor();
 }
 
@@ -13,9 +16,8 @@
 function recTableId ($bd, $table, $id){
     $rec =  $bd->prepare('SELECT * FROM '.$table.' WHERE id = ?');
     $rec->execute(array($id));
-    $data = $rec->fetch(PDO::FETCH_ASSOC);
-
-    return  $data;
+    return  $rec->fetchAll(PDO::FETCH_ASSOC);;
     $rec->closeCursor();
 }
+
     ?>

@@ -1,11 +1,7 @@
 <?php
-require_once ('../models/Cntbd.php');
-$Cntbd = new Cntbd();
-$bd = $Cntbd->bd();
-
 class Routeur
 {
-    public function routePublic($bd){
+    public function routePublic(){
          //Chargement automatique des class du doc models
             $url = '';
              if(isset($_GET["url"])){

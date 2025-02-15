@@ -9,7 +9,9 @@ class Cntbd
         $dbname = "kephale";
         $username = "root";
         $password = "root";
+        
         self:: $bd = new PDO ("mysql:host=$host; dbname=$dbname", "$username", "$password");
+
         }
 
         protected function getbd(){

@@ -1,12 +1,8 @@
 <?php
+function infoUser(){
 require_once ('../models/Model.php');
-
-$info_user = recTable ( $bd, 'utilisateur', '2');
-
-
-while ($result = $info_user->fetch(PDO::FETCH_ASSOC)){
-
+    $info_use = recTableId ( $bd, 'liste_achat' , '1');
+    return $info_use ;
 }
-var_dump ($info_user);
 
     ?>

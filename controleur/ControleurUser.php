@@ -8,10 +8,12 @@ if(isset($_SESSION["id_user"] )){
     $model_user = "../models/".$controleur."Manager.php";
     if(file_exists($model_user)){
         require_once ($model_user);
+        $infoUser = infoUser();
     }
 
+
+    
     function ControleurUser ( $controleur){
-       
     }
 
     
