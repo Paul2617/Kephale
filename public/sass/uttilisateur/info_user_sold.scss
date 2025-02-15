@@ -1,0 +1,34 @@
+.info_user_sold{
+    width: 85%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #7d7d7d63;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 13px;
+}
+.info_solde{
+    width: 50%;
+    height: auto;
+    h1{
+        font-size: 15px;
+    }
+    h2{
+        font-size: 13px;
+        font-weight: 400;
+        color: rgb(121, 121, 121);
+
+    }
+    border-right: 1px solid rgb(99, 99, 99);
+}
+.clock_re_re{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    img{
+        width: 40px;
+    }
+}
+

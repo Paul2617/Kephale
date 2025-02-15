@@ -1,0 +1,38 @@
+.nav_bare{
+    width: 100%;
+    height: 60px;
+   background-color: rgb(255, 255, 255);
+    display: flex;
+    position: fixed;
+    z-index: 5;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1D71B8;
+    .bloc_logo{
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .lin_connect{
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.section_pub{
+    width: 100%;
+
+    .img_anim{
+        width: 100%;
+    }
+}

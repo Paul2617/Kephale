@@ -1,7 +1,7 @@
 <?php
 function infoUser(){
-require_once ('../models/Model.php');
-    $info_use = recTableId ( $bd, 'liste_achat' , '1');
+require_once ('../models/bd/Model.php');
+    $info_use = recTableId ( $bd, 'user' , $_SESSION["id"]);
     return $info_use ;
 }
 

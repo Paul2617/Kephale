@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+    text-decoration: none;
+    list-style: none;
+}
+$couleur_bleu: #1D71B8;
+$couleur_Orange: #F7A429;
+$couleur_rouge:  #E94E1B;
+$couleur_verte: #95C11F;
+$couleur_noir: #3D3D3B;
+$couleur_noir_claire: #6d6d6d;
+$couleur_blan: #ffffff;
+
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.body_2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    position: absolute;
+}
+
+@media screen and (min-width: 560px) {
+    .body_2 {
+        width: 560px;
+    }
+    .section_menu_icon {
+        width: 560px;
+    }
+}

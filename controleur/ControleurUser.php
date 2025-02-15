@@ -3,39 +3,25 @@
 //session_destroy();
 
 //voir la session est id_user est declare
-if(isset($_SESSION["id_user"] )){
+if(isset($_SESSION["id"])){
     //Inporte le doc dans model pour tout les recquet de la basse de done
     $model_user = "../models/".$controleur."Manager.php";
     if(file_exists($model_user)){
         require_once ($model_user);
+        require_once ('../models/solde_affiche/solde.php');
         $infoUser = infoUser();
+        // bodie lafissage du solde
+        $userSolde = solde ($infoUser["solde"]) ;
     }
-
-
-    
-    function ControleurUser ( $controleur){
+//importe page user
+    $userpage = "../views/".$controleur."Page.php";
+    if(file_exists($userpage)){
+        require_once ($userpage);
+    }else{
+       echo 'Page_introuvable';
     }
-
-    
- $viewsUser = ControleurUser($controleur);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }else{
-    $_SESSION["id_user"] = '1';
     header ('Location: /Kephale/accueil'  );
 }
    

@@ -1,0 +1,30 @@
+.bloc_recherche{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    .recherche_b{
+        width: 89%;
+        display: flex;
+        justify-content: space-between;
+        .recherche_sz{
+            width: 77%;
+            height: 50px;
+            border: none;
+            border: 1px solid black;
+            border-radius: 13px;
+            padding-left: 5px;
+        }
+        .recher_dd{
+            width: 20%;
+            height: 50px;
+            border-radius: 13px;
+            border: none;
+            background-color: #1D71B8;
+            color: #ffffff;
+            font-size: 12px;
+        }
+    }
+}
