@@ -521,4 +521,20 @@ a .icon_user {
   font-size: 12px;
 }
 
+.bloc_boutique {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.blockInfo {
+  width: 90%;
+  background-color: aqua;
+  height: 300px;
+}
+
 /*# sourceMappingURL=style.css.map */

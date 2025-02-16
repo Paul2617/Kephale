@@ -28,4 +28,6 @@ function recNum($bd, $numero){
   return $rec->rowCount();
   $rec->closeCursor();
 }
+
+
     ?>

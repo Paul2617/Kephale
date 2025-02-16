@@ -10,9 +10,26 @@ if(isset($_SESSION["id"])){
         require_once ($model_user);
         require_once ('../models/solde_affiche/solde.php');
         $infoUser = infoUser();
+        $userBoutiqueEtat = infoUserBoutiqu();
         // bodie lafissage du solde
         $userSolde = solde ($infoUser["solde"]) ;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //importe page user
     $userpage = "../views/".$controleur."Page.php";
     if(file_exists($userpage)){
