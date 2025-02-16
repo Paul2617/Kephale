@@ -27,6 +27,7 @@
 </section>
 </section>
 <!-- -->
+
 <!-- block recherhe -->
 <section class="bloc_recherche">
 <form class="recherche_b" method="post">
@@ -34,6 +35,8 @@
     <input class="recher_dd" type="submit" value="Envoyer">
 </form>
 </section>
+
+<?= $userBoutiqueEtat ?>
 <!-- -->
 <!-- liste boutique -->
 <section class="bloc_boutique">
@@ -84,7 +87,7 @@
         <img class="icon_menu" src="public/asset/_icone/parametre.svg" alt="">
     </a>
 
-    <a class="lien_icon" href="">
+    <a class="lien_icon" href="/kephale/<?= $userBoutiqueEtat ?>">
             <img class="icon_menu" src="public/asset/_icone/boutique.svg" alt="">
         </a>
 

@@ -13,21 +13,20 @@ $bd = $Cntbd->bd();
 }
 
   // requet table en fonction de id
-function recTableId ($bd, $table, $id){
-    $rec =  $bd->prepare('SELECT * FROM '.$table.' WHERE id = ?');
+function recTableId ($bd, $table, $colone, $id){
+    $rec =  $bd->prepare('SELECT * FROM '.$table.' WHERE '.$colone.' = ?');
     $rec->execute(array($id));
     return  $rec->fetch(PDO::FETCH_ASSOC);
     $rec->closeCursor();
 }
 
 //requet ferif numero
-
-function recNum($bd, $numero){
-  $rec = $bd->prepare("SELECT * FROM user WHERE tel = ?");
-  $rec->execute(array($numero));
+function recRowCount($bd, $table, $colone, $id){
+  $rec = $bd->prepare('SELECT * FROM '.$table.' WHERE '.$colone.' = ?');
+  $rec->execute(array($id));
   return $rec->rowCount();
   $rec->closeCursor();
 }
-
+//requet ferif numero
 
     ?>

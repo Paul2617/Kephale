@@ -1,107 +1,107 @@
 .poppins-thin {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 100;
   font-style: normal;
 }
 
 .poppins-extralight {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-style: normal;
 }
 
 .poppins-light {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
 .poppins-regular {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 .poppins-medium {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
 .poppins-semibold {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
 }
 
 .poppins-bold {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
 .poppins-extrabold {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 800;
   font-style: normal;
 }
 
 .poppins-black {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-style: normal;
 }
 
 .poppins-thin-italic {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 100;
   font-style: italic;
 }
 
 .poppins-extralight-italic {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-style: italic;
 }
 
 .poppins-light-italic {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-style: italic;
 }
 
 .poppins-regular-italic {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: italic;
 }
 
 .poppins-medium-italic {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: italic;
 }
 
 .poppins-semibold-italic {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: italic;
 }
 
 .poppins-bold-italic {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-style: italic;
 }
 
 .poppins-extrabold-italic {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 800;
   font-style: italic;
 }
 
 .poppins-black-italic {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-style: italic;
 }
@@ -109,7 +109,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Poppins";
+  font-family: "Poppins", serif;
   text-decoration: none;
   list-style: none;
 }
@@ -212,7 +212,14 @@ body {
   align-items: center;
 }
 .bloc_form_p h1 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+.bloc_form_p P {
+  width: 85%;
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 10px;
 }
 .bloc_form_p form {
   width: 100%;
@@ -279,6 +286,44 @@ body {
 }
 .bloc_form_p form .text_d .link {
   color: #95C11F;
+}
+.bloc_form_p form p {
+  font-size: 12px;
+  width: 80%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.bloc_form_p form .blocfil {
+  width: 50%;
+  height: 50px;
+  background-color: #ced2c2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+  margin-bottom: 10px;
+}
+.bloc_form_p form .blocfil h4 {
+  font-weight: 700;
+  color: #95C11F;
+}
+.bloc_form_p form .blocfil input[type=file] {
+  display: none;
+}
+.bloc_form_p form .blocfil label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  border-radius: 7px;
+}
+.bloc_form_p form .blocfil label img {
+  margin-right: 5px;
+  width: 50px;
 }
 
 .section_menu_icon {
@@ -535,6 +580,22 @@ a .icon_user {
   width: 90%;
   background-color: aqua;
   height: 300px;
+}
+
+.listabtn {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.blocAbonnent {
+  width: 85%;
+  height: 300px;
+  background-color: rgb(198, 198, 198);
+  border-radius: 13px;
 }
 
 /*# sourceMappingURL=style.css.map */

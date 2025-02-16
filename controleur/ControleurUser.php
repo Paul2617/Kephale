@@ -9,8 +9,10 @@ if(isset($_SESSION["id"])){
     if(file_exists($model_user)){
         require_once ($model_user);
         require_once ('../models/solde_affiche/solde.php');
-        $infoUser = infoUser();
-        $userBoutiqueEtat = infoUserBoutiqu();
+        //recupere les info de ulitilisteur
+        $infoUser = infoUser($bd);
+        //Verifie si l'utilisateur a une boutique
+        $userBoutiqueEtat = infoUserBoutiqu($bd);
         // bodie lafissage du solde
         $userSolde = solde ($infoUser["solde"]) ;
     }
