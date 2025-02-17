@@ -593,9 +593,52 @@ a .icon_user {
 
 .blocAbonnent {
   width: 85%;
-  height: 300px;
-  background-color: rgb(198, 198, 198);
+  height: auto;
   border-radius: 13px;
+  border: 1px solid #1D71B8;
+  background-color: rgba(29, 114, 184, 0.1921568627);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.blocAbonnent h2 {
+  width: 90%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #1D71B8;
+}
+.blocAbonnent p {
+  width: 90%;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.blocAbonnent h3 {
+  width: 50%;
+  background-color: rgba(150, 193, 31, 0.662745098);
+  text-align: center;
+  padding: 7px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 7px;
+}
+.blocAbonnent a {
+  width: 95%;
+  height: 60px;
+  background-color: #1D71B8;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 19px;
+  border-radius: 13px;
+}
+
+.nav_bare h5 {
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

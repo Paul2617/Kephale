@@ -41,6 +41,8 @@ if(isset($_SESSION["id"])){
     }
 
 }else{
+    $_SESSION = array();
+    session_destroy();
     header ('Location: /Kephale/accueil'  );
 }
    

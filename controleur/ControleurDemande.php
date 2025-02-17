@@ -59,6 +59,8 @@ if(file_exists($page)){
     require_once ($page);
 }
 }else{
+    $_SESSION = array();
+    session_destroy();
     header ('Location: /Kephale/accueil'  );
 }
 

@@ -6,7 +6,7 @@ $bd = $Cntbd->bd();
 // count() pour compt
   // requet de tout une table
    function recTable ( $bd, $table){
-    $rec =  $bd->prepare(' SELECT * FROM '.$table.' ORDER BY id desc ');
+    $rec =  $bd->prepare(' SELECT * FROM '.$table.' ORDER BY id  ');
     $rec->execute();
     return  $rec->fetchAll(PDO::FETCH_ASSOC);
     $rec->closeCursor();
