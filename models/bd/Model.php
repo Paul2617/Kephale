@@ -2,7 +2,6 @@
 require_once ('../models/bd/Cntbd.php');
 $Cntbd = new Cntbd();
 $bd = $Cntbd->bd();
-
 // count() pour compt
   // requet de tout une table
    function recTable ( $bd, $table){

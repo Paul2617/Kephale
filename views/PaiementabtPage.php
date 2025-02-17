@@ -12,7 +12,7 @@
         <p>Entre votre Mot de passe pour confirmer l'achat</p>
         <form method="POST" enctype="multipart/form-data">
             <section class='bloc_form_input'>
-            <input  type="number" placeholder="Numéro" name="telephone" value="">
+            <input  type="number" placeholder="<?= $montantAbt  ?>" name="telephone">
             <h5>Mot de passe</h5>
             <input  type="password" placeholder="Mot de passe" name="password_user">
             </section>

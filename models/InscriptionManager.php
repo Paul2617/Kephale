@@ -3,7 +3,7 @@
 
 function inscription($bd, $nom_user, $numerau_user, $password_user, $category ){
 
-    $req_numeraux_existe = recNum($bd, $numerau_user);
+    $req_numeraux_existe = recRowCount($bd,'user', 'tel', $numerau_user);
     if( $req_numeraux_existe === 1){
         
         return  'numero_existe';

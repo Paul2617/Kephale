@@ -79,7 +79,7 @@
         </section>
 
 <!-- -->
-
+<?= $userBoutiqueEtat ?>
 <!-- -->
 <!--bloce icone de base -->
 <section class="section_menu_icon">
