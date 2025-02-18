@@ -26,6 +26,14 @@ function recRowCount($bd, $table, $colone, $id){
   return $rec->rowCount();
   $rec->closeCursor();
 }
-//requet ferif numero
+//requet inser abonnemnt
+function inserabonnemnt($bd){
+  $etat = '1';
+  $date_transaction = time();
+  $date_fin =    $date_transaction + "2592000";
+  $stmt = $bd->prepare("INSERT INTO abonnement (id_user, id_offre, date_debut, date_fin, etat) VALUES (?,?,?,?,?)");
+  $stmt->execute(array($_SESSION["id"],$_GET["id_abt"],$date_transaction, $date_fin, $etat ));
+  return true ;
+}
 
     ?>

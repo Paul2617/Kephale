@@ -29,7 +29,10 @@ if(isset($code)){
         if($info_user["solde"] >=  $montant){
 // verifie si l'abonnement est gratuit
             if($info_abonnement["mode"] === 'G'){
-                header ('Location: /Kephale/crtboutique&id_abt='.$_GET["id_abt"]);
+                $transactionsgratui = transactionsgratui($bd);
+                if($transactionsgratui === true ){
+                    header ('Location: /Kephale/crtboutique');
+                }
             }elseif
             // verifie si l'abonnement est payen
             ($info_abonnement["mode"] === 'P'){

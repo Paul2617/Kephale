@@ -10,7 +10,9 @@ function info_abonnement ($bd){
 function info_user ($bd){
   return recTableId($bd, 'user', 'id', $_SESSION["id"]);
 }
-
+function transactionsgratui($bd){
+  return $inserabonnemnt = inserabonnemnt($bd);
+}
 function transactions($bd,$montant, $id_abt ){
   return  $transactionKephale = transactionAbonnement($bd, $montant, $id_abt);
 }

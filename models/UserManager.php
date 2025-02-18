@@ -17,9 +17,15 @@ function infoUserBoutiqu($bd){
         if( $demandeEnvoir === 1){
             //verifi si la demande est valide 
            $etatDemande = recTableId ($bd, 'demande', 'id_user', $_SESSION["id"]);
-
            if($etatDemande["etat"] === 1){
-            return 'abonnement';
+             //verifi si la si il y a un abonnement au compte de user
+             $abonnementexiste = recRowCount($bd, 'abonnement','id_user', $_SESSION["id"]);
+
+             if($abonnementexiste === 1){
+                return 'crtboutique';
+             }else{
+                return 'abonnement';
+             }
            }else{
             return 'demande';
            }
