@@ -37,7 +37,7 @@
  <!-- bloc liste des categorie -->
 
  <section class='blocKategirie'>
-<a href="">Ajouter categori</a>
+<a class ='linkAjout'href="/Kephale/categorie"><h1>Ajouter catégorie</h1></a>
  <section class = 'blocCategori'>
 <section class='blocko'>
 <img class ='img_cate' src="public/asset/img_categori/Homme.png" alt="">
@@ -46,12 +46,14 @@
     <p>2 Produits</p>
     </section>
 </section>
-<section class='blocko'>
-    <a href="">Produits </a>
+<section class='blocko plusStyle'>
+    <a class='linkBtn' href=""><h1>Produits</h1> </a>
+
     <a href="">
     <img src="public/asset/_icone/suprime.svg" alt="">
     </a>
 </section>
+
  </section>
 
  </section>
