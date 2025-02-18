@@ -35,10 +35,11 @@ if(isset($_SESSION["id"])){
 
         if(isset( $imgDirection )){
             if(move_uploaded_file($_FILES["img_demande"]["tmp_name"], $imgDirection)){
-              $inserdata = ajouteBoutique ($bd, $imgNom);
+              $inserdata = ajouteBoutique ($bd, $nomBoutique, $imgNom, $paye);
               if($inserdata === true){
                 $alt = 'Demande envoyer.';
                 header ("Refresh: 2");
+                header ('Location: /Kephale/boutique'  );
               }
             }
         }

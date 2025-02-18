@@ -21,6 +21,7 @@ if(file_exists($model)){
 
         require_once ($model);
         $connection =  connection ($bd,$telephone, $passwor_usre);
+        
         if($connection === 'numero_inconu'){
             $erreur = 'Numéro introuvable.';
         }elseif($connection === 'code_inconu'){

@@ -1,9 +1,9 @@
 <?php
 require_once ('../models/bd/Model.php');
-function ajouteBoutique($bd, $imgNom){
-    $etat = 0;
-    $inser = $bd->prepare("INSERT INTO demande ( id_user, img, etat ) VALUES (?,?,?)");
-    $inser->execute(array($id, $imgNom, $etat));
+function ajouteBoutique($bd, $nomBoutique, $imgNom, $paye){
+    $soldeBoutique = '0';
+    $inser = $bd->prepare("INSERT INTO boutique ( id_user, nom, img, pays, solde ) VALUES (?,?,?,?,?)");
+    $inser->execute(array($_SESSION["id"], $nomBoutique, $imgNom, $paye, $soldeBoutique));
     return true ;
 }
 ?>

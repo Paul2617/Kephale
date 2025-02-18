@@ -1,0 +1,87 @@
+  <!-- -->
+     <!--nave bare-->
+     <div class='nav_bare'>
+    <a class='bloc_logo' href="/Kephale/accueil">
+        <img class="icon_user" src="public/asset/_icone/accuil.svg" alt="">
+    </a>
+    <h5>boutique</h5>
+    <a class='lin_connect' href="">
+        <img class="icon_user" src="public/asset/_icone/user.svg" alt="">
+    </a>
+</div>
+ <!-- -->
+<div style="padding-top: 35px;" ></div>
+
+<section class='logoboutique'>
+<img src="public/asset/img_boutique/LOGOS-BRAMALI-170x150px-1_250218_130034.png" alt="">
+</section>
+
+
+ <!-- bloc affiche sole et icone -->
+ <section class="info_user_sold">
+<section class="info_solde">
+    <h2>Solde</h2>
+<h1> 0</h1>
+</section>
+<section class="clock_re_re">
+<section class='infoAbonnement'>
+<h4>23 Jr</h4>
+<p>Restant</p>
+</section>
+<a href=""><img src="public/asset/_icone/retrais.svg" alt=""></a>
+
+</section>
+</section>
+
+
+ <!-- bloc liste des categorie -->
+
+ <section class='blocKategirie'>
+<a href="">Ajouter categori</a>
+ <section class = 'blocCategori'>
+<section class='blocko'>
+<img class ='img_cate' src="public/asset/img_categori/Homme.png" alt="">
+    <section class ='blocTexte'>
+    <h4>Catégorie Homme</h4>
+    <p>2 Produits</p>
+    </section>
+</section>
+<section class='blocko'>
+    <a href="">Produits </a>
+    <a href="">
+    <img src="public/asset/_icone/suprime.svg" alt="">
+    </a>
+</section>
+ </section>
+
+ </section>
+
+
+
+
+
+
+
+
+<!--bloce icone de base -->
+<section class="section_menu_icon">
+    <a class="lien_icon" href="">
+        <img class="icon_menu" src="public/asset/_icone/parametre.svg" alt="">
+    </a>
+
+    <a class="lien_icon" href="">
+            <img class="icon_menu" src="public/asset/_icone/boutique.svg" alt="">
+        </a>
+
+        <a class="lien_icon" href="">
+        <img class="icon_menu" src="public/asset/_icone/notification.svg" alt="">
+        <section class="alerte_conteur">
+                <p class="conteur">0</p>
+            </section>
+    </a>
+
+    
+    <a class="lien_icon" href="">
+        <img class="icon_menu" src="public/asset/_icone/panye.svg" alt="">
+    </a>
+</section>
