@@ -4,7 +4,7 @@
     <a class='bloc_logo' href="/Kephale/accueil">
         <img class="icon_user" src="public/asset/_icone/accuil.svg" alt="">
     </a>
-    <h5>boutique</h5>
+    <h5><?= $infoBoutique["nom"] ?></h5>
     <a class='lin_connect' href="">
         <img class="icon_user" src="public/asset/_icone/user.svg" alt="">
     </a>
@@ -20,8 +20,9 @@
  <!-- bloc affiche sole et icone -->
  <section class="info_user_sold">
 <section class="info_solde">
+
     <h2>Solde</h2>
-<h1> 0</h1>
+<h1> <?= $boutiqueSolde ?></h1>
 </section>
 <section class="clock_re_re">
 <section class='infoAbonnement'>
@@ -37,7 +38,7 @@
  <!-- bloc liste des categorie -->
 
  <section class='blocKategirie'>
-<a class ='linkAjout'href="/Kephale/categorie"><h1>Ajouter catégorie</h1></a>
+<a class ='linkAjout'href="/Kephale/ajoutecategorie"><h1>Ajouter catégorie</h1></a>
  <section class = 'blocCategori'>
 <section class='blocko'>
 <img class ='img_cate' src="public/asset/img_categori/Homme.png" alt="">

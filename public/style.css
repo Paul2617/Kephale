@@ -157,6 +157,7 @@ body {
   height: 100%;
 }
 .nav_bare .lin_connect {
+  margin-left: 5px;
   margin-right: 10px;
   width: 30px;
   height: 30px;
@@ -255,6 +256,10 @@ body {
   height: 10px;
   transform: scale(2);
   margin-right: 10px;
+}
+.bloc_form_p form .bloc_form_input .info_radio .form_input {
+  width: 100%;
+  border-radius: 13px;
 }
 .bloc_form_p form .bloc_form_input input {
   width: 100%;
@@ -638,7 +643,7 @@ a .icon_user {
 }
 
 .nav_bare h5 {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .logoboutique {

@@ -1,4 +1,3 @@
-<div class='bloc'>
 
 <div class='nav_bare'>
     <a class ='lin_connect'href= "/Kephale/user" >
@@ -54,4 +53,3 @@
         </form>
     </section>
     </section>
-</div>
