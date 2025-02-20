@@ -8,7 +8,7 @@
         <img class="icon_user" src="public/asset/_icone/accuil.svg" alt="">
     </a>
     <h5><?= $infoUser["nom"]?></h5>
-    <a class='lin_connect' href="">
+    <a class='lin_connect' href="/Kephale/deconnection">
         <img class="icon_user" src="public/asset/_icone/user.svg" alt="">
     </a>
 </div>
