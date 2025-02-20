@@ -1,5 +1,8 @@
 <?php
-
+ //$host = "sql103.infinityfree.com";
+ //$dbname = "if0_38345177_kephale";
+ //$username = "if0_38345177";
+ //$password = "w7QYPEGftfkmxB";
 class Cntbd 
 {
     private static $bd;

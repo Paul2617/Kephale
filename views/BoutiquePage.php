@@ -13,7 +13,7 @@
 <div style="padding-top: 35px;" ></div>
 
 <section class='logoboutique'>
-<img src="public/asset/img_boutique/LOGOS-BRAMALI-170x150px-1_250218_130034.png" alt="">
+<img src="public/asset/img_boutique/<?= $infoBoutique["img"] ?>" alt="">
 </section>
 
 
@@ -44,25 +44,31 @@
 <!-- bloc liste des categorie -->
 
 <?php 
-foreach ($infoCategorie as $infoCategories){
-    ?>
-     <section class = 'blocCategori'>
-<section class='blocko'>
-<img class ='img_cate' src="public/asset/img_categori/<?= $infoCategories['img']; ?>" alt="">
-    <section class ='blocTexte'>
-    <h4>Catégorie <br> <?= $infoCategories['nom']; ?></h4>
-    </section>
-</section>
-<section class='blocko plusStyle'>
-    <a class='linkBtn' href=""><h1>Produits</h1> </a>
+if($infoCategorie === 'null'){
+    echo 'Pas de catégore';
 
-    <a href="">
-    <img src="public/asset/_icone/suprime.svg" alt="">
-    </a>
-</section>
- </section>
-    <?php 
+}else{
+    foreach ($infoCategorie as $infoCategories){
+        ?>
+         <section class = 'blocCategori'>
+    <section class='blocko'>
+    <img class ='img_cate' src="public/asset/img_categori/<?= $infoCategories['img']; ?>" alt="">
+        <section class ='blocTexte'>
+        <h4>Catégorie <br> <?= $infoCategories['nom']; ?></h4>
+        </section>
+    </section>
+    <section class='blocko plusStyle'>
+        <a class='linkBtn' href=""><h1>Produits</h1> </a>
+    
+        <a href="">
+        <img src="public/asset/_icone/suprime.svg" alt="">
+        </a>
+    </section>
+     </section>
+        <?php 
+    }
 }
+
 
 ?>
 
