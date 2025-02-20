@@ -8,7 +8,7 @@
 <div style="padding-top: 80px;" ></div>
 
 <section class='bloc_form_p' >
-        <h1>Entre votre mot de passe</h1>
+        <h1>Entre votre mot de passe.</h1>
         <p></p>
         <form method="POST" enctype="multipart/form-data">
             <section class='bloc_form_input'>
