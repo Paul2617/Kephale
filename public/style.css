@@ -705,6 +705,7 @@ a .icon_user {
   height: 70px;
   margin-left: 5px;
   border-radius: 13px;
+  object-fit: cover;
 }
 .blocKategirie .blocCategori .blocko .blocTexte {
   margin-left: 10px;

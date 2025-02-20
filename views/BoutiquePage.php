@@ -24,10 +24,12 @@
     <h2>Solde</h2>
 <h1> <?= $boutiqueSolde ?></h1>
 </section>
+
+
 <section class="clock_re_re">
 <section class='infoAbonnement'>
-<h4>23 Jr</h4>
-<p>Restant</p>
+<h4><?= $tecko  ?></h4>
+<p><?= $tecka  ?></p>
 </section>
 <a href=""><img src="public/asset/_icone/retrais.svg" alt=""></a>
 
@@ -35,16 +37,20 @@
 </section>
 
 
- <!-- bloc liste des categorie -->
+ 
 
  <section class='blocKategirie'>
 <a class ='linkAjout'href="/Kephale/ajoutecategorie"><h1>Ajouter catégorie</h1></a>
- <section class = 'blocCategori'>
+<!-- bloc liste des categorie -->
+
+<?php 
+foreach ($infoCategorie as $infoCategories){
+    ?>
+     <section class = 'blocCategori'>
 <section class='blocko'>
-<img class ='img_cate' src="public/asset/img_categori/Homme.png" alt="">
+<img class ='img_cate' src="public/asset/img_categori/<?= $infoCategories['img']; ?>" alt="">
     <section class ='blocTexte'>
-    <h4>Catégorie Homme</h4>
-    <p>2 Produits</p>
+    <h4>Catégorie <br> <?= $infoCategories['nom']; ?></h4>
     </section>
 </section>
 <section class='blocko plusStyle'>
@@ -54,8 +60,15 @@
     <img src="public/asset/_icone/suprime.svg" alt="">
     </a>
 </section>
-
  </section>
+    <?php 
+}
+
+?>
+
+
+<!-- bloc liste des categorie -->
+
 
  </section>
 

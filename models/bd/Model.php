@@ -13,9 +13,17 @@ $bd = $Cntbd->bd();
 
   // requet table en fonction de id
 function recTableId ($bd, $table, $colone, $id){
-    $rec =  $bd->prepare('SELECT * FROM '.$table.' WHERE '.$colone.' = ?');
+    $rec =  $bd->prepare('SELECT * FROM '.$table.' WHERE '.$colone.' = ? ');
     $rec->execute(array($id));
     return  $rec->fetch(PDO::FETCH_ASSOC);
+    $rec->closeCursor();
+}
+
+  // requet table en fonction de id
+  function recTableIdBoucle ($bd, $table, $colone, $id){
+    $rec =  $bd->prepare('SELECT * FROM '.$table.' WHERE '.$colone.' = ? ');
+    $rec->execute(array($id));
+    return  $rec->fetchAll(PDO::FETCH_ASSOC);
     $rec->closeCursor();
 }
 

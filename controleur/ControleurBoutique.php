@@ -5,7 +5,16 @@ if(isset($_SESSION["id"])){
         $model = "../models/".$controleur."Manager.php";
         if(file_exists($model)){
             require_once ($model);
-            $etatAbonnement = 
+            $etatAbonnement = etatAbonnement($bd);
+            if($etatAbonnement === 'expire'){
+                header ('Location: /Kephale/reabonnement');
+            }elseif($etatAbonnement === 'G'){
+                $tecko = '10%';
+                $tecka = 'Sur achat';
+            }else{
+                $tecko = $etatAbonnement.' Jr' ;
+                $tecka = 'Restant';
+            }
             require_once ('../models/solde_affiche/solde.php');
             $infoBoutique = infoBoutique($bd);
             $infoCategorie = infoCategorie($bd);
