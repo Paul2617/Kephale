@@ -346,6 +346,10 @@ body {
   bottom: 0px;
   position: fixed;
 }
+.section_menu_icon .lien_icon {
+  width: 45px;
+  height: 45px;
+}
 
 @media screen and (min-width: 430px) {
   .section_menu_icon {

@@ -12,6 +12,11 @@
     position: absolute;
     bottom: 0px;
     position: fixed;
+
+    .lien_icon{
+        width: 45px;
+        height: 45px;
+    }
 }
 
 @media screen and (min-width: 430px) {
