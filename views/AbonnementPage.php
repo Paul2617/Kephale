@@ -19,7 +19,7 @@ foreach($recupListAbonnement as $recupListAbonnements){
 <h2><?= $recupListAbonnements["nom"] ?></h2>
 <p><?= $recupListAbonnements["description"] ?></p>
 <h3><?= $montant?> / Mois</h3>
-<a href="/kephale/paiementabt&id_abt=<?= $recupListAbonnements["id"] ?>">Acheter</a>
+<a href="/Kephale/paiementabt&id_abt=<?= $recupListAbonnements["id"] ?>">Acheter</a>
 </section>
     <?php
 }

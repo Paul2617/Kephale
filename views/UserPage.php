@@ -86,7 +86,7 @@
         <img class="icon_menu" src="public/asset/_icone/parametre.svg" alt="">
     </a>
 
-    <a class="lien_icon" href="/kephale/<?= $userBoutiqueEtat ?>">
+    <a class="lien_icon" href="/Kephale/<?= $userBoutiqueEtat ?>">
             <img class="icon_menu" src="public/asset/_icone/boutique.svg" alt="">
         </a>
 

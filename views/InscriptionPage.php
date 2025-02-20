@@ -1,7 +1,7 @@
 <div class='bloc'>
 
     <section class='retour'>
-        <a class='link_retour' href="/kephale/accueil"> <img class='img_icon' src="public/asset/_icone/retoure.svg"
+        <a class='link_retour' href="/Kephale/accueil"> <img class='img_icon' src="public/asset/_icone/retoure.svg"
                 alt=""></a>
     </section>
 
@@ -42,7 +42,7 @@
                 <input class="boutton_inpute" class="submit" type="submit" value="M'inscrire" name="inscrire">
 
                 <?php if (isset($erreur)) { ?> <h2 class="erreur"><?php echo $erreur ?></h1> <?php } ?>
-                    <h1 class='text_d'>Me <a class='link' href="/kephale/connection">Connecter</a></h1>
+                    <h1 class='text_d'>Me <a class='link' href="/Kephale/connection">Connecter</a></h1>
             </form>
         </section>
         </section>

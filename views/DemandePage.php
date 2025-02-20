@@ -1,6 +1,6 @@
 <div class='bloc'>
 <section class='retour'>
-    <a class='link_retour' href="/kephale/user"> <img class='img_icon' src="public/asset/_icone/retoure.svg" alt=""></a>
+    <a class='link_retour' href="/Kephale/user"> <img class='img_icon' src="public/asset/_icone/retoure.svg" alt=""></a>
 </section>
 <div class='bloc_form'>
 
