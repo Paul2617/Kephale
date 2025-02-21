@@ -5,7 +5,7 @@ if(isset($_SESSION["id"]) and isset($_SESSION["id_boutique"]) and isset($_GET["i
     $model = "../models/".$controleur."Manager.php";
         if(file_exists($model)){
             require_once ($model);
-           // $listeProduit = listeArticle($bd);
+            $listeArticle = listeArticle ($bd);
         }  
 }else{
     header ('Location: /Kephale/boutique');

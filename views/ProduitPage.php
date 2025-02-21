@@ -3,7 +3,7 @@
     <a class ='lin_connect'href= "/Kephale/boutique" >
         <img class="icon_user" src="public/asset/_icone/retoure.svg" alt="">
         </a>
-    <h5>Ajouter Produit</h5>
+    <h5>Produit</h5>
 </div>
 <div style="padding-top: 70px;" ></div>
 
@@ -21,7 +21,7 @@ if($listeProduit === null){
     <img class ='img_cate' src="public/asset/img_produit/<?= $listeProduits['img']; ?>" alt="">
         <section class ='blocTexte'>
         <h3><?= $listeProduits['nom']; ?></h3>
-        <h4><span>Produit</span></h4>
+        <h4><span><?= $listeProduits['types']; ?></span></h4>
         </section>
     </section>
     <section class='blocko plusStyle'>

@@ -5,7 +5,8 @@
         </a>
     <h5>Ajouter Produit</h5>
 </div>
-<div style="padding-top: 80px;" ></div>
+
+<section class="bloc_form">
 
 <section class='bloc_form_p' >
         <h1> Ajouter un produit</h1>
@@ -18,9 +19,9 @@
             <section class ='info_radio'>
             <select class="form_input" name="type_categorie">
                     <option value="">Sélectionne</option>
-                    <option value="Chausue">Chausue</option>
-                    <option value="Femmes">Vaitement</option>
-                    <option value="autre">autre</option>
+                    <option value="Chaussure">Chaussure</option>
+                    <option value="Vêtement">Vêtement</option>
+                    <option value="Autre">Autre</option>
                 </select>
                     </section>
             </section>
@@ -38,3 +39,5 @@
         </form>
     </section>
     </section>
+
+</section>

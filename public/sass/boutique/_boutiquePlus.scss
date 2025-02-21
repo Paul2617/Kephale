@@ -1,0 +1,87 @@
+.blocPayes{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    a{
+        width: 100px;
+        height: 50px;
+        background-color: rgb(218, 218, 218);
+        border-radius: 14px;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.blocArticlP{
+    margin-top: 20px;
+    width: 90%;
+    height: auto;
+    border: 1px solid #1D71B8;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+
+    .infoBoutique{
+        margin-top: 10px;
+        width: 95%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-items: center;
+        .blookk{
+            display: flex;
+            .dkdkdk{
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                border-radius: 100px;
+            }
+
+            .infotextebta{
+                margin-left: 10px;
+                h1{
+                    font-size: 15px;
+                }
+                p{
+                    font-size: 12px;
+                    font-weight: 300px;
+                }
+            }
+        }
+      a{
+        img{
+            width: 35px;
+            height: 35px;
+            object-fit: cover;
+        }
+      }
+       
+        .iconBoutique{
+            position: relative;
+            justify-self: right;
+        }
+    }
+
+    .imgCategori{
+        width: 95%;
+        height: 200px;
+        object-fit: cover;
+        margin-top: 5px;
+    }
+
+    .blocinfoCategorie{
+        width: 95%;
+        height: auto;
+        h1{
+            font-size: 20px;
+        }
+        p{
+            font-size: 10px;
+            margin-top: -5px;
+        }
+    }
+}
