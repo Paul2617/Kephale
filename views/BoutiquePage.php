@@ -54,11 +54,12 @@ if($infoCategorie === 'null'){
     <section class='blocko'>
     <img class ='img_cate' src="public/asset/img_categori/<?= $infoCategories['img']; ?>" alt="">
         <section class ='blocTexte'>
-        <h4>Catégorie <br> <?= $infoCategories['nom']; ?></h4>
+        <h3><?= $infoCategories['nom']; ?></h3>
+        <h4><span><?= $infoCategories['types']; ?></span></h4>
         </section>
     </section>
     <section class='blocko plusStyle'>
-        <a class='linkBtn' href=""><h1>Produits</h1> </a>
+        <a class='linkBtn' href="/Kephale/produit&id_categorie=<?= $infoCategories['id']; ?>"><h1>Produits</h1> </a>
     
         <a href="">
         <img src="public/asset/_icone/suprime.svg" alt="">

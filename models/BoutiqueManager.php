@@ -29,7 +29,7 @@ function infoCategorie($bd) {
         return recTableIdBoucle($bd, 'categorie','id_boutique', $_SESSION["id_boutique"]);
 
     }else{
-        return 'null';
+        return null;
     }
 }
 

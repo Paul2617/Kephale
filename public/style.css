@@ -591,6 +591,18 @@ a .icon_user {
   height: 300px;
 }
 
+.blocTexte h3 {
+  font-size: 13px;
+}
+.blocTexte h4 {
+  font-size: 10px;
+  margin-top: -5px;
+}
+.blocTexte h4 span {
+  font-size: 10px;
+  color: rgb(131, 131, 131);
+}
+
 .listabtn {
   width: 100%;
   height: auto;

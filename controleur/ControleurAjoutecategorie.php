@@ -18,6 +18,8 @@ if(isset($_SESSION["id_boutique"])){
                     $imgNom = $resultImg;
                     $imgDirection = $direction.$imgNom;
                 }
+                }else{
+                    $erreur =  "Veuillez ajouter l'image de la catégorie";
                 }
             }else{
                 $erreur =  "Veuillez indiquer le type de la catégorie";

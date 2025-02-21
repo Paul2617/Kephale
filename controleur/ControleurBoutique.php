@@ -1,5 +1,4 @@
 <?php
-echo 'boutique';
 if(isset($_SESSION["id"])){
     if(isset($_SESSION["id_boutique"])){
         $model = "../models/".$controleur."Manager.php";
