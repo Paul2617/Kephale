@@ -73,7 +73,26 @@
             <p>Categori Homme</p>
         </section>
         <!--Bloc info  catégorie-->
-        
+        <!--Bloc info  produit-->
+        <section class="BlockProduit">
+            <a href="">
+                <img src="public/asset/img_produit/Homme.png" alt="">
+                <p>Montre</p>
+            </a>
+            <a href="">
+                <img src="public/asset/img_produit/Homme.png" alt="">
+                <p>Montre</p>
+            </a>
+            <a href="">
+                <img src="public/asset/img_produit/Homme.png" alt="">
+                <p>Montre</p>
+            </a>
+            <a href="">
+                <img src="public/asset/img_produit/Homme.png" alt="">
+                <p>Montre</p>
+            </a>
+        </section>
+
     </section>
     <!--Fin Bloc article-->
 
