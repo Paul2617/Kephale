@@ -76,8 +76,8 @@
         <!--Bloc info  produit-->
         <section class="BlockProduit">
             <a href="">
-                <img src="public/asset/img_produit/Homme.png" alt="">
-                <p>Montre</p>
+                <img class="imgContour" src="public/asset/img_produit/Homme.png" alt="">
+                <p class="pColor" >voir +</p>
             </a>
             <a href="">
                 <img src="public/asset/img_produit/Homme.png" alt="">

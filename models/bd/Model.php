@@ -43,5 +43,45 @@ function inserabonnemnt($bd){
   $stmt->execute(array($_SESSION["id"],$_GET["id_abt"],$date_transaction, $date_fin, $etat ));
   return true ;
 }
+// requt boutique type homme
 
+function recherche($bd, $type, $colone, $ORDER_BY){
+  $rec = $bd->query("SELECT 
+  categorie.id AS categorie_id, 
+  categorie.nom AS categorie_nom,
+  categorie.img AS categorie_img, 
+  categorie.types AS categorie_types, 
+
+  boutique.id AS boutique_id, 
+  boutique.nom AS boutique_nom,
+  boutique.img AS boutique_img, 
+  boutique.pays AS boutique_pays
+
+  FROM categorie INNER JOIN boutique ON categorie.id_boutique = boutique.id WHERE categorie.types LIKE '$type' ORDER BY $colone $ORDER_BY ");
+
+
+  return $rec;
+  $rec->closeCursor();
+}
+
+// requt boutique type homme
+
+function rechercheBoutique ($bd, $type, $rech){
+  $rec = $bd->query("SELECT 
+  categorie.id AS categorie_id, 
+  categorie.nom AS categorie_nom,
+  categorie.img AS categorie_img, 
+  categorie.types AS categorie_types, 
+
+  boutique.id AS boutique_id, 
+  boutique.nom AS boutique_nom,
+  boutique.img AS boutique_img, 
+  boutique.pays AS boutique_pays
+
+  FROM categorie INNER JOIN boutique ON categorie.id_boutique = boutique.id WHERE categorie.types LIKE '$type' and boutique.nom LIKE  '%$rech%'  ORDER BY categorie.id DESC ");
+
+
+  return $rec;
+  $rec->closeCursor();
+}
     ?>

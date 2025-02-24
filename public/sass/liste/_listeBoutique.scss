@@ -1,0 +1,93 @@
+.imgPddk{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+.blocListP{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+}
+.listProduiti{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+    .h1{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 6px;
+        font-size: 17px;
+    }
+
+    .blochdfg{
+        width: 130px;
+        height: auto;
+        border: 1px solid #1D71B8;
+        border-radius: 13px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+        padding: 5px;
+      
+        img{
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 13px 13px 0px 0px;
+        }
+        h1{
+            width: 100%;
+            font-size: 15px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            display: inline-block;
+        }
+        a{
+            width: 100%;
+            height: 40px;
+            background-color: #1D71B8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 13px;
+            margin-top: 20px;
+            color: #ffffff;
+        }
+    }
+}
+.blocInfoCategories{
+      width: auto;
+      height: 70px;  
+      margin-bottom: 10px;
+      border: 1px solid #1D71B8;
+      border-radius: 13px;
+      padding: 5px;
+      padding-right: 30px;
+      display: flex;
+      img{
+        width: 80px;
+        height: 100%;
+        border-radius: 13px;
+      }
+      .ddkfkdk{
+        margin-left: 10px;
+        h2{
+            font-size: 14px;
+        }
+        h3{
+            font-size: 10px;
+            color: #494949;
+        }
+      }
+}

@@ -1,6 +1,5 @@
 .logoboutique{
     width: 100%;
-    background-color: aqua;
     height: 200px;
     img{
         width: 100%;
@@ -35,12 +34,12 @@
     .blocCategori{
         width: 90%;
         height: 80px;
-        background-color: rgba(125, 125, 125, 0.3882352941);
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 13px;
         margin-top: 10px;
+        border: 1px solid #1D71B8;
         .blocko{
             width: 50%;
             height: 80px;

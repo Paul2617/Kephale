@@ -18,9 +18,9 @@
             <section class ='info_radio'>
             <select class="form_input" name="type_categorie">
                     <option value="">Sélectionne</option>
-                    <option value="Hommes">Hommes</option>
-                    <option value="Femmes">Femmes</option>
-                    <option value="Enfants">Enfants</option>
+                    <option value="Homme">Homme</option>
+                    <option value="Femme">Femme</option>
+                    <option value="Enfant">Enfant</option>
                     <option value="Électronique">Électronique</option>
                     <option value="Cosmétique">Cosmétique</option>
                     <option value="Boissons">Boissons</option>
