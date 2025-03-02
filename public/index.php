@@ -2,6 +2,7 @@
 session_start();
 setlocale(LC_TIME, 'fr_FR');
 $timestamp = date('Ymd');
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
