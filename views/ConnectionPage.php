@@ -4,7 +4,7 @@
     <a class ='lin_connect'href= "/Kephale/user" >
         <img class="icon_user" src="public/asset/_icone/retoure.svg" alt="">
         </a>
-    <h5>Connexion</h5>
+    <h5></h5>
 </div>
 <div class='bloc_form'>
         <section class='bloc_form_p' >

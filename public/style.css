@@ -1138,11 +1138,15 @@ a .icon_user {
 }
 .listProduiti .blochdfg h1 {
   width: 100%;
-  font-size: 15px;
+  font-size: 14px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: inline-block;
+}
+.listProduiti .blochdfg .soldeFinfo {
+  font-size: 12px;
+  font-weight: 400;
 }
 .listProduiti .blochdfg a {
   width: 100%;

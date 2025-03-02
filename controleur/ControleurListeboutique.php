@@ -30,9 +30,7 @@ if ($_SESSION["actualise"] === 0 || $_SESSION["actualise"] <= 2) {
     $ORDER_BY = 'DESC';
 }
 
-    $model = "../models/".$controleur."Manager.php";
-    if(file_exists($model)){
-        require_once ($model);  
+
         $type = $_GET["rc"];
         if (isset($_POST["recherche"]) and !empty($_POST["recherche"])) {
             $rech = htmlspecialchars($_POST["recherche"]);
@@ -43,7 +41,7 @@ if ($_SESSION["actualise"] === 0 || $_SESSION["actualise"] <= 2) {
             
 
         }
-    }
+    
 
 
 
@@ -59,14 +57,6 @@ if ($_SESSION["actualise"] === 0 || $_SESSION["actualise"] <= 2) {
 
 
 
-// Import la page de demande
-$page = "../views/".$controleur."Page.php";
-
-if(file_exists($page)){
-    require_once ($page);
-}else{
-    echo "page intouvable";
-}
 
 
 

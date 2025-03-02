@@ -12,7 +12,7 @@ function solde ( $montant_user ) {
         $_08_caractaure = 8;
         $_09_caractaure = 9;
         $_prefix_fcfa = '.00';
-        $prefix = ' cfa';
+        $prefix = ' FCFA';
         if ($nonbre === $_01_caractaure) {
             $resule_finale = $montant_user  . $prefix;
             return $resule_finale;

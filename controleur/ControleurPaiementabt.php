@@ -13,9 +13,6 @@
 
 
 if(isset($_SESSION["id"])){
-    $model = "../models/".$controleur."Manager.php";
-    if(file_exists($model)){
-        require_once ($model);
         require_once ('../models/solde_affiche/solde.php');
         $info_abonnement = info_abonnement ($bd);
         $info_user = info_user ($bd);
@@ -52,7 +49,7 @@ if(isset($code)){
       
 
       
-    }
+    
 
 
 
@@ -69,13 +66,6 @@ if(isset($code)){
 
 
 
-//importe page 
-$page = "../views/".$controleur."Page.php";
-if(file_exists($page)){
-    require_once ($page);
-}else{
-   echo 'Page_introuvable';
-}
 
 }else{
     $_SESSION = array();

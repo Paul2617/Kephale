@@ -14,12 +14,9 @@ if (isset($_POST["conection"]) and !empty($_POST["conection"])){
 
 
 //Inporte le doc dans model pour tout les recquet de la basse de done
-$model = "../models/".$controleur."Manager.php";
-if(file_exists($model)){
+
     if (isset( $telephone ) and !empty($passwor_usre )){
         if (isset( $telephone ) and !empty($passwor_usre )){
-
-        require_once ($model);
         $connection =  connection ($bd,$telephone, $passwor_usre);
         
         if($connection === 'numero_inconu'){
@@ -31,14 +28,5 @@ if(file_exists($model)){
         }
     }
     }
-}
 
-
-// page connection
-$model_user = "../views/".$controleur."Page.php";
-if(file_exists($model_user)){
-    require_once ($model_user);
-}else{
-    echo 'Page inrouvable';
-}
     ?>

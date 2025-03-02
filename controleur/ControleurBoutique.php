@@ -1,9 +1,7 @@
 <?php
 if(isset($_SESSION["id"])){
     if(isset($_SESSION["id_boutique"])){
-        $model = "../models/".$controleur."Manager.php";
-        if(file_exists($model)){
-            require_once ($model);
+       
             $etatAbonnement = etatAbonnement($bd);
             if($etatAbonnement === 'expire'){
                 header ('Location: /Kephale/reabonnement');
@@ -18,7 +16,7 @@ if(isset($_SESSION["id"])){
             $infoBoutique = infoBoutique($bd);
             $infoCategorie = infoCategorie($bd);
             $boutiqueSolde = solde ($infoBoutique["solde"]) ;
-        }
+        
         
 
 
@@ -31,15 +29,6 @@ if(isset($_SESSION["id"])){
 
 
 
-
-
-
-        $page = "../views/".$controleur."Page.php";
-        if(file_exists($page)){
-            require_once ($page);
-        }else{
-           echo 'Page_introuvable';
-        }
     }else{
         header ('Location: /Kephale/look');
     }

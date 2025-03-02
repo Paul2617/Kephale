@@ -22,9 +22,6 @@ if(isset($_SESSION["id"])){
     
     }
 
-    $model = "../models/".$controleur."Manager.php";
-    if(file_exists($model)){
-        require_once ($model);
         $infoUser = infoUser($bd);
        $etatDemande = verifEtat($bd);
         if(isset( $imgDirection )){
@@ -36,7 +33,7 @@ if(isset($_SESSION["id"])){
               }
             }
         }
-    }
+    
 
 
 
@@ -49,15 +46,6 @@ if(isset($_SESSION["id"])){
 
 
 
-
-
-
-// Import la page de demande
-$page = "../views/".$controleur."Page.php";
-
-if(file_exists($page)){
-    require_once ($page);
-}
 }else{
     $_SESSION = array();
     session_destroy();

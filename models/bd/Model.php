@@ -1,7 +1,4 @@
 <?php
-require_once ('../models/bd/Cntbd.php');
-$Cntbd = new Cntbd();
-$bd = $Cntbd->bd();
 // count() pour compt
   // requet de tout une table
    function recTable ( $bd, $table){
@@ -31,6 +28,14 @@ function recTableId ($bd, $table, $colone, $id){
 function recRowCount($bd, $table, $colone, $id){
   $rec = $bd->prepare('SELECT * FROM '.$table.' WHERE '.$colone.' = ?');
   $rec->execute(array($id));
+  return $rec->rowCount();
+  $rec->closeCursor();
+}
+
+//Ferifie panier
+function panierVerifi ($bd, $id_user, $id_article){
+  $rec = $bd->prepare('SELECT * FROM panie WHERE id_user = ? and id_article = ? ');
+  $rec->execute(array($id_user, $id_article));
   return $rec->rowCount();
   $rec->closeCursor();
 }

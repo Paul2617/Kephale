@@ -12,15 +12,13 @@
 <?php 
 if(is_array($infoArticle) and !empty($infoArticle)){
     foreach($infoArticle as $infoArticles){
-        $prixArticle = prixArticle($bd, $infoArticles["prix"]);
-        require_once ('../models/solde_affiche/solde.php');
-        //$Solde = solde ($infoArticles["prix"]) ;
+        $Solde = solde ($infoArticles["prix"]) ;
         ?>
-        <section class = "blochdfg">
+    <section class = "blochdfg">
     <img src="public/asset/img_article/<?= $infoArticles["img"]  ?>" alt="">
     <h1><?= $infoArticles["nom"] ?></h1>
-    <h1><?php //$Solde ?></h1>
-    <a href="">Voir +</a>
+    <h1 class="soldeFinfo"><?= $Solde ?></h1>
+    <a href="/Kephale/articles&rc=<?= $_GET["rc"]?>&id_categorie=<?= $_GET["id_categorie"]?>&id_produit=<?= $_GET["id_produit"]?>&id_article=<?= $infoArticles["id"]?>">Voir +</a>
     </section>
         <?php 
     }

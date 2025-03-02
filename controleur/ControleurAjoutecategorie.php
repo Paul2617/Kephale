@@ -30,9 +30,6 @@ if(isset($_SESSION["id_boutique"])){
     }
 
 
-    $model = "../models/".$controleur."Manager.php";
-    if(file_exists($model)){
-        require_once ($model);
         if(isset($imgDirection)){
             if(move_uploaded_file($_FILES["img_demande"]["tmp_name"], $imgDirection)){
             $ajoute_categori = ajoute_categori($bd, $nomCategorie, $type_categorie,$imgNom );
@@ -41,19 +38,12 @@ if(isset($_SESSION["id_boutique"])){
             }
         }
         }
-    }
+    
 
 
 
 
 
-//importe page 
-$page = "../views/".$controleur."Page.php";
-if(file_exists($page)){
-    require_once ($page);
-}else{
-   echo 'Page introuvable';
-}
 
 }else{
     $_SESSION = array();

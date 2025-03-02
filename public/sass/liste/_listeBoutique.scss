@@ -47,11 +47,15 @@
         }
         h1{
             width: 100%;
-            font-size: 15px;
+            font-size: 14px;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
             display: inline-block;
+        }
+        .soldeFinfo{
+            font-size: 12px;
+            font-weight: 200;
         }
         a{
             width: 100%;
@@ -79,6 +83,7 @@
         width: 80px;
         height: 100%;
         border-radius: 13px;
+        object-fit: cover;
       }
       .ddkfkdk{
         margin-left: 10px;

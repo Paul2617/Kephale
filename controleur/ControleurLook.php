@@ -10,9 +10,7 @@ if(isset($_SESSION["id"])){
     }
 
 
-    $model = "../models/".$controleur."Manager.php";
-    if(file_exists($model)){
-        require_once ($model);
+
         if(isset($passwor_usre)){
             $verifiCode =  verifiCode ($bd, $passwor_usre);
             if($verifiCode === true){
@@ -26,7 +24,7 @@ if(isset($_SESSION["id"])){
                 $erreur = 'Mot de passe incorrect !';
             }
         }
-      }
+      
 
 
 
@@ -44,13 +42,7 @@ if(isset($_SESSION["id"])){
 
 
 
-          //importe page 
-$page = "../views/".$controleur."Page.php";
-if(file_exists($page)){
-    require_once ($page);
-}else{
-   echo 'Page_introuvable';
-}
+
 
 }else{
     $_SESSION = array();

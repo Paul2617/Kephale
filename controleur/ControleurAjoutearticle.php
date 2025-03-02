@@ -1,13 +1,11 @@
 <?php 
 
 if(isset($_SESSION["id"]) and isset($_SESSION["id_boutique"]) and isset($_GET["id_categorie"]) and isset($_GET["id_produit"]) ){
-    $model = "../models/".$controleur."Manager.php";
-        if(file_exists($model)){
-            require_once ($model);
+
            // $listeProduit = listeArticle($bd);
           $modeBoutique = modeBoutique ($bd);
           $typesProduit = typesProduit ($bd);
-        }  
+      
 
 
 // debut POST   
@@ -66,9 +64,7 @@ if(isset($_SESSION["id"]) and isset($_SESSION["id_boutique"]) and isset($_GET["i
 // fin POST   
 
 
-//ajoute les information de l'article
-if(file_exists($model)){
-    require_once ($model);
+
 
     if(isset( $tailles) and isset( $date_livraison ) and isset( $imgDirection ) ){
         if(move_uploaded_file($_FILES["img_demande"]["tmp_name"], $imgDirection)){
@@ -81,7 +77,7 @@ if(file_exists($model)){
     }
     }
 
-}
+
 
 
 
@@ -104,12 +100,6 @@ if(file_exists($model)){
 
 
 
-$page = "../views/".$controleur."Page.php";
-if(file_exists($page)){
-    require_once ($page);
-}else{
-   echo 'Page_introuvable';
-}
 
 
 ?>

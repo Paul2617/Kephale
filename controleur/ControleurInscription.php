@@ -34,12 +34,11 @@ if (isset($_POST["inscrire"]) and !empty($_POST["inscrire"])){
 }
 
 
-$model_user = "../models/".$controleur."Manager.php";
-if(file_exists($model_user)){
+
 // si tout les informentions son inquique
     if(isset($veirif )){
         //inser les informations
-    require_once ($model_user);
+   
     $resulte = inscription($bd, $nom_user, $numerau_user, $password_user, $category );
 
     if($resulte === 'numero_existe'){
@@ -48,14 +47,8 @@ if(file_exists($model_user)){
         header ('Location: /Kephale/connection'  );
     }
     }
-}
 
 
 
 
-//importe page inscription
-$model_user = "../views/".$controleur."Page.php";
-if(file_exists($model_user)){
-    require_once ($model_user);
-}
 ?>
