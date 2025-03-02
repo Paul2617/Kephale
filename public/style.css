@@ -551,10 +551,6 @@ a .icon_user {
   color: #E94E1B;
 }
 
-.imgContour {
-  border: 2px solid #1D71B8;
-}
-
 .bloc_recherche {
   width: 100%;
   height: auto;
@@ -598,6 +594,7 @@ a .icon_user {
 
 .blockInfo {
   width: 90%;
+  background-color: aqua;
   height: 300px;
 }
 
@@ -668,8 +665,13 @@ a .icon_user {
   border-radius: 13px;
 }
 
+.nav_bare h5 {
+  margin-right: 20px;
+}
+
 .logoboutique {
   width: 100%;
+  background-color: aqua;
   height: 200px;
 }
 .logoboutique img {
@@ -704,12 +706,12 @@ a .icon_user {
 .blocKategirie .blocCategori {
   width: 90%;
   height: 80px;
+  background-color: rgba(125, 125, 125, 0.3882352941);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 13px;
   margin-top: 10px;
-  border: 1px solid #1D71B8;
 }
 .blocKategirie .blocCategori .blocko {
   width: 50%;
@@ -968,8 +970,8 @@ a .icon_user {
   font-weight: 300px;
 }
 .blocArticlP .infoBoutique a img {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   object-fit: cover;
 }
 .blocArticlP .infoBoutique .iconBoutique {
@@ -993,6 +995,7 @@ a .icon_user {
   font-size: 10px;
   margin-top: -5px;
 }
+<<<<<<< HEAD
 .blocArticlP .BlockProduit {
   margin-top: 10px;
   width: 95%;
@@ -1185,5 +1188,7 @@ a .icon_user {
   font-size: 10px;
   color: #494949;
 }
+=======
+>>>>>>> 754c5cac37e2d6f6d0107cec4be194165e2bf1b5
 
 /*# sourceMappingURL=style.css.map */
