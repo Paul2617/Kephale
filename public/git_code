@@ -1,6 +1,6 @@
 git init
 git add README.md
-git commit -m "firsscommit" 
+git commit -m "firsscommi" 
 git branch -M main
 git remote add origin https://github.com/Paul2617/Kephale.
 git push -u origin main
