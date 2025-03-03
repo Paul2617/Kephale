@@ -995,35 +995,6 @@ a .icon_user {
   font-size: 10px;
   margin-top: -5px;
 }
-<<<<<<< HEAD
-.blocArticlP .BlockProduit {
-  margin-top: 10px;
-  width: 95%;
-  height: auto;
-  display: flex;
-  justify-content: space-around;
-  align-self: center;
-}
-.blocArticlP .BlockProduit a {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.blocArticlP .BlockProduit a p {
-  font-size: 14px;
-  color: #000000;
-}
-.blocArticlP .BlockProduit a .pColor {
-  color: #1D71B8;
-  font-weight: 600;
-}
-.blocArticlP .BlockProduit a img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 100px;
-}
 
 .bloc_scrole_menu {
   width: 100%;
@@ -1149,7 +1120,7 @@ a .icon_user {
 }
 .listProduiti .blochdfg .soldeFinfo {
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 200;
 }
 .listProduiti .blochdfg a {
   width: 100%;
@@ -1177,6 +1148,7 @@ a .icon_user {
   width: 80px;
   height: 100%;
   border-radius: 13px;
+  object-fit: cover;
 }
 .blocInfoCategories .ddkfkdk {
   margin-left: 10px;
@@ -1188,7 +1160,5 @@ a .icon_user {
   font-size: 10px;
   color: #494949;
 }
-=======
->>>>>>> 754c5cac37e2d6f6d0107cec4be194165e2bf1b5
 
 /*# sourceMappingURL=style.css.map */
