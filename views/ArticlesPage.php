@@ -5,21 +5,21 @@
 </div>
 <div style="padding-top: 60px;" ></div>
 
-<div class='blocke'>
+<div class='blockehdte'> 
+
 <section class='blockarticle'>
-<img src="" alt="">
 <section class='blocImg'>
-<img src="" alt="">
+<img src="public/asset/img_article/<?= $infoArticle ["img"] ?>" alt="">
 </section>
 <section class='blocInfoArticle'>
 <h1><?= $infoArticle ["nom"] ?></h1>
 <h2><?= $infoArticle ["descriptions"] ?></h2>
-<h2><?= $soldeArticle ?></h2>
+<h3><?= $soldeArticle ?> </h3>
 </section>
 <section class='sectionBloc'>
 <?= $botoneInfo?>  
-
 </section>
+
 </section>
 </div>
 <?php
