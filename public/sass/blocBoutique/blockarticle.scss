@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 200px;
     .blockarticle {
         width: 90%;
         height: auto;
@@ -14,6 +15,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .ddhfj {
+        margin-bottom: 10px;
+    }
+    .bloc_taille {
+        width: 97%;
     }
     .blocImg {
         width: 100%;
@@ -48,12 +55,13 @@
             display: flex;
             justify-content: space-between;
             input {
-                width: 150px;
+                width: 47%;
                 height: 50px;
                 border-radius: 13px;
                 border: none;
                 background-color: #1D71B8;
                 color: #ffffff;
+                font-size: 16px;
             }
         }
     }

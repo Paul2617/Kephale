@@ -3,7 +3,6 @@
 if(isset($_SESSION["id"])){
 
    
-        require_once ($model);
         $recupListAbonnement = recupListAbonnement($bd);
     
 

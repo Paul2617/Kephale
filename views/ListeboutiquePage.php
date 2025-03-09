@@ -14,7 +14,6 @@
         <input class="recher_dd" type="submit" value="Envoyer">
     </form>
 </section>
-<?php// var_dump  ($listBoutiqueType );?>
  <!-- -->
 <div class='blocListP'>
     <!--Bloc article-->

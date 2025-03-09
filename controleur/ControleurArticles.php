@@ -6,7 +6,13 @@
                $infoArticle =  articles($bd, $id_article);
                require_once ('../models/solde_affiche/solde.php');
                $soldeArticle = solde ($infoArticle["prix"]) ;
-
+               if($infoArticle["tailles"] === 0){
+               }else{
+                  $taille = str_replace('+', ' ', $infoArticle["tailles"]);
+                  $tailless = explode(" ",  $taille);
+                  $i = 0;
+               }
+            
                // info paniier de l'article
                if(isset($_SESSION["id"])){
                $infoPanier = panier ($bd, $id_article);
