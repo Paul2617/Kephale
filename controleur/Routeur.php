@@ -25,6 +25,7 @@ class Routeur
                     require_once ($models);
                 }
                 if(file_exists($controleur)){
+                    require_once '../core/Component.php';
                     require_once ($controleur);
                     if(file_exists($views)){
                         require_once ($views);

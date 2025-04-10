@@ -3,6 +3,7 @@ if(isset($_SESSION["id"])){
     if(isset($_SESSION["id_boutique"])){
        
             $etatAbonnement = etatAbonnement($bd);
+            // si l'abonnement est expire
             if($etatAbonnement === 'expire'){
                 header ('Location: /Kephale/reabonnement');
             }elseif($etatAbonnement === 'G'){

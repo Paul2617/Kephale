@@ -1,5 +1,4 @@
 <?php
-require_once ('../models/bd/Model.php');
 function etatAbonnement($bd){
    $listeAbnnt = recTableId($bd, 'abonnement','id_user', $_SESSION["id"]);
    $listeAbnnt ["id_offre"];

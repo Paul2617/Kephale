@@ -1,8 +1,7 @@
 <div class='nav_bare'>
-    <a class='lin_connect'
-        href="/Kephale/listearticle&rc=<?= $_GET["rc"]?>&id_categorie=<?= $_GET["id_categorie"]?>&id_produit=<?= $_GET["id_produit"]?>">
-        <img class="icon_user" src="public/asset/_icone/retoure.svg" alt="">
-    </a>
+<?php
+retourPagePrecedente();
+?>
 </div>
 <div style="padding-top: 60px;"></div>
 <div class='blockehdte'>

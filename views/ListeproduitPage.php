@@ -1,7 +1,9 @@
+
 <div class='nav_bare'>
-    <a class ='lin_connect'href= "/Kephale/listeboutique&rc=<?= $_GET["rc"]?>" >
-        <img class="icon_user" src="public/asset/_icone/retoure.svg" alt="">
-        </a>
+<?php
+retourPagePrecedente();
+?>
+
 </div>
 <div style="padding-top: 50px;" ></div>
 

@@ -6,8 +6,8 @@ function transactionAbonnement($bd, $montant){
         $stmt->execute(array($montant, $_SESSION["id"]));
 
         // Ajoute le montant sur le compte kephale
-        $idkephale = "1";
-        $stmt = $bd->prepare("UPDATE kephale SET solde = solde + ? WHERE id = ? ");
+        $idkephale = "2025777333";
+        $stmt = $bd->prepare("UPDATE kephale SET solde = solde + ? WHERE api = ? ");
         $stmt->execute(array($montant, $idkephale));
 
         // Ajoute a la liste de transictions

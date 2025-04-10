@@ -1,5 +1,4 @@
 <?php
-require_once ('../models/bd/Model.php');
 
 //inporte la transactions
 require_once ('../models/bd/transaction.php');

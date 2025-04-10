@@ -1,0 +1,85 @@
+:root {
+    --font-grand_titre: clamp(1.8rem, 5vw, 3rem);
+    --font-titre: clamp(1.5rem, 4vw, 2.2rem);
+    --font-petit_titre: clamp(1.2rem, 3vw, 1.6rem);
+    --font-paragraphe: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+
+/* Style de base (mobile-first) */
+
+.grand_titre {
+    width: auto;
+    font-size: 1.2rem;
+    /* grand titre */
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Nombre de lignes */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.titre {
+    width: auto;
+    font-size: 1rem;
+    /* titre moyen */
+    font-weight: 600;
+    margin-bottom: 0.4em;
+}
+
+.petit_titre {
+    width: auto;
+    font-size: 0.9rem;
+    /* petit titre */
+    font-weight: 500;
+    margin-bottom: 0.3em;
+}
+
+.paragraphe {
+    font-size: 0.8rem;
+    /* paragraphe */
+    line-height: 1.3;
+    font-weight: 300;
+    margin-bottom: 1em;
+    width: auto;
+}
+
+
+/* Tablettes */
+
+@media (min-width: 600px) {
+    .grand_titre {
+        font-size: 2.5rem;
+    }
+    .titre_moyen {
+        font-size: 2rem;
+    }
+    .petit_titre {
+        font-size: 1.5rem;
+    }
+    .paragraphe {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Ordinateurs */
+
+@media (min-width: 1024px) {
+    .grand_titre {
+        font-size: 3rem;
+    }
+    .titre_moyen {
+        font-size: 2.5rem;
+    }
+    .petit_titre {
+        font-size: 1.8rem;
+    }
+    .paragraphe {
+        font-size: 1.2rem;
+    }
+}
