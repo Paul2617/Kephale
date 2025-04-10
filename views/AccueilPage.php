@@ -1,6 +1,8 @@
 <?php
 ?>
 <div class='nav_bare'>
+    <section class="bloc_nave">
+
     <section class='bloc_logo'>
         <img class="img_logo" src="public/asset/logo/logo_kephale.png" alt="">
     </section>
@@ -8,6 +10,8 @@
         <a class ='lin_connect'href= "/Kephale/<?= $icon ;?>" >
         <img class="icon_user" src="public/asset/_icone/<?= $icon ;?>.svg" alt="">
         </a>
+    </section>
+
 </div>
 <div style="padding-top: 60px;" ></div>
 

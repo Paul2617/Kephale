@@ -4,7 +4,7 @@
     margin: 20px;
     width: 90%;
     height: 60px;
-    background-color: #7d7d7d63;
+    background-color: #9d9d9d63;
     border-radius: 13px;
     display: flex;
     align-items: center;
@@ -12,10 +12,8 @@
     position: absolute;
     bottom: 0px;
     position: fixed;
-
-    .lien_icon{
-        width: 45px;
-        height: 45px;
+    .lien_icon {
+        width: 35px;
     }
 }
 
@@ -25,15 +23,11 @@
     }
 }
 
-
-
-
-
 a {
     .icon_user {
         margin-right: 10px;
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -52,7 +46,7 @@ a {
     width: 40px;
 }
 
-.alerte_conteur{
+.alerte_conteur {
     background-color: #E94E1B;
     width: auto;
     height: 20px;
@@ -62,9 +56,9 @@ a {
     align-items: center;
     margin-top: -20px;
     margin-left: -17px;
-
 }
-.conteur{
+
+.conteur {
     margin: 3px 6px;
     color: rgb(255, 255, 255);
     font-size: 12px;

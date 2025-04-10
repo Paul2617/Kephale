@@ -1,9 +1,11 @@
 
 <div class='nav_bare'>
+    <section class="bloc_nave">
     <a class ='lin_connect'href= "/Kephale/produit&id_categorie=<?= $_GET["id_categorie"] ?>" >
-        <img class="icon_user" src="public/asset/_icone/retoure.svg" alt="">
+        <img src="public/asset/_icone/retoure.svg" alt="">
         </a>
     <h5>Ajouter Produit</h5>
+    </section>
 </div>
 
 <section class="bloc_form">

@@ -2,17 +2,7 @@
 session_start();
 setlocale(LC_TIME, 'fr_FR');
 $timestamp = date('Ymd');
-
-function retourPagePrecedente($fallback = '/Kephale/accueil') {
-    // Vérifie si une page précédente est définie
-    if (!empty($_SERVER['HTTP_REFERER'])) {
-        $urlPrecedente = htmlspecialchars($_SERVER['HTTP_REFERER']);
-        echo "<a class ='lin_connect' href=\"$urlPrecedente\"><img class='icon_user' src='public/asset/_icone/retoure.svg' ></a>";
-    } else {
-        // Si pas de referer, lien de secours
-        echo "<a href=\"$fallback\">⬅ Retour</a>";
-    }
-}
+require_once ('../models/fonctions_retoure/retourPagePrecedente.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">

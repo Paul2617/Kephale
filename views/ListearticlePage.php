@@ -1,7 +1,9 @@
 <div class='nav_bare'>
-<?php
+    <section class="bloc_nave">
+    <?php
 retourPagePrecedente();
 ?>
+    </section>
 </div>
 <div style="padding-top: 50px;" ></div>
 

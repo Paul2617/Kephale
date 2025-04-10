@@ -1,8 +1,10 @@
 <div class='nav_bare'>
+    <section class="bloc_nave">
     <a class ='lin_connect'href= "/Kephale/produit&id_categorie=<?= $_GET["id_categorie"]; ?>" >
-        <img class="icon_user" src="public/asset/_icone/retoure.svg" alt="">
+        <img src="public/asset/_icone/retoure.svg" alt="">
         </a>
     <h5>Article</h5>
+    </section>
 </div>
 <div style="padding-top: 70px;" ></div>
 <section class='blocKategirie'>

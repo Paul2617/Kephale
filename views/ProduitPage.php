@@ -1,9 +1,11 @@
 
 <div class='nav_bare'>
-    <a class ='lin_connect'href= "/Kephale/boutique" >
-        <img class="icon_user" src="public/asset/_icone/retoure.svg" alt="">
+  <section class="bloc_nave">
+  <a class ='lin_connect'href= "/Kephale/boutique" >
+        <img src="public/asset/_icone/retoure.svg" alt="">
         </a>
     <h5>Produit</h5>
+  </section>
 </div>
 <div style="padding-top: 70px;" ></div>
 

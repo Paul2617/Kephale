@@ -1,8 +1,11 @@
 <div class='nav_bare'>
+    <section class="bloc_nave">
     <a class ='lin_connect'href= "/Kephale/article&id_categorie=<?= $_GET['id_categorie']; ?>&id_produit=<?= $_GET['id_produit']; ?>" >
-        <img class="icon_user" src="public/asset/_icone/retoure.svg" alt="">
+        <img src="public/asset/_icone/retoure.svg" alt="">
         </a>
     <h5>Ajouter article</h5>
+    </section>
+
 </div>
 <style>
     .bloc_formE{

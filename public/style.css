@@ -144,28 +144,29 @@ body {
   display: flex;
   position: fixed;
   z-index: 5;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-bottom: 1px solid #1D71B8;
 }
-.nav_bare .bloc_logo {
-  margin-left: 10px;
+
+.bloc_logo {
   width: 30px;
   height: 30px;
 }
-.nav_bare .bloc_logo img {
+.bloc_logo img {
   width: 100%;
   height: 100%;
 }
-.nav_bare .lin_connect {
-  margin-left: 5px;
-  margin-right: 10px;
-  width: 30px;
-  height: 30px;
+
+.lin_connect {
+  width: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.nav_bare .lin_connect img {
+.lin_connect img {
   width: 100%;
-  height: 100%;
 }
 
 .section_pub {
@@ -173,6 +174,14 @@ body {
 }
 .section_pub .img_anim {
   width: 100%;
+}
+
+.bloc_nave {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 :root {
@@ -422,7 +431,7 @@ body {
   margin: 20px;
   width: 90%;
   height: 60px;
-  background-color: rgba(125, 125, 125, 0.3882352941);
+  background-color: rgba(157, 157, 157, 0.3882352941);
   border-radius: 13px;
   display: flex;
   align-items: center;
@@ -432,8 +441,7 @@ body {
   position: fixed;
 }
 .section_menu_icon .lien_icon {
-  width: 45px;
-  height: 45px;
+  width: 35px;
 }
 
 @media screen and (min-width: 430px) {
@@ -443,8 +451,8 @@ body {
 }
 a .icon_user {
   margin-right: 10px;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
 }
 
 .lien_icon {
@@ -1248,7 +1256,7 @@ a .icon_user {
 }
 .listProduiti .blochdfg img {
   width: 100%;
-  height: 100px;
+  height: 150px;
   object-fit: cover;
   border-radius: 13px 13px 0px 0px;
 }

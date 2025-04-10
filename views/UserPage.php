@@ -4,6 +4,7 @@
 <!-- -->
 <!--nave bare-->
 <div class='nav_bare'>
+    <section class="bloc_nave">
     <a class='bloc_logo' href="/Kephale/accueil">
         <img class="icon_user" src="public/asset/_icone/accuil.svg" alt="">
     </a>
@@ -11,6 +12,8 @@
     <a class='lin_connect' href="/Kephale/deconnection">
         <img class="icon_user" src="public/asset/_icone/user.svg" alt="">
     </a>
+    </section>
+
 </div>
 <!-- -->
 <div style="padding-top: 70px;"></div>
