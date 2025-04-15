@@ -2,9 +2,11 @@
     <section class="bloc_nave">
 
     <a class ='lin_connect'href= "/Kephale/accueil" >
-        <img src="public/asset/_icone/retoure.svg" alt="">
+        <img class='retoure'  src="public/asset/_icone/retoure.svg" alt="">
         </a>
-
+        <a class ='lin_connect'href= "/Kephale/user" >
+        <img class="<?= $lala ;?>" src="<?= $icon ;?>" alt="">
+        </a>
     </section>
 </div>
 <div style="padding-top: 60px;" ></div>

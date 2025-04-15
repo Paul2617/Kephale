@@ -11,8 +11,24 @@ if (isset($_POST["inscrire"]) and !empty($_POST["inscrire"])){
                     $password_user_2 = htmlspecialchars($_POST["password_user_2"]);
                     if($password_user ===  $password_user_2 ){
                         if (isset($_POST["category"]) and !empty($_POST["category"])){
-                            $category = htmlspecialchars($_POST["category"]);
-                            $veirif = true;
+                            if (!empty($_FILES["img_demande"]["tmp_name"])){
+                                require_once "../models/img_verif/img_verif.php";
+                                $resultImg = img_verif();
+                                if($resultImg === 'format'){
+                                    $erreur = "Veuiller utiliser une image au format jpeg, jpg ou png";
+                                }elseif($resultImg === 'taille') {
+                                    $erreur = "La taille de votre image dépasse 5 Mo. ";
+                                }else{
+                                    $direction = "asset/img_user/";
+                                    $imgNom = $resultImg;
+                                    $imgDirection = $direction.$imgNom;
+                                    $category = htmlspecialchars($_POST["category"]);
+                                    $veirif = true;
+                                }
+                
+                        }else{
+                            $erreur =  "Veuillez ajouter l'image de profile";
+                        }
                         }else{
                             $erreur = "Veuillez indiquer votre genre.";
                         }
@@ -35,16 +51,18 @@ if (isset($_POST["inscrire"]) and !empty($_POST["inscrire"])){
 
 
 
+
 // si tout les informentions son inquique
     if(isset($veirif )){
         //inser les informations
-   
-    $resulte = inscription($bd, $nom_user, $numerau_user, $password_user, $category );
+    $resulte = inscription($bd, $nom_user, $numerau_user, $password_user, $category, $imgNom  );
 
     if($resulte === 'numero_existe'){
         $erreur = "Veuillez indiquer un autre numéro de téléphone.";
     }elseif($resulte === 'ok'){
-        header ('Location: /Kephale/connection'  );
+        if(move_uploaded_file($_FILES["img_demande"]["tmp_name"], $imgDirection)){
+            header ('Location: /Kephale/connection'  );
+        }
     }
     }
 

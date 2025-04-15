@@ -1,7 +1,7 @@
 <div class='nav_bare'>
     <section class="bloc_nave">
     <a class ='lin_connect'href= "/Kephale/article&id_categorie=<?= $_GET['id_categorie']; ?>&id_produit=<?= $_GET['id_produit']; ?>" >
-        <img src="public/asset/_icone/retoure.svg" alt="">
+        <img class='retoure' src="public/asset/_icone/retoure.svg" alt="">
         </a>
     <h5>Ajouter article</h5>
     </section>
@@ -57,7 +57,7 @@
             
             <p>Veuillez ajouter le photo de l'article.</p>
             <section class ='blocfil'>
-            <input type="file" id="file" name="img_demande">
+            <input type="file" id="file" name="images[]" multiple >
             <label for="file">
             <img src="public/asset/_icone/appareil.svg" alt="">
             <h4>Ajouter</h4>

@@ -25,6 +25,7 @@ require_once ('../models/fonctions_retoure/retourPagePrecedente.php');
 require_once ('../controleur/Routeur.php');
 $router = new Routeur();
 $router->routePublic();
+
 ?>
     </div>
 

@@ -6,14 +6,14 @@
               <img class="icon_user" src="public/asset/_icone/accuil.svg" alt="">
           </a>
           <h5><?= $infoBoutique["nom"] ?></h5>
-          <a class='lin_connect' href="">
-              <img class="icon_user" src="public/asset/_icone/user.svg" alt="">
-          </a>
+          <a class ='lin_connect'href= "/Kephale/user" >
+        <img class="<?= $lala ;?>" src="<?= $icon ;?>" alt="">
+        </a>
       </section>
 
   </div>
   <!-- -->
-  <div style="padding-top: 35px;"></div>
+  <div style="padding-top: 60px;"></div>
 
   <section class='logoboutique'>
       <img src="public/asset/img_boutique/<?= $infoBoutique["img"] ?>" alt="">

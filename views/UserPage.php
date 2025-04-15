@@ -10,7 +10,7 @@
     </a>
     <h5><?= $infoUser["nom"]?></h5>
     <a class='lin_connect' href="/Kephale/deconnection">
-        <img class="icon_user" src="public/asset/_icone/user.svg" alt="">
+        <img class="icon_user" src="public/asset/img_user/<?= $infoUser["img"] ?>" alt="">
     </a>
     </section>
 
@@ -50,53 +50,30 @@
     </section>
 
     <!--Bloc article-->
-    <section class='blocArticlP'>
-        <!--Bloc info boutique-->
-        <section class='infoBoutique'>
-            <section class='blookk'>
-                <img class='dkdkdk' src="public/asset/img_boutique/logo_250220_164409.png" alt="">
-                <section class='infotextebta'>
-                    <h1>Kephalé</h1>
-                    <p>Mali</p>
-                </section>
-            </section>
-            <a href="">
-                <img class='iconBoutique' src="public/asset/_icone/Icon_boutique.png" alt="">
-            </a>
-        </section>
-        <!--Bloc info boutique fin-->
+    <?php
+     if(isset($_POST["recherche"])){
+        if(isset($info)){
+            if($info === 'boutique'){
+                require_once "recherche/boutique.php";
+            }elseif($info === 'article'){
+                require_once "recherche/article.php";
+            }elseif($info === 'produit'){
+                require_once "recherche/produit.php";
+            }elseif($info === 'categorie'){
+                require_once "recherche/categorie.php";
+            }
+        }else{
+            ?>
+            <p style= "" >Pas de resulta trouve</p>
+            <?php
+        }
+     }else{
+        require_once "../controleur/algoriste/algoriste01.php";
+     }
 
-        <!--Bloc img  catégorie-->
-        <img class='imgCategori' src="public/asset/img_categori/31080_250220_002412.jpg" alt="">
-        <!--Bloc img  catégorie fin-->
-
-        <!--Bloc info  catégorie-->
-        <section class='blocinfoCategorie'>
-            <h1>boos homme</h1>
-            <p>Categori Homme</p>
-        </section>
-        <!--Bloc info  catégorie-->
-        <!--Bloc info  produit-->
-        <section class="BlockProduit">
-            <a href="">
-                <img class="imgContour" src="public/asset/img_produit/Homme.png" alt="">
-                <p class="pColor" >voir +</p>
-            </a>
-            <a href="">
-                <img src="public/asset/img_produit/Homme.png" alt="">
-                <p>Montre</p>
-            </a>
-            <a href="">
-                <img src="public/asset/img_produit/Homme.png" alt="">
-                <p>Montre</p>
-            </a>
-            <a href="">
-                <img src="public/asset/img_produit/Homme.png" alt="">
-                <p>Montre</p>
-            </a>
-        </section>
-
-    </section>
+// info rechercher
+     require_once "../controleur/cookie/historique_recherche.php";
+    ?>
     <!--Fin Bloc article-->
 
 
@@ -105,6 +82,7 @@
 <!-- -->
 <!-- -->
 <!--bloce icone de base -->
+
 <section class="section_menu_icon">
     <a class="lien_icon" href="">
         <img class="icon_menu" src="public/asset/_icone/parametre.svg" alt="">

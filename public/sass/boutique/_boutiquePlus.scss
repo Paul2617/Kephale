@@ -94,7 +94,20 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            .p {
+                display: flex;
+                width: 65px;
+                font-size: 14px;
+                color: #000000;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                /* Nombre de lignes */
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
             p {
+                display: flex;
                 font-size: 14px;
                 color: #000000;
             }

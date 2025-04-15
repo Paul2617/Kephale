@@ -1,5 +1,4 @@
-<?php
-?>
+<?php ?>
 <div class='nav_bare'>
     <section class="bloc_nave">
 
@@ -7,8 +6,8 @@
         <img class="img_logo" src="public/asset/logo/logo_kephale.png" alt="">
     </section>
     <h5>Kephalé</h5>
-        <a class ='lin_connect'href= "/Kephale/<?= $icon ;?>" >
-        <img class="icon_user" src="public/asset/_icone/<?= $icon ;?>.svg" alt="">
+        <a class ='lin_connect'href= "/Kephale/user" >
+        <img class="<?= $lala ;?>" src="<?= $icon ;?>" alt="">
         </a>
     </section>
 

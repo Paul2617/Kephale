@@ -4,7 +4,7 @@
                 $id_produit = $_GET["id_produit"];
                 $infoArticle =  listeArticle($bd, $id_produit);
 
-        require_once ('../models/solde_affiche/solde.php');
+                require_once ('../models/solde_affiche/solde.php');
                 
             }else{
 

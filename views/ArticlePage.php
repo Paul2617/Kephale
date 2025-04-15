@@ -1,7 +1,7 @@
 <div class='nav_bare'>
     <section class="bloc_nave">
     <a class ='lin_connect'href= "/Kephale/produit&id_categorie=<?= $_GET["id_categorie"]; ?>" >
-        <img src="public/asset/_icone/retoure.svg" alt="">
+        <img class='retoure'  src="public/asset/_icone/retoure.svg" alt="">
         </a>
     <h5>Article</h5>
     </section>
@@ -13,9 +13,11 @@
 <?php
 foreach( $listeArticle as $listeArticles){
     $tailles = str_replace('+', ' - ', $listeArticles['tailles']);
+    $id_article = $listeArticles['id'];
+    $img = img($bd, $id_article);
     ?>
     <section class='bloc_article'>
-        <img src="public/asset/img_article/<?= $listeArticles['img']; ?>" alt="">
+        <img src="public/asset/img_article/<?= $img['nom_image']; ?>" alt="">
         <section class='blockinfoa'>
             <h1><?= $listeArticles['nom']; ?></h1>
             <p><?= $listeArticles['descriptions']; ?> </p>

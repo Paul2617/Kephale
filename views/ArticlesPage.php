@@ -3,28 +3,48 @@
     <?php
 retourPagePrecedente();
 ?>
+<a class ='lin_connect'href= "/Kephale/user" >
+        <img class="<?= $lala ;?>" src="<?= $icon ;?>" alt="">
+        </a>
     </section>
 </div>
 <div style="padding-top: 60px;"></div>
-<div class='blockehdte'>
+<?php
+$id_article = $infoArticle ["id"];
+$rec = $bd->prepare('SELECT nom_image FROM images_article WHERE article_id = ? ORDER BY id ASC ');
+$rece = $bd->prepare('SELECT nom_image FROM images_article WHERE article_id = ? ORDER BY id ASC LIMIT 1');
+$rec->execute(array($id_article));
+$rece->execute(array($id_article));
 
+$requestUri = $_SERVER['REQUEST_URI'];
+        ?>
+<div class='blockehdte'>
     <section class='blockarticle'>
         <section class='blocImg'>
-            <img src="public/asset/img_article/<?= $infoArticle ["img"] ?>" alt="">
+            <img src="public/asset/img_article/<?= $_GET['image'] ?>" alt="">
         </section>
 
         <section class="scrole_img">
             <section class="scrol_img_s">
+            <?php
+            if ($rec->rowCount() > 0){
+                $imge = $rece->fetch(PDO::FETCH_ASSOC);
+                $imges = $imge['nom_image'];
+                if(isset($_GET['image'])){ }else{
+                    header("Location: ".$requestUri.'&image='.$imges );
+                    exit;
+                }
 
-                <a class="uegeeyg"
-                    href="index.php?page=arti&id_produit=<?php echo $id_produit ?>&type=<?php echo $type ?>&id_groupe_article=<?php echo $id_groupe_article ?>&id_article=<?php echo $id_article ?>">
-                    <img style="<?php if(empty($_GET['image'])){?>border: 2px solid #94C123;<?php } ?>"
-                    class="hdudjdgdg" src="public/asset/img_article/<?php echo $infoArticle["img"] ?>" alt="">
-                </a>
+while ($img = $rec->fetch(PDO::FETCH_ASSOC)){
+      ?>
 
-                <a  class="uegeeyg" href="index.php?page=arti&id_produit=<?php echo $id_produit ?>&type=<?php echo $type ?>&id_groupe_article=<?php echo $id_groupe_article ?>&id_article=<?php echo $id_article ?>&image=<?= $nom_img;?>">
-                <img style=" <?php if(isset($_GET['image'])){ if($_GET['image'] === $result["img"] ){?>border: 2px solid #94C123;<?php } }?>" class="hdudjdgdg" src="public/asset/img_article/<?php echo $infoArticle["img"]  ?>" alt="">
+<a  class="uegeeyg" href="/Kephale/articles&rc=<?= $_GET['rc']?>&id_categorie=<?= $_GET['id_categorie']?>&id_produit=<?= $_GET['id_produit']?>&id_article=<?= $_GET['id_article']?>&image=<?= $img["nom_image"] ?>">
+                <img style=" <?php if(isset($_GET['image'])){ if($_GET['image'] === $img["nom_image"] ){?>border: 2px solid #94C123;<?php } }?>" class="hdudjdgdg" src="public/asset/img_article/<?php echo $img["nom_image"]  ?>" alt="">
                 </a>
+    <?php
+}}
+            ?>
+
 
                 
             </section>

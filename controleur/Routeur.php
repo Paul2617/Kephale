@@ -21,6 +21,18 @@ class Routeur
                     require_once ("../models/bd/Cntbd.php");
                     $Cntbd = new Cntbd();
                     $bd = $Cntbd->bd();
+
+                    if(isset($_SESSION["id"])){
+                        $userimg = $bd->prepare("SELECT img FROM user WHERE id = ? ");
+                        $userimg->execute(array($_SESSION["id"]));
+                        $imgUser = $userimg->fetch();
+                        $imgUserK = $imgUser["img"]; 
+                        $lala = 'icon_user';
+                        $icon = 'public/asset/img_user/'.$imgUserK;
+                    }else{
+                        $lala = 'retouree';
+                        $icon = 'public/asset/_icone/connection.svg';
+                    }
                     require_once ("../models/bd/Model.php");
                     require_once ($models);
                 }

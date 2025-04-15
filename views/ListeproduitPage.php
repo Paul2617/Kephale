@@ -4,6 +4,9 @@
     <?php
 retourPagePrecedente();
 ?>
+<a class ='lin_connect'href= "/Kephale/user" >
+        <img class="<?= $lala ;?>" src="<?= $icon ;?>" alt="">
+        </a>
     </section>
 
 </div>

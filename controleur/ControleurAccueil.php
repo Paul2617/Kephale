@@ -3,10 +3,11 @@
      
         //definitin de leta de licon connection et lin
         if(isset($_SESSION["id"])){
-            $icon = 'user';
+            $lala = 'icon_user';
+        $icon = 'public/asset/img_user/'.$imgUserK;
         }else{
-            $icon = 'connection';
-            
+            $lala = 'retouree';
+            $icon = 'public/asset/_icone/connection.svg';
         }
 
 // affiche page accuil

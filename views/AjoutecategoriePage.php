@@ -2,7 +2,7 @@
 <div class='nav_bare'>
     <section class="bloc_nave">
     <a class ='lin_connect'href= "/Kephale/boutique" >
-        <img src="public/asset/_icone/retoure.svg" alt="">
+        <img class='retoure' src="public/asset/_icone/retoure.svg" alt="">
         </a>
     <h5>Ajouter Catégorie</h5>
     </section>

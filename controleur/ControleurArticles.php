@@ -1,6 +1,6 @@
 <?php
 
-            if(!empty($_GET["rc"]) AND !empty($_GET["id_categorie"]) AND !empty($_GET["id_produit"]) AND !empty($_GET["id_article"])){
+            if( !empty($_GET["id_categorie"]) AND !empty($_GET["id_produit"]) AND !empty($_GET["id_article"])){
                $id_article = $_GET["id_article"];
 
                $infoArticle =  articles($bd, $id_article);
@@ -12,7 +12,10 @@
                   $tailless = explode(" ",  $taille);
                   $i = 0;
                }
-            
+            if(isset($_POST["ajouter"])){
+               ajourtPanier ($bd, $id_article);
+
+            }
                // info paniier de l'article
                if(isset($_SESSION["id"])){
                $infoPanier = panier ($bd, $id_article);
@@ -32,5 +35,7 @@
             }else{
 
             }
+
+
         
 ?>

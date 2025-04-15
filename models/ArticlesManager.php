@@ -7,4 +7,7 @@
        return $panierVerifi = panierVerifi ($bd, $_SESSION["id"], $id_article);
        
      }
+     function ajourtPanier ($bd, $id_article){
+
+     }
 ?>
