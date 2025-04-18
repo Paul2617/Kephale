@@ -18,7 +18,7 @@ function recTableId ($bd, $table, $colone, $id){
 
   // requet table en fonction de id
   function recTableIdBoucle ($bd, $table, $colone, $id){
-    $rec =  $bd->prepare('SELECT * FROM '.$table.' WHERE '.$colone.' = ? ');
+    $rec =  $bd->prepare('SELECT * FROM '.$table.' WHERE '.$colone.' = ? ORDER BY  id DESC ');
     $rec->execute(array($id));
     return  $rec->fetchAll(PDO::FETCH_ASSOC);
     $rec->closeCursor();

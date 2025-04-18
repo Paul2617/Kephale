@@ -1,9 +1,9 @@
+<?php  require_once ('../controleur/cookie/historique_page_retoure.php');  ?>
 <div class='nav_bare'>
     <section class="bloc_nave">
 
-    <?php
-    retourPagePrecedente();
-    ?>
+    <?php //echo $_COOKIE['navigation_history']; ?>
+    <a class ='lin_connect' href="<?php echo getLastPage(); ?>"><img class='retoure'  src='public/asset/_icone/retoure.svg' ></a>
         <a class ='lin_connect'href= "/Kephale/user" >
         <img class="<?= $lala ;?>" src="<?= $icon ;?>" alt="">
         </a>
@@ -27,9 +27,7 @@ if($info_categori->rowCount() >= 1){
         <?php 
     }
 }
-
 ?>
-
 
 
 

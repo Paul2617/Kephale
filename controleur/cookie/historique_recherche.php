@@ -23,6 +23,6 @@
         $nom_COOKIE= 'historique_recherche';
         $historique = [];
         $expiration = time() + (30 * 24 * 60 * 60); // 30 jours
-        setcookie($nom_COOKIE, json_encode($historique), $expiration, "/");
+       // setcookie($nom_COOKIE, json_encode($historique), $expiration, "/");
     
     }

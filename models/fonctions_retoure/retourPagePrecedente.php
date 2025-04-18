@@ -12,7 +12,7 @@ function retourPagePrecedente($fallback = '/Kephale/accueil') {
             header("Refresh: 0");
         }
         if(isset($_COOKIE[$nom_COOKIE])){
-            echo "<a class ='lin_connect' href=\"$_COOKIE[$nom_COOKIE]\"><img class='retoure'  src='public/asset/_icone/retoure.svg' ></a>";
+            echo "";
         }
         //
 

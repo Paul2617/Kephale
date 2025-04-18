@@ -1,9 +1,7 @@
-
+<?php  require_once ('../controleur/cookie/historique_page_retoure.php');  ?>
 <div class='nav_bare'>
     <section  class="bloc_nave">
-    <?php
-retourPagePrecedente();
-?>
+    <a class ='lin_connect' href="<?= getLastPage(); ?>"><img class='retoure'  src='public/asset/_icone/retoure.svg' ></a>
 <a class ='lin_connect'href= "/Kephale/user" >
         <img class="<?= $lala ;?>" src="<?= $icon ;?>" alt="">
         </a>

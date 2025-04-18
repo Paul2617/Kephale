@@ -1,8 +1,7 @@
+<?php  require_once ('../controleur/cookie/historique_page_retoure.php');  ?>
 <div class='nav_bare'>
 <section class="bloc_nave">
-    <?php
-retourPagePrecedente();
-?>
+<a class ='lin_connect' href="<?php echo getLastPage(); ?>"><img class='retoure'  src='public/asset/_icone/retoure.svg' ></a>
 <a class ='lin_connect'href= "/Kephale/user" >
         <img class="<?= $lala ;?>" src="<?= $icon ;?>" alt="">
         </a>
@@ -38,7 +37,7 @@ $requestUri = $_SERVER['REQUEST_URI'];
 while ($img = $rec->fetch(PDO::FETCH_ASSOC)){
       ?>
 
-<a  class="uegeeyg" href="/Kephale/articles&rc=<?= $_GET['rc']?>&id_categorie=<?= $_GET['id_categorie']?>&id_produit=<?= $_GET['id_produit']?>&id_article=<?= $_GET['id_article']?>&image=<?= $img["nom_image"] ?>">
+<a  class="uegeeyg" href="/Kephale/articles<?php if(isset($_GET['rc'])){ echo '&rc='.$_GET['rc']; }?>&id_categorie=<?= $_GET['id_categorie']?>&id_produit=<?= $_GET['id_produit']?>&id_article=<?= $_GET['id_article']?>&image=<?= $img["nom_image"] ?>">
                 <img style=" <?php if(isset($_GET['image'])){ if($_GET['image'] === $img["nom_image"] ){?>border: 2px solid #94C123;<?php } }?>" class="hdudjdgdg" src="public/asset/img_article/<?php echo $img["nom_image"]  ?>" alt="">
                 </a>
     <?php

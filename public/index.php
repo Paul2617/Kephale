@@ -2,7 +2,6 @@
 session_start();
 setlocale(LC_TIME, 'fr_FR');
 $timestamp = date('Ymd');
-require_once ('../models/fonctions_retoure/retourPagePrecedente.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,13 +19,12 @@ require_once ('../models/fonctions_retoure/retourPagePrecedente.php');
 </head>
 <body>
     <div class='body_2'>
-
 <?php 
 require_once ('../controleur/Routeur.php');
 $router = new Routeur();
 $router->routePublic();
-
 ?>
+
     </div>
 
 </body>

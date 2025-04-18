@@ -30,7 +30,13 @@ if(isset($_SESSION["id"]) and isset($_SESSION["id_boutique"]) and isset($_GET["i
                                 $erreur = "Veuillez indiquer les tailles disponible";
                             }
                         }else{
-                            $tailles = 'null';
+                           
+                            if (isset($_FILES["images"]["tmp_name"]) and !empty($_FILES["images"]["tmp_name"])){
+                                $imgDirection = "asset/img_article/";
+                                $tailles = 'null';
+                                }else{
+                                    $erreur =  "Veuillez ajouter l'image de l'article";
+                                }
                         }
 
                         if (isset($_POST["date_livraison"]) and !empty($_POST["date_livraison"])){
@@ -57,6 +63,7 @@ if(isset($_SESSION["id"]) and isset($_SESSION["id_boutique"]) and isset($_GET["i
 
 
     if(isset( $tailles) and isset( $imgDirection) ){
+       
         if (isset($_POST["date_livraison"]) and !empty($_POST["date_livraison"])){
             $date_livraison = $_POST["date_livraison"];
         }else{

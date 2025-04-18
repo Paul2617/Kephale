@@ -1,6 +1,3 @@
-<?php
-
-  ?>
 <!-- -->
 <!--nave bare-->
 <div class='nav_bare'>
