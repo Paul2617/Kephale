@@ -1,5 +1,4 @@
 <?php
-echo 'fkfkkf';
 function img_verif ($bd, $nomArticle, $descriptions_article, $prixArticle, $tailles, $date_livraison, $imgDirection ){
     $maxFileSize = 5 * 1024 * 1024; // 5 Mo
     $allowedTypes = ['image/jpeg', 'image/jpg', 'image/JPEG', 'image/JPG', 'image/png', 'image/PNG'];

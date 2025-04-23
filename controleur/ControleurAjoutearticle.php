@@ -18,7 +18,7 @@ if(isset($_SESSION["id"]) and isset($_SESSION["id_boutique"]) and isset($_GET["i
                         $descriptions_article = htmlspecialchars($_POST["descriptions_article"]);
                         if($typesProduit === "Vêtement" || $typesProduit === "Chaussure"){
                             if (isset($_POST["options"]) and !empty($_POST["options"])){
-                                if (isset($_FILES["images"]["tmp_name"]) and !empty($_FILES["images"]["tmp_name"])){
+                                if (!empty($_FILES["images"]["name"][0])){
                                 $selectedOptions = implode(' ', $_POST['options']);
                                 $tailles = str_replace(' ', '+', $selectedOptions);
                                 $imgDirection = "asset/img_article/";
@@ -31,7 +31,7 @@ if(isset($_SESSION["id"]) and isset($_SESSION["id_boutique"]) and isset($_GET["i
                             }
                         }else{
                            
-                            if (isset($_FILES["images"]["tmp_name"]) and !empty($_FILES["images"]["tmp_name"])){
+                            if (!empty($_FILES["images"]["name"][0])){
                                 $imgDirection = "asset/img_article/";
                                 $tailles = 'null';
                                 }else{
@@ -60,8 +60,6 @@ if(isset($_SESSION["id"]) and isset($_SESSION["id_boutique"]) and isset($_GET["i
 // fin POST   
 
 
-
-
     if(isset( $tailles) and isset( $imgDirection) ){
        
         if (isset($_POST["date_livraison"]) and !empty($_POST["date_livraison"])){
@@ -69,16 +67,8 @@ if(isset($_SESSION["id"]) and isset($_SESSION["id_boutique"]) and isset($_GET["i
         }else{
             $date_livraison = '0';
         }
-    
-         $ajouteArticle = ajouteArticle($bd, $nomArticle, $descriptions_article, $prixArticle, $tailles, $date_livraison,$imgDirection );
-    
-        if($ajouteArticle === true){
-            header ('Location: /Kephale/article&id_categorie='.$_GET["id_categorie"].'&id_produit='.$_GET["id_produit"] );
-        }elseif($ajouteArticle === 'format'){
-            $erreur = "Veuiller utiliser une image au format jpeg, jpg ou png";
-        }elseif($ajouteArticle === 'taille') {
-            $erreur = "La taille de votre image dépasse 5 Mo. ";
-        }
+        require_once "../models/img_verif/imgPlus.php";
+
     }
 
 }else{

@@ -15,6 +15,7 @@
 
 <h1 class='h1' >Liste produit</h1>
 <?php 
+
 if($info_categori->rowCount() >= 1){
     while ($result_info_categori = $info_categori->fetch()){
         ?>

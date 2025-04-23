@@ -66,8 +66,7 @@
             <input class="boutton_inpute" class="submit" type="submit" value="Ajouter la catégorie" name="ajouter">
 
             <?php if (isset($erreur)) { ?> <h2 class="erreur"><?php echo $erreur ?></h1> <?php } ?>
-        </form>
+            <?php if (isset($err)) {  echo $err ; } ?>
     </section>
 </section>
-
 
