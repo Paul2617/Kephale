@@ -58,7 +58,7 @@
             </form>
         </section>
         <section class='infoAchata'>
-            <h1>Facture</h1>
+            <h1>Facture</h1> 
             <?php 
             if(isset($pourcentage)){
                 ?>
@@ -73,16 +73,16 @@
             }
             ?>
             <?php 
-             if($taille  !== null){
+             if($taille  !== "null"){
                 ?>
             <h2>Tailles: <span><?= $taille  ?></span></h2>
                 <?php
             } ?>
-            <h2>Délai de livraison: <span><?=  $date_livraison  ?> jours</span></h2>
+            <h2>Délai de livraison: <span><?=  $date_livraison  ?></span></h2>
             <?php 
              if($psa !== null){
                 ?>
-                        <h2>PSA: <span><?=  $psa_prix  ?> jours</span></h2>
+                        <h2>PSA: <span><?=  $psa_prix  ?> </span></h2>
                 <?php
             } ?>
 

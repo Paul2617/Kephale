@@ -6,9 +6,6 @@
         }else{
             $erreur = 'Veuillez saisir votre Mot de passe. ';
         }
-
-        
-       
     }
 
 

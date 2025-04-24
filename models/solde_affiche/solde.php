@@ -71,3 +71,27 @@ function solde ( $montant_user ) {
         }
     
 }
+
+ function delai_livraison($delai_livraison)
+    {
+        $_5_jours  = 432000; //5 jours
+        $_10_jours  = 864000; //10 jours
+        $_15_jours  = 1296000; //15 jours
+        $_20_jours  = 1728000; //20 jours
+        if ($delai_livraison === $_5_jours) {
+            $Jour_delais = '5';
+        } else {
+            if ($delai_livraison === $_10_jours) {
+                $Jour_delais = '10';
+            } else {
+                if ($delai_livraison === $_15_jours) {
+                    $Jour_delais = '15';
+                } else {
+                    if ($delai_livraison === $_20_jours) {
+                        $Jour_delais = '20';
+                    }
+                }
+            }
+        }
+        return $Jour_delais ;
+    }

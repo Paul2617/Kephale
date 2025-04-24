@@ -6,14 +6,14 @@ function transactionAbonnement($bd, $montant){
         $stmt->execute(array($montant, $_SESSION["id"]));
 
         // Ajoute le montant sur le compte kephale
-        $idkephale = "2025777333";
+        $apikephale = "2025777333";
         $stmt = $bd->prepare("UPDATE kephale SET solde = solde + ? WHERE api = ? ");
-        $stmt->execute(array($montant, $idkephale));
+        $stmt->execute(array($montant, $apikephale));
 
         // Ajoute a la liste de transictions
         $motif = 'Abonnement';
         $date_transaction= time();
-
+        $idkephale = "1";
         $stmt = $bd->prepare("INSERT INTO transactions (id_deduit, id_ajout, montant, motif, date_transaction ) VALUES (?,?,?,?,?)");
         $stmt->execute(array($_SESSION["id"],  $idkephale, $montant, $motif , $date_transaction));
         // Ajoute a la liste de transictions

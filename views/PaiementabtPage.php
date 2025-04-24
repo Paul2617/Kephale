@@ -1,10 +1,14 @@
 
 
 <div class='nav_bare'>
+    <section class="bloc_nave">
+
     <a class ='lin_connect'href= "/Kephale/abonnement" >
-        <img class="icon_user" src="public/asset/_icone/retoure.svg" alt="">
+        <img class="retoure" src="public/asset/_icone/retoure.svg" alt="">
         </a>
     <h5>Payement abonnement</h5>
+    </section>
+
 </div>
 <div style="padding-top: 80px;" ></div>
 <div class='listabtn'>
