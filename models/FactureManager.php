@@ -163,7 +163,12 @@ function achat_article ( $bd, $prix_article, $psa_enregistre, $id_boutique, $id_
      $etat_livraison = 'non';
      $stmt = $bd->prepare("INSERT INTO liste_achat (id_user, id_article, id_boutique, prix_article, psa, promo, total, taille, date_achat, date_livraison, etat_livraison, user, boutique ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
      $stmt->execute(array($_SESSION["id"],  $id_article, $id_boutique, $prix_article, $new_psa_finale, $promo_final, $totale_achat, $taille, $date_transaction, $date_livraisons, $etat_livraison, $oui, $oui ));
-
+    
+     // ajoute entre boutique 
+     $id_achat = $bd->lastInsertId();
+     $motife = "achat";
+     $stmt = $bd->prepare("INSERT INTO entreboutique (id_boutique, id_achat, montant, motif, date_transaction ) VALUES (?,?,?,?,?)");
+     $stmt->execute(array($id_boutique,  $id_achat, $new_priex_boutique, $motife , $date_transaction));
     
      if ($stmt->rowCount() === 0) {
         throw new Exception("Échec de la mise à jour des comptes.");
