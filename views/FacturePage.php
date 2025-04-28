@@ -38,7 +38,7 @@
 </div>
 <div style="padding-top: 70px;"></div>
 
-<div class=blockFacture>
+<div class="blockFacture" >
     <section class='blockFac'>
 
         <section class='blockInfoArticle'>
@@ -80,11 +80,12 @@
             } ?>
             <h2>Délai de livraison: <span><?=  $date_livraison  ?></span></h2>
             <?php 
-             if($psa !== null){
+            if($psa !== null){
+             if($psa["compte"] === 'client'){
                 ?>
                         <h2>PSA: <span><?=  $psa_prix  ?> </span></h2>
                 <?php
-            } ?>
+            } }?>
 
             <h2>Total: <span><?=  $total  ?></span></h2>
             <p>Il est possible d'annuler l'achat et obtenir un remboursement pour la commande, dans le cas où l'article
@@ -104,4 +105,4 @@
     </form>
 </section>
 </section>
-
+<?php ?> 

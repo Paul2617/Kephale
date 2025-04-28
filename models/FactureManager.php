@@ -47,23 +47,38 @@ function img_article ($bd, $id_article){
 
 //PSA Poursantage sur achat verifications 
 function psa ($bd, $id_boutique, $prix_finale){
+    $boutique = 'boutique';
+    $client = 'client';
     $psa = $bd->prepare("SELECT etat FROM psa WHERE id_boutique = ? ");
     $psa->execute([$id_boutique]);
     if ($psa->rowCount() > "0" ){
         $resulte = $psa->fetch(PDO::FETCH_ASSOC);
         $etat =  $resulte ['etat'];
-        if($etat === '1' ){
-            if($prix_finale  <= 500000){
-                $pourcentages = 8;
-            }elseif($prix_finale  <= 1000000 AND $prix_finale > 500000){
-                $pourcentages = 10;
-            }elseif($prix_finale  <= 50000000 AND $prix_finale > 1000000){
-                $pourcentages = 12;
-            }
-            $poursantage_kephale = ($pourcentages / 100) * $prix_finale;
-            return $poursantage_kephale;
-        }else{
-            return null;
+        if($prix_finale  <= 10000){
+            $pourcentages = 6;
+        }elseif($prix_finale  <= 50000 AND $prix_finale > 10000){
+            $pourcentages = 8;
+        }elseif($prix_finale  <= 500000 AND $prix_finale > 50000){
+            $pourcentages = 10;
+        }elseif($prix_finale  <= 5000000 AND $prix_finale > 500000){
+            $pourcentages = 12;
+        }
+        $poursantage_kephale = ($pourcentages / 100) * $prix_finale;
+        // si c'est la boutique prend a charge psa poursantage sur achats
+        if($etat === $boutique ){
+            $psa = [
+                'compte' => 'boutique',
+                'pourcentages' => $poursantage_kephale 
+            ];
+            return $psa;
+        }
+        // si c'est le client prend a charge psa poursantage sur achats
+        elseif($etat === $client) {
+            $psa = [
+                'compte' => 'client',
+                'pourcentages' => $poursantage_kephale 
+            ];
+            return $psa ;
         }
     }else{
         return null;
@@ -101,51 +116,41 @@ function achat_article ( $bd, $prix_article, $psa_enregistre, $id_boutique, $id_
         $promo_final = $prix_promo;
      }
 
-     if ($psa_enregistre === "non" ){
-    // verifie si la boutique est gratuit avec psk
-     $psa = $bd->prepare("SELECT etat FROM psa WHERE id_boutique = ? ");
-     $psa->execute([$id_boutique]);
-      // Verifie si le psa est retire ou pas dans le compte de la boutique ou pas
-     if ($psa->rowCount() > "0" ){
-         $resulte = $psa->fetch(PDO::FETCH_ASSOC);
-         $etat =  $resulte ['etat'];
-         if($etat === '0' ){
-
-            if($prix_article_final  <= 500000){
-                $pourcentages = 8;
-            }elseif($prix_article_final  <= 1000000 AND $prix_article_final > 500000){
-                $pourcentages = 10;
-            }elseif($prix_article_final  <= 50000000 AND $prix_article_final > 1000000){
-                $pourcentages = 12;
-            }
-            $poursantage_kephale = ($pourcentages / 100) * $prix_article_final;
-            $new_priex_boutique =  $prix_article_final - $poursantage_kephale ;
-            $new_psa = $poursantage_kephale ;
-            $id_deduit = $id_boutique;
-            $new_psa_finale =  $new_psa ;
-         }
-     }else{
-        $new_priex_boutique = $prix_article_final ;
-        $new_psa_finale =  "non";
+     if($psa_enregistre === null){
+        $new_psa_client = 'non';
+        $new_psa_boutique = 'non';
+        $new_solde_retrait_client = $prix_article_final ;
+        $new_solde_boutique =  $prix_article_final ;
      }
-
-    }else{
-        $new_priex_boutique = $prix_article_final;
-        $new_psa = $psa_enregistre ;
-        $id_deduit = $_SESSION["id"];
-        $new_psa_finale =  $new_psa ;
+     // si le client qui prend en compte le psa
+     elseif($psa_enregistre["compte"] === 'client'){
+        $new_psa_client = $psa_enregistre["pourcentages"];
+        $new_psa_boutique = 'non';
+        $new_psa = $psa_enregistre["pourcentages"] ;
+        $new_solde_retrait_client = $new_psa + $prix_article_final ;
+        $new_solde_boutique =  $prix_article_final ;
      }
+     // si la boutique qui prend en compte le psa
+     elseif($psa_enregistre["compte"] === 'boutique'){
+        $new_psa_client = 'non';
+        $new_psa_boutique = $psa_enregistre["pourcentages"] ;
+        $new_psa = $psa_enregistre["pourcentages"] ;
+        $new_solde_retrait_client = $prix_article_final ;
+        $new_solde_boutique =  $prix_article_final  - $new_psa;
+     }
+   
      // Retirer le montant totale dans le solde de user
      $stmt = $bd->prepare('UPDATE user SET solde = solde - ? WHERE id = ? ');
-     $stmt->execute(array($totale_achat, $_SESSION["id"]));
-
+     $stmt->execute(array($new_solde_retrait_client, $_SESSION["id"]));
+  
 
                   
      // Ajoute le montant de l'article dans le solde de la boutique
      $stmt = $bd->prepare('UPDATE boutique SET solde = solde + ? WHERE id = ? ');
-     $stmt->execute(array($new_priex_boutique, $id_boutique));
+     $stmt->execute(array($new_solde_boutique, $id_boutique));
 
      // Ajoute le psa sur le compte kephale
+     $date_transaction = time();
      if(isset($new_psa)){
         $apikephale = "2025777333";
         $stmt = $bd->prepare("UPDATE kephale SET solde = solde + ? WHERE api = ? ");
@@ -153,23 +158,28 @@ function achat_article ( $bd, $prix_article, $psa_enregistre, $id_boutique, $id_
        
         // Ajoute a la liste de transictions
         $motif = 'psa';
-        $date_transaction = time();
+        
         $idkephale = "1";
+        $id_deduit = "1";
         $stmt = $bd->prepare("INSERT INTO transactions (id_deduit, id_ajout, montant, motif, date_transaction ) VALUES (?,?,?,?,?)");
-        $stmt->execute(array($id_deduit,  $idkephale, $new_psa, $motif , $date_transaction));
+        $stmt->execute(array($id_deduit, $idkephale, $new_psa, $motif , $date_transaction));
      }
      // ajoutre achat
      $oui = 'oui';
      $etat_livraison = 'non';
-     $stmt = $bd->prepare("INSERT INTO liste_achat (id_user, id_article, id_boutique, prix_article, psa, promo, total, taille, date_achat, date_livraison, etat_livraison, user, boutique ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
-     $stmt->execute(array($_SESSION["id"],  $id_article, $id_boutique, $prix_article, $new_psa_finale, $promo_final, $totale_achat, $taille, $date_transaction, $date_livraisons, $etat_livraison, $oui, $oui ));
+     $stmt = $bd->prepare("INSERT INTO liste_achat (id_user, id_article, id_boutique, prix_article, psa_user, psa_boutique, promo, total, taille, date_achat, date_livraison, etat_livraison, user, boutique ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+     $stmt->execute(array($_SESSION["id"],  $id_article, $id_boutique, $prix_article, $new_psa_client, $new_psa_boutique, $promo_final, $totale_achat, $taille, $date_transaction, $date_livraisons, $etat_livraison, $oui, $oui ));
     
      // ajoute entre boutique 
      $id_achat = $bd->lastInsertId();
      $motife = "achat";
-     $stmt = $bd->prepare("INSERT INTO entreboutique (id_boutique, id_achat, montant, motif, date_transaction ) VALUES (?,?,?,?,?)");
-     $stmt->execute(array($id_boutique,  $id_achat, $new_priex_boutique, $motife , $date_transaction));
+     $stmt = $bd->prepare("INSERT INTO entre_boutique (id_boutique, id_achat, montant, motif, date_transaction ) VALUES (?,?,?,?,?)");
+     $stmt->execute(array($id_boutique,  $id_achat, $new_solde_boutique, $motife , $date_transaction));
     
+     // historique retrait de du compte
+     $stmt = $bd->prepare("INSERT INTO achat_user (id_user, id_article, id_boutique, id_achat, prix_article, prix_promo, psa, total_retire, date_achat ) VALUES (?,?,?,?,?,?,?,?,?)");
+     $stmt->execute(array($_SESSION["id"], $id_article, $id_boutique, $id_achat , $prix_article, $promo_final, $new_psa_client, $new_solde_retrait_client, time() ));
+
      if ($stmt->rowCount() === 0) {
         throw new Exception("Échec de la mise à jour des comptes.");
     }else{

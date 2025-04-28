@@ -89,14 +89,18 @@
         <img class="icon_menu" src="public/asset/_icone/boutique.svg" alt="">
     </a>
 
-    <a class="lien_icon" href="">
+    <a class="lien_icon" href="/Kephale/listachat">
         <img class="icon_menu" src="public/asset/_icone/notification.svg" alt="">
+        <?php
+        if(isset($achat_efect)){
+            ?>
         <section class="alerte_conteur">
-            <p class="conteur">0</p>
+            <p class="conteur"><?= $achat_efect  ?></p>
         </section>
+            <?php
+        }
+        ?>
     </a>
-
-
     <a class="lien_icon" href="">
         <img class="icon_menu" src="public/asset/_icone/panye.svg" alt="">
     </a>

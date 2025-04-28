@@ -13,23 +13,6 @@ if(isset($_SESSION["id"])){
         $userBoutiqueEtat = infoUserBoutiqu($bd);
         // bodie lafissage du solde
         $userSolde = solde ($infoUser["solde"]) ;
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }else{
     $_SESSION = array();
     session_destroy();
@@ -139,6 +122,9 @@ if($stmt->rowCount() >= 1){
     }
 }
 
+    $infoachat = infoachat ($bd);
 
-
+    if($infoachat !== false){
+        $achat_efect = $infoachat;
+    }
 ?>
