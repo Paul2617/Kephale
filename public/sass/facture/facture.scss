@@ -101,14 +101,14 @@ h1{
 
     .bloKleArteb{
         width: 90%;
-        height: 200px;
+        height: auto;
         border-radius: 13px;
         background-color: rgb(255, 255, 255);
         box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        padding-bottom: 10px;
     }
     .dpdiido{
         color: #E94E1B;
@@ -120,4 +120,57 @@ h1{
     width: 98%;
     display: flex;
     justify-content: flex-end;
+}
+.date_position{
+    width: 100%;
+    text-align: end;
+}
+.blocBotoneListe{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.boutton_inpute{
+    width: auto;
+    height: 50px;
+    border: none;
+    background-color: #1D71B8;
+    color: #ffffff;
+    border-radius: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.annule{
+    background-color: #E94E1B;
+}
+.blockinfoAlte{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #2f2f2f;
+    p{
+        margin-top: 10px;
+        font-size: 12px;
+        width: 90%;
+    }
+}
+.ddkffjdkfjf{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .jdhjgfd{
+        width: 70%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 13px;
+    }
 }

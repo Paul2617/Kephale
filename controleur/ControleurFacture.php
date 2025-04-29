@@ -71,7 +71,7 @@ if(isset($_GET["id_article"])){
             $prix_article = $prix ;
             $achat_article =  achat_article ($bd, $prix_article, $psa_enregistre, $id_boutique, $id_article, $date_livraisons, $prix_promo, $totale_achat, $taille);
             if($achat_article === true){
-                header ('Location: /Kephale/listachat'  );
+                header ('Location: /Kephale/?url=userachat'  );
             }
         }else{
             $erreur =  $verifiCode ;

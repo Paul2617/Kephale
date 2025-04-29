@@ -89,7 +89,7 @@
         <img class="icon_menu" src="public/asset/_icone/boutique.svg" alt="">
     </a>
 
-    <a class="lien_icon" href="/Kephale/listachat">
+    <a class="lien_icon" href="/Kephale/?url=userachat">
         <img class="icon_menu" src="public/asset/_icone/notification.svg" alt="">
         <?php
         if(isset($achat_efect)){

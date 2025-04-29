@@ -48,7 +48,7 @@ class Routeur
                     header ('Location: /Kephale/accueil'  );
                 }
              }else{
-                header ('Location: Kephale/accueil' );
+                header ('Location: /Kephale/accueil' );
              }
             //code...
         
