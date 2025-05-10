@@ -49,6 +49,7 @@
       <!-- bloc liste des categorie -->
 
       <?php 
+     echo verifidaite_boutique($bd);
 if($infoCategorie === 'null'){
     echo 'Pas de catégore';
 
