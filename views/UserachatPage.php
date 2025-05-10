@@ -25,6 +25,21 @@ if(empty($_POST["ferme"])){
         AlertePlus ( $titre, $contenue, $nameBoutton, $valueBoutton, $nameInfoId, $valueInfoId );
     }
 }
+// annuler l'achat delait de livraison depasse 
+if(empty($_POST["ferme"])){
+    if(isset($_POST["annule_lachat"])){
+        $titre = "Annuler l'achat";
+        $contenue = "Veuillez nous excuser pour le retard de l'ivraison.<br> 
+        N'hésitez pas à contacter le service de livraison pour signaler ou annuler votre achat. 
+        <br>Service de livraison <a href='' style = 'color: #95C11F;'>+223 94 14 18 04</a>";
+        $nameBoutton = 'annule_achat';
+        $valueBoutton = "Annuler l'achat";
+        $nameInfoId = 'id_achat';
+        $valueInfoId = $_POST['id_achat'];
+        require_once ('../components/alerte.php');
+        Alerte ( $titre, $contenue, $nameBoutton, $valueBoutton, $nameInfoId, $valueInfoId );
+    }
+}
     ?>
 <div class='nav_bare'>
     <section class="bloc_nave">
@@ -76,6 +91,9 @@ if(isset($liste_achats)){
 
        // article livre
         $articlelivre = articlelivre($bd, $id_achat, $etat_livraison);
+
+        // verifie si l'achat est annule
+        $achat_annule = achat_annule($bd, $id_achat);
         ?>
 <section style='  margin-bottom: 10px;' class="blockFac">
 
@@ -116,12 +134,13 @@ if(isset($liste_achats)){
         <h2>Totale : <span ><?= solde ($total) ?> </span></h2>
         <section>
         <?php  
+        if($etat_livraison === 'non'){
         if($tempsLivraisons['etatLivraion'] === 'non'){
             ?>
             <p class='date_position' style=' color: #E94E1B;' >Délai de livraison passé</p>
             <p class='date_position' style=' color: #E94E1B;' ><?= $tempsLivraisons['dateLivraison'] ;?></p>
             <?php 
-        }
+        }}
         ?>
 
         
@@ -130,6 +149,7 @@ if(isset($liste_achats)){
             <input type="hidden" name="id_achat" value="<?= $id_achat?>">
             <input type="hidden" name="id_boutique" value="<?= $liste_achat['id_boutique']?>">
             <?php  
+            if($achat_annule === true ){
         if($etat_livraison === 'non'){
             ?>
             <input class="boutton_inpute" class="submit" type="submit" value="Confirme la livraison" name="confirme">
@@ -180,7 +200,7 @@ if(isset($liste_achats)){
             if($etat_livraison === 'non'){
             if($tempsLivraisons['etatLivraion'] === 'non' ){
                 ?>
-            <input class="boutton_inpute annule" class="submit" type="submit" value="Annuler l'achat" name="annuler">
+            <input class="boutton_inpute annule" class="submit" type="submit" value="Annuler l'achat" name="annule_lachat">
                 <?php
             }else{
                 ?>
@@ -190,8 +210,18 @@ if(isset($liste_achats)){
                 </div>
                  <?php
             } }
+        }else{
             ?>
+            <p class='date_position'>Achat annulé</p>
+            <?php
+        }
+            ?>
+
+
             </form>
+        
+        
+        
         </section>
         </section>
         <?php

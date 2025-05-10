@@ -36,8 +36,6 @@ if(isset($_SESSION["id"])){
               $inserdata = ajouteBoutique ($bd, $nomBoutique, $imgNom, $paye);
               if($inserdata === true){
                 header ('Location: /Kephale/boutique'  );
-              }else{
-                echo 'no';
               }
             }
         }

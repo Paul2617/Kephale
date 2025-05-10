@@ -92,5 +92,12 @@ if(isset($_POST["annulerLachatMotife"])){
     }
 
 }
+// annuler l'achat 
 
+if(isset($_POST["annule_achat"])){
+    $id_achat = $_POST['id_achat'];
+    annule_achat($bd, $id_achat );
+
+    header("refresh:1");
+}
 ?>
