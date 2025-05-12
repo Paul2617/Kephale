@@ -6,9 +6,9 @@
               <img class="icon_user" src="public/asset/_icone/accuil.svg" alt="">
           </a>
           <h5><?= $infoBoutique["nom"] ?></h5>
-          <a class ='lin_connect'href= "/Kephale/user" >
-        <img class="<?= $lala ;?>" src="<?= $icon ;?>" alt="">
-        </a>
+          <a class='lin_connect' href="/Kephale/user">
+              <img class="<?= $lala ;?>" src="<?= $icon ;?>" alt="">
+          </a>
       </section>
 
   </div>
@@ -99,7 +99,7 @@ if($infoCategorie === 'null'){
 
   <!--bloce icone de base -->
   <section class="section_menu_icon">
-      <a class="lien_icon" href="">
+      <a class="lien_icon" href="/Kephale/?url=boutiqueparametre">
           <img class="icon_menu" src="public/asset/_icone/parametre.svg" alt="">
       </a>
 
@@ -107,11 +107,18 @@ if($infoCategorie === 'null'){
           <img class="icon_menu" src="public/asset/_icone/boutique.svg" alt="">
       </a>
 
-      <a class="lien_icon" href="">
+      <a class="lien_icon" href="/Kephale/?url=listevente">
           <img class="icon_menu" src="public/asset/_icone/notification.svg" alt="">
+          <?php  $infovante = infovante ($bd); 
+           if($infovante !== false){
+            ?>
           <section class="alerte_conteur">
-              <p class="conteur">0</p>
+              <p class="conteur"><?= $infovante ?></p>
           </section>
+          <?php 
+           }
+           ?>
+
       </a>
 
 

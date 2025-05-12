@@ -134,6 +134,7 @@ if(isset($liste_achats)){
         <h2>Totale : <span ><?= solde ($total) ?> </span></h2>
         <section>
         <?php  
+
         if($etat_livraison === 'non'){
         if($tempsLivraisons['etatLivraion'] === 'non'){
             ?>
@@ -231,3 +232,4 @@ if(isset($liste_achats)){
 
 
 </section>
+<div style="padding-top: 80px;"></div>

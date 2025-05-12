@@ -168,6 +168,11 @@ function  annule_achat ($bd, $id_achat ){
       $stmt = $bd->prepare("INSERT INTO achat_annule (id_achat) VALUES (?)");
       $stmt->execute(array( $id_achat));
 
+      // Valide la livraison de l'article
+      $etat_livraison = 'oui';
+      $stmt = $bd->prepare('UPDATE liste_achat SET etat_livraison =  ? WHERE id = ? ');
+      $stmt->execute(array($etat_livraison, $id_achat ));
+
       if ($stmt->rowCount() === 0) {
         throw new Exception("Échec de la mise à jour des comptes.");
     }else{

@@ -31,6 +31,16 @@ function infoCategorie($bd) {
         return null;
     }
 }
+// info vante
+function infovante ($bd) {
+    $infoachat = $bd->prepare("SELECT * FROM liste_achat WHERE id_boutique = ? AND etat_livraison LIKE 'non' ");
+    $infoachat->execute([$_SESSION["id_boutique"]]);
+    if ($infoachat->rowCount() > 0 ){
+        return $infoachat->rowCount();
+    }else{
+        return false ;
+    }
+}
 function verifidaite_boutique($bd) {
     $date_transaction = time();
     $id_boutique = $_SESSION["id_boutique"];

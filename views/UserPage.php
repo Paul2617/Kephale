@@ -2,11 +2,11 @@
 <!--nave bare-->
 <div class='nav_bare'>
     <section class="bloc_nave">
-    <a class='bloc_logo' href="/Kephale/accueil">
+    <a class='bloc_logo' href="/Kephale/user">
         <img class="icon_user" src="public/asset/_icone/accuil.svg" alt="">
     </a>
     <h5><?= $infoUser["nom"]?></h5>
-    <a class='lin_connect' href="/Kephale/deconnection">
+    <a class='lin_connect' href="/Kephale/?url=userparametre">
         <img class="icon_user" src="public/asset/img_user/<?= $infoUser["img"] ?>" alt="">
     </a>
     </section>

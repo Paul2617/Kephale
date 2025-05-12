@@ -1,0 +1,112 @@
+.block_info_boutique{
+    width: 90%;
+    height: auto;
+    border-radius: 13px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+
+}
+.ddjdjfhkf{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    img{
+        width: 70px;
+        height: 70px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+}
+
+
+.block_info_prame{
+    width: auto;
+    height: auto;
+    padding-top: 10px;
+    h1{
+        font-size: 17px;
+        color: black;
+    }
+    h2{
+        font-size: 12px;
+        color: black;
+        font-weight: 400;
+    }
+}
+.ddjfkff{
+width: 90%;
+height: 50px;
+background-color: rgb(235, 235, 235);
+margin: 7px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: black;
+border-radius: 13px;
+border: none;
+}
+.flex{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+.deconet{
+    background-color: #E94E1B;
+    color: #ffffff;
+}
+
+.ffdofjfjjd{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .ddfkdmjfkff{
+        width: 95%;
+        height: 50px;
+        padding-left: 10px;
+        border-radius: 13px;
+        border: none;
+        border: 1px solid black;
+    }
+}
+.ddlfk{
+    height: auto;
+}
+.blocfildd{
+    background-color: #d5ffe1;
+    width:  80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 13px;
+    input[type="file"] {
+        display: none;
+    }
+    
+    label {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        h4{
+            color: #0ec141;
+        }
+    }
+    
+    label img {
+        margin-right: 5px;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+}
+.h5d{
+    margin-bottom: 10px;
+    width: 97%;
+}
