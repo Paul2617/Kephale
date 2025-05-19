@@ -11,11 +11,12 @@
 
 
 <div class='block_info_boutique'>
-    <a class='ddjdjfhkf' href="">
-<img src="public/asset/img_boutique/7676_250223_171318.jpg" alt="">
+    <a class='ddjdjfhkf' href="/Kephale/?url=usermodif">
+<img src="public/asset/img_user/<?= $info_user ["img_user"]; ?>" alt="">
 <section class='block_info_prame'>
-<h1>Nom user</h1>
-<h2>+223 00 00 00 00</h2>
+<h1><?= $info_user ["nom_user"]; ?></h1>
+<h2>+223 <?= $info_user ["tel_user"]; ?></h2>
+<h3><?= $info_user ["sexe_user"]; ?></h3>
 </section>
     </a>
 </div>

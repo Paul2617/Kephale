@@ -38,8 +38,9 @@ foreach ($_FILES['images']['tmp_name'] as $index => $tmpName) {
 if(isset($trur)){
     $date_creations = time();
     $imgNom = 'null';
-    $inser = $bd->prepare("INSERT INTO article ( id_boutique, id_categorie, id_produit, nom, descriptions, tailles, img, prix, date_livraison, date_creations ) VALUES (?,?,?,?,?,?,?,?,?,?)");
-    $inser->execute(array($_SESSION["id_boutique"], $_GET["id_categorie"], $_GET["id_produit"], $nomArticle, $descriptions_article, $tailles, $imgNom, $prixArticle, $date_livraison, $date_creations));
+    $etat = 1;
+    $inser = $bd->prepare("INSERT INTO article ( id_boutique, id_categorie, id_produit, nom, descriptions, tailles, img, prix, date_livraison, date_creations, etat ) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+    $inser->execute(array($_SESSION["id_boutique"], $_GET["id_categorie"], $_GET["id_produit"], $nomArticle, $descriptions_article, $tailles, $imgNom, $prixArticle, $date_livraison, $date_creations, $etat));
     
     $articleId = $bd->lastInsertId();
     }
@@ -62,8 +63,9 @@ if(isset($articleId)){
         $newFileName = $date . '_' . uniqid() .'_'.$img_name .'.' . $extension;
         $imgDirection = "asset/img_article/";
         if (move_uploaded_file($tmpName, $imgDirection . $newFileName))  {
-            $stmt = $bd->prepare("INSERT INTO images_article (article_id, nom_image) VALUES (?, ?)");
-            if($stmt->execute([$articleId, $newFileName])){
+             $id_boutique = $_SESSION["id_boutique"];
+            $stmt = $bd->prepare("INSERT INTO images_article (article_id, id_boutique, nom_image) VALUES (?,?,?)");
+            if($stmt->execute([$articleId, $id_boutique, $newFileName])){
                 header ('Location: /Kephale/article&id_categorie='.$_GET["id_categorie"].'&id_produit='.$_GET["id_produit"] );
             }
         }

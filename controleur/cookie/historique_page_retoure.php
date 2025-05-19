@@ -24,6 +24,8 @@ if($nomPageactule === 'articleplus'){
     $page_suivant = 'facture';
 }elseif($nomPageactule === 'facture'){
     $page_suivant = 'listeachat';
+}elseif($nomPageactule === 'facture'){
+    $page_suivant = 'suppretioboutique';
 }
 
 if(isset($_SESSION[$_GET['url']])){
@@ -34,20 +36,20 @@ if(isset($_SESSION[$_GET['url']])){
         // si la page actuel a une session
         if(isset($_SESSION[$_GET['url']])){
               // si le mon de la page suivant n'est pas dans la page presedant 
+              if(isset($page_suivant )){
             if (stripos($urlPrecedente, $page_suivant ) === false){
                 // si le mon de la page actuel n'est pas dans la page presedant 
                 if (stripos($urlPrecedente, $_GET['url']) === false){
                         $_SESSION[$_GET['url']] =  $urlPrecedente ;
                 }
             }
-
+}
         }
     }
     }else{
        
     }
 }else{
-
     if(isset( $_SERVER['HTTP_REFERER'])){
     $urlPrecedente = htmlspecialchars($_SERVER['HTTP_REFERER']);
     $_SESSION[$_GET['url']] =  $urlPrecedente;}

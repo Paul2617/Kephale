@@ -70,7 +70,7 @@ if($infoCategorie === 'null'){
                   <h1>Produits</h1>
               </a>
 
-              <a href="">
+              <a href=" /Kephale/?url=modif_supp&page=categorie&id_categorie=<?= $infoCategories['id']; ?>">
                   <img src="public/asset/_icone/suprime.svg" alt="">
               </a>
           </section>

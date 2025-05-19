@@ -11,12 +11,12 @@ function Alerte ($titre, $contenue, $nameBoutton, $valueBoutton, $nameInfoId, $v
             </form>
         </section>
         <section class='blockinfoAlte'>
-            <h4><?= $titre?></h4>
+            <h4 style='<?php if($valueBoutton === 'Supprimer'){ echo " color: #E94E1B;"; } ?>'><?= $titre?></h4>
             <p><?= $contenue?></p>
         </section>
         <form method="POST" enctype="multipart/form-data">
         <input type="hidden" name="<?= $nameInfoId?>" value="<?= $valueInfoId?>">
-            <input class="boutton_inpute" class="submit" type="submit" value="<?= $valueBoutton?>" name="<?= $nameBoutton?>">
+            <input class="boutton_inpute" style='<?php if($valueBoutton === 'Supprimer'){ echo "background-color: #E94E1B; color:rgb(255, 255, 255);"; } ?>' class="submit" type="submit" value="<?= $valueBoutton?>" name="<?= $nameBoutton?>">
             
         </form>
     </section>

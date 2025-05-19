@@ -11,10 +11,7 @@ $id_groupe_arlticle = $_GET["id_groupe_arlticle"];
     }
 
 */
-?>
-
-<h5>Sélectionnées les tailles disponibles</h5>
-            
+?>            
 
 <div class="bloc_taille">
                 

@@ -21,7 +21,6 @@
 
             </section>
             <input class="boutton_inpute" class="submit" type="submit" value="Connexion" name="conection">
-
             <?php if (isset($erreur)) { ?> <h2 class="erreur"><?php echo $erreur ?></h1> <?php } ?>
             <h1 class='text_d' >Je <a class='link' href="/Kephale/inscription">m'inscris</a></h1>
         </form>

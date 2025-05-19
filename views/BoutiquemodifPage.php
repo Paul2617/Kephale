@@ -17,7 +17,7 @@
                     <input type="file" id="file" name="img_demande">
                     <label for="file">
                         <img src="public/asset/img_boutique/<?= $info_boutique ["img_boutique"] ?>" alt="">
-                        <h4>Mofidie image</h4>
+                        <h4>Modifier l'image</h4>
                     </label>
                 </section> 
     <h5 class='h5d'>Nom de la Boutique</h5>

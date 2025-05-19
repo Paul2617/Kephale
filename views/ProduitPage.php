@@ -29,7 +29,7 @@ if($listeProduit === null){
     <section class='blocko plusStyle'>
         <a class='linkBtn' href="/Kephale/article&id_categorie=<?= $_GET["id_categorie"]; ?>&id_produit=<?= $listeProduits['id']; ?>"><h1>Produits</h1> </a>
     
-        <a href="">
+        <a href="/Kephale/?url=modif_supp&page=produit&id_produit=<?= $listeProduits['id'];?>&id_categorie=<?= $_GET["id_categorie"]; ?>">
         <img src="public/asset/_icone/suprime.svg" alt="">
         </a>
     </section>

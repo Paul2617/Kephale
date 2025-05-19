@@ -23,7 +23,6 @@ if(isset($_FILES["img_demande"]["name"]) and !empty($_FILES["img_demande"]["name
     $new_img_boutque = $_FILES["img_demande"]["name"];
 }
 if(isset( $new_img_boutque )){
-    if($new_img_boutque !== $img_boutique ){
         require_once "../models/img_verif/img_verif.php";
         $resultImg = img_verif();
 
@@ -42,9 +41,14 @@ if(isset( $new_img_boutque )){
                     new_img_boutque_final($bd, $new_img_boutque_finale);
 
                 }
+            }else{
+                if(move_uploaded_file($_FILES["img_demande"]["tmp_name"], $new_img_boutque_final)){
+                    $new_img_boutque_finale = $resultImg;
+                    new_img_boutque_final($bd, $new_img_boutque_finale);
+
+                }
             }
         }
-    }
 }
 }
 

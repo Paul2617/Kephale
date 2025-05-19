@@ -45,6 +45,7 @@ if(isset($_GET["id_article"])){
     //PSA Poursantage sur achat verifications 
     $psa = psa ($bd, $id_boutique, $prix_finale);
     if($psa !== null){
+      
     if( $psa["compte"] === 'client' ){
         $psa_enregistre = $psa ;
         $psa_prix = solde ($psa["pourcentages"]);
@@ -52,6 +53,13 @@ if(isset($_GET["id_article"])){
          // totalle
         $total = solde ($totale);
         $totale_achat = $totale ;
+    }else{
+        $psa_enregistre = $psa ;
+        $psa_prix = solde ($psa["pourcentages"]);
+        $totale = $prix_finale - $psa["pourcentages"];
+          // totalle
+        $total = solde ($prix_finale);
+        $totale_achat = $prix_finale ;
     }
 }else{
     $psa_enregistre = $psa ;

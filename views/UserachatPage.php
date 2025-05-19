@@ -73,9 +73,8 @@ if(isset($liste_achats)){
         // info article
         $info_article = info_article($bd, $id_article);
         // verifie si c'est le client sa payes le psa
-        if( $psa_user !== 'non'){
-            $psa = solde ($psa_user);
-        }
+       
+     
         // verifi si l'article etait en prommo
         if( $promo !== 'non'){
             $promos = solde ($promo);
@@ -128,7 +127,15 @@ if(isset($liste_achats)){
              <?php 
          }
         ?>
-        <?php if(isset($psa)){?><h2>psa: <span ><?= $psa ?></span> </h2>  <?php } ?>
+        <?php
+
+           if( $psa_user === 'non'){
+        }else{
+            $psa_use = solde ($psa_user);
+            ?><h2>psa: <span ><?= $psa_use ?></span> </h2>  <?php
+        }
+            
+        ?>
         <h2>Date d'achat : <span ><?= $tempsLivraisons['dateAchat'] ?></span></h2>
         <h2>Date limite : <span ><?= $date_livraison ?> Jours</span></h2>
         <h2>Totale : <span ><?= solde ($total) ?> </span></h2>

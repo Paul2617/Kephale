@@ -2,7 +2,7 @@
 <!--nave bare-->
 <div class='nav_bare'>
     <section class="bloc_nave">
-    <a class='bloc_logo' href="/Kephale/user">
+    <a class='bloc_logo' href="/Kephale/accueil">
         <img class="icon_user" src="public/asset/_icone/accuil.svg" alt="">
     </a>
     <h5><?= $infoUser["nom"]?></h5>

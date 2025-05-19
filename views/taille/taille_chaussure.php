@@ -1,42 +1,5 @@
 
-<h5>Sélectionnées les tailles disponibles</h5>
             <div class="bloc_taille">
-                
-            <div class="form-element">
-            <input type="checkbox" name="options[]" value="30" id="30">
-            <label for="30">
-            <div class="title">30</div>
-            </label>
-            </div>
-
-            <div class="form-element">
-            <input type="checkbox" name="options[]" value="31" id="31">
-            <label for="31">
-            <div class="title">31</div>
-            </label>
-            </div>
-
-            <div class="form-element">
-            <input type="checkbox" name="options[]" value="32" id="32">
-            <label for="32">
-            <div class="title">32</div>
-            </label>
-            </div>
-
-            <div class="form-element">
-            <input type="checkbox" name="options[]" value="33" id="33">
-            <label for="33">
-            <div class="title">33</div>
-            </label>
-            </div>
-
-            <div class="form-element">
-            <input type="checkbox" name="options[]" value="34" id="34">
-            <label for="34">
-            <div class="title">34</div>
-            </label>
-            </div>
-
             <div class="form-element">
             <input type="checkbox" name="options[]" value="35" id="35">
             <label for="35">

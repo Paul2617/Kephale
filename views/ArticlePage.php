@@ -24,7 +24,7 @@ foreach( $listeArticle as $listeArticles){
             <h2>Tailles: <?= $tailles; ?> </h2>
 
             <section class = 'bloc_linka'>
-<a href="">Modifier</a>
+<a href="/Kephale/?url=modif_supp&page=article&id_produit=<?=$_GET['id_produit']; ?>&id_categorie=<?= $_GET['id_categorie']; ?>&id_article=<?=  $id_article; ?> ">Modifier</a>
 <a class='alte' href="">Supprimer</a>
             </section>
         </section>
