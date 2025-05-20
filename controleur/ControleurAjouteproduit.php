@@ -1,7 +1,7 @@
 <?php 
   if (isset($_POST["ajouter"]) and !empty($_POST["ajouter"])){
-    if (isset($_POST["nomCategorie"]) and !empty($_POST["nomCategorie"])){
-        $nomProduit = htmlspecialchars($_POST["nomCategorie"]);
+    if (isset($_POST["nom_produit"]) and !empty($_POST["nom_produit"])){
+        $nomProduit = htmlspecialchars($_POST["nom_produit"]);
         if (isset($_POST["type_categorie"]) and !empty($_POST["type_categorie"])){
             if (!empty($_FILES["img_demande"]["tmp_name"])){
                 require_once "../models/img_verif/img_verif.php";
