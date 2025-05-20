@@ -11,6 +11,7 @@ function img_verif (){
     $taille_en_ko = $taille_fichier / 1024;
     $taille_en_mo = $taille_en_ko / 1024;
     round($taille_en_ko, 2);
+    $maxFileSize   = 5 * 1024 * 1024; 
     $img_autorise = ['jpg', 'jpeg', 'png', 'PNG', 'JPG', 'JPEG'];
     if (in_array($img_expentions, $img_autorise)) {
         if (round($taille_en_mo, 1) <= 5) {

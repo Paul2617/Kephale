@@ -11,7 +11,7 @@
 
 
 
-<section class='block_info_boutique flex'>
+<section class='block_info_boutique flex' style= ' margin-bottom: 100px;'>
 
 <form class='ffdofjfjjd' method="POST" enctype="multipart/form-data">
 <section class='blocfildd'>
