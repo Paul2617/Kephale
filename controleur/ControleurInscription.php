@@ -27,7 +27,11 @@ if (isset($_POST["inscrire"]) and !empty($_POST["inscrire"])){
                                 }
                 
                         }else{
-                            $erreur =  "Veuillez ajouter l'image de profile";
+                             $direction = "asset/img_user/";
+                            $imgNom = 'logo.png';
+                            $imgDirection = $direction.$imgNom;
+                            $category = htmlspecialchars($_POST["category"]);
+                            $veirif = true;
                         }
                         }else{
                             $erreur = "Veuillez indiquer votre genre.";
@@ -60,9 +64,14 @@ if (isset($_POST["inscrire"]) and !empty($_POST["inscrire"])){
     if($resulte === 'numero_existe'){
         $erreur = "Veuillez indiquer un autre numéro de téléphone.";
     }elseif($resulte === 'ok'){
+        if($imgNom !== 'logo.png'){
         if(move_uploaded_file($_FILES["img_demande"]["tmp_name"], $imgDirection)){
             header ('Location: /Kephale/connection'  );
         }
+        }else{
+             header ('Location: /Kephale/connection');
+        }
+
     }
     }
 

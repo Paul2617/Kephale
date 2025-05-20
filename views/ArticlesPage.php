@@ -65,8 +65,12 @@ while ($img = $rec->fetch(PDO::FETCH_ASSOC)){
             if($infoArticle["tailles"] !== 'null'){
                 if($i  < count($tailless)){
                     ?>
-                            <h5 class="ddhfj">Sélectionnées les tailles disponibles</h5>
-        <div class="bloc_taille">
+                    <section  style = ' margin-left : 10px ' >
+
+                                              <h5 class="ddhfj">Sélectionnées les tailles disponibles</h5>
+                    </section>
+
+                  <div class="bloc_taille" >
 
                       <?php
                     foreach($tailless as $taillesse){
@@ -83,6 +87,7 @@ while ($img = $rec->fetch(PDO::FETCH_ASSOC)){
             }else{
                 ?>
 <div class="bloc_taille">
+      
 
           <?php
             }

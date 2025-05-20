@@ -1016,6 +1016,99 @@ body {
   margin-bottom: 10px;
 }
 
+.form-element-plus {
+  position: relative;
+  width: auto;
+  height: 40px;
+  margin: 4px;
+  margin-right: 15px;
+}
+
+.form-element-plus input {
+  display: none;
+}
+
+.form-element-plus label {
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  background: #fff;
+  box-shadow: 0px 5px 20px 2px rgba(208, 208, 208, 0.1);
+  text-align: center;
+  transition: all 200ms ease-in-out;
+  border-radius: 5px;
+}
+
+.form-element-plus .icon {
+  margin-top: 10px;
+  font-size: 30px;
+  color: #555;
+  transition: all 200ms ease-in-out;
+}
+
+.form-element-plus .title {
+  font-size: 15px;
+  color: #555;
+  padding: 5px 0px;
+  transition: all 200ms ease-in-out;
+}
+
+.form-element-plus label:before {
+  content: "✓";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: -2px;
+  left: -2px;
+  background: #1D70B7;
+  color: #fff;
+  text-align: center;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 200ms ease-in-out;
+}
+
+.form-element-plus input:checked + label:before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.form-element-plus input:checked + label .icon {
+  color: #1D70B7;
+}
+
+.form-element-plus input:checked + label .title {
+  color: #1D70B7;
+}
+
+.form-element-plus input:checked + label {
+  border: 2px solid #1D70B7;
+}
+
+.texte_minime {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.dmmefnkfkjfk {
+  font-size: 13px;
+  margin-top: 3px;
+}
+.dmmefnkfkjfk .link {
+  color: #95C11F;
+}
+
 .blocPayes {
   width: 90%;
   display: flex;

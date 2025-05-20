@@ -39,7 +39,9 @@
             }
                // info paniier de l'article
                if(isset($_SESSION["id"])){
+               $etat = $infoArticle['etat']; 
                $infoPanier = panier ($bd, $id_article);
+               if($etat === 1){
                if($infoPanier === 0){
                 $panier = "<input class='boutton_inpute' style = ' background-color: #95C11F;'  type='submit' value='Ajouter au Panier' name='ajouter'>";
                }elseif($infoPanier === 1){
@@ -50,10 +52,12 @@
                <input type='submit' value='Acheter' name='acheter'>
                ".$panier."</form>";
                }else{
+               $botoneInfo = 'Article indisponible';
+}
+               }else{
                 $botoneInfo = 'Merci de cree un compte ou vous connections pour efectue un achat.';
                }
-            }else{
-
+               
             }
 
         if(isset($tr)){

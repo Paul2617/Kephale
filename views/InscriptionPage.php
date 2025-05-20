@@ -7,54 +7,45 @@
     </section>
 </div>
 
-<div style="padding-top: 30px;"></div>
-<div class='bloc_form'>
-    <section class='bloc_form_p'>
-        <h1>Inscription</h1>
-        <form method="POST" enctype="multipart/form-data">
-            <section class='bloc_form_input'>
-                <h5>Nom complet</h5>
-                <input class="form_input" type="text" placeholder="Nom" name="nom_user"
-                    value="<?php if (isset($nom_user)) {echo $nom_user;} ?>">
-                <h5>Numéro de téléphone</h5>
-                <input class="form_input" type="number" placeholder="Numéro de téléphone" name="numeraux_user"
-                    value="<?php if (isset($numerau_user)) {
-                                                                                                                            echo $numerau_user;                                                                                                        } ?>">
+<div style="padding-top: 80px;"></div>
 
-                <h5>Mot de passe</h5>
-                <input type="password" placeholder="Mot de passe" name="password_user">
-                <h5>Comfirmer mot de passe</h5>
-                <input type="password" placeholder=" Comfirme mot de passe" name="password_user_2">
-                <section class='info_radio'>
-                    <label>
-                        <input type="radio" name="category" value='homme'>
-                        Homme
-                    </label>
-                    <label>
-                        <input type="radio" name="category" value='femme'>
-                        Femme
-                    </label>
-                    <label>
-                        <input type="radio" name="category" value='enfant'>
-                        Enfant
-                    </label>
-                </section>
-                <p>Veuillez ajouter le photo de profile.</p>
-                <section class='blocfil'>
+
+
+<section class='block_info_boutique flex'>
+
+<form class='ffdofjfjjd' method="POST" enctype="multipart/form-data">
+<section class='blocfildd'>
                     <input type="file" id="file" name="img_demande">
                     <label for="file">
-                        <img src="public/asset/_icone/appareil.svg" alt="">
-                        <h4>Ajouter</h4>
+                        <img src="public/asset/img_user/logo.png" alt="">
+                        <h4>Modifier la photo</h4>
                     </label>
-                </section>
-
-            </section>
-            <input class="boutton_inpute" class="submit" type="submit" value="M'inscrire" name="inscrire">
-
-            <?php if (isset($erreur)) { ?> <h2 class="erreur"><?php echo $erreur ?></h1> <?php } ?>
-                <h1 class='text_d'>Me <a class='link' href="/Kephale/connection">Connecter</a></h1>
-        </form>
-    </section>
-    </section>
-
-</div>
+                </section> 
+    <h5 class='h5d'>Nom complet</h5>
+        <input class='ddfkdmjfkff'  type="text" placeholder="Nom" name="nom_user" value="<?php if (isset($nom_user)) {echo $nom_user;} ?>">
+        <h5 class='h5d'>Numéro de téléphone</h5>
+        <input class='ddfkdmjfkff'  type="number" placeholder="Numéro de téléphone" name="numeraux_user"value="<?php if (isset($numerau_user)) {echo $numerau_user;} ?>">
+        <h5 class='h5d'>Mot de passe</h5>
+        <input class='ddfkdmjfkff' type="password" placeholder="Mot de passe" name="password_user">
+        <h5 class='h5d'>Comfirmer mot de passe</h5>
+        <input class='ddfkdmjfkff' type="password" placeholder=" Comfirme mot de passe" name="password_user_2">
+         <h5 class='h5d'>Sexe</h5>
+      <div class="bloc_taille">
+            <div class="form-element-plus">
+            <input type="radio" name="category" value="homme" id="homme">
+            <label for="homme">
+            <div class="title">Homme</div>
+            </label>
+            </div>
+             <div class="form-element-plus">
+            <input type="radio" name="category" value="femme" id="femme">
+            <label for="femme">
+            <div class="title">Femme</div>
+            </label>
+            </div>
+      </div>
+        <input class='ddjfkff' type="submit" value="M'inscrire" name="inscrire"> 
+        <?php if (isset($erreur)) { ?> <h2 class="erreur"><?php echo $erreur ?></h1> <?php } ?>
+         <h1 class='dmmefnkfkjfk'>Me <a class='link' href="/Kephale/connection">Connecter</a></h1>
+    </form>
+</section>

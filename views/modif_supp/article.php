@@ -1,4 +1,7 @@
 <?php  
+$id_produits = htmlspecialchars($_GET["id_produit"]) ;
+$id_categories = htmlspecialchars($_GET["id_categorie"]) ;
+$id_articles = htmlspecialchars($_GET["id_article"]) ;
 // alerte confirme l'achat
     if(empty($_POST["ferme"])){
     if(isset($_POST["supprimerd"])){
@@ -15,11 +18,11 @@
 ?>
 <?php 
 
-;?>
+?>
 <section style=' margin-bottom: 100px;' class='block_info_boutique flex'>
 <form class='ffdofjfjjd' method="POST" enctype="multipart/form-data">
 <section class='blocfildd'>
-    <a href="">
+    <a href="/Kephale/?url=modif_img&id_produit=<?= $id_produits ?>&id_categorie=<?= $id_categories ?>&id_article=<?= $id_articles ?>">
                     <label for="file">
                         <img src="public/asset/img_article/<?= $img_article ;?>" alt="">
                         <h4>Modifier l'image</h4>

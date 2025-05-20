@@ -1,7 +1,8 @@
 <?php  
 function info_categorie($bd, $id_categorie){
-    $stmt = $bd->prepare("SELECT * FROM categorie WHERE id = ? ");
-    $stmt->execute([ $id_categorie ]);
+     $id_boutique = $_SESSION["id_boutique"];
+    $stmt = $bd->prepare("SELECT * FROM categorie WHERE id = ? AND id_boutique LIKE ? ");
+    $stmt->execute([ $id_categorie,  $id_boutique ]);
     if ($stmt->rowCount() > 0){
         $info_stmt = $stmt->fetch(PDO::FETCH_ASSOC);
         $nom = $info_stmt["nom"];
