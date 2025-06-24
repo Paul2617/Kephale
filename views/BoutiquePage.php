@@ -2,8 +2,8 @@
   <!--nave bare-->
   <div class='nav_bare'>
       <section class="bloc_nave">
-          <a class='bloc_logo' href="/Kephale/accueil">
-              <img class="icon_user" src="public/asset/_icone/accuil.svg" alt="">
+          <a class='bloc_logo' style = 'width: 40px;  height: 40px;  background-color:  padding-left: 10px;' href="/Kephale/accueil">
+              <img class="icon_user" style = '   width: 30px;  height: 30px; border-radius: 2px;  ' src="public/asset/home_svg/home.svg" alt="">
           </a>
           <h5><?= $infoBoutique["nom"] ?></h5>
           <a class='lin_connect' href="/Kephale/user">
@@ -100,15 +100,27 @@ if($infoCategorie === 'null'){
   <!--bloce icone de base -->
   <section class="section_menu_icon">
       <a class="lien_icon" href="/Kephale/?url=boutiqueparametre">
-          <img class="icon_menu" src="public/asset/_icone/parametre.svg" alt="">
+          <img class="icon_menu" src="public/asset/home_svg/parametre.svg" alt="">
+          <p>Paramètre</p>
       </a>
 
+       <a class="lien_icon" href="">
+          <img class="icon_menu" src="public/asset/home_svg/restaurant.svg" alt="">
+           <p>Restaurants</p>
+      </a>
+      <a class="lien_icon" href="/Kephale/user">
+          <img class="icon_menu" src="public/asset/home_svg/user.svg" alt="">
+          <p>Profil</p>
+      </a>
+
+
       <a class="lien_icon" href="">
-          <img class="icon_menu" src="public/asset/_icone/boutique.svg" alt="">
+          <img class="icon_menu" src="public/asset/home_svg/message.svg" alt="">
+            <p>Discussions</p>
       </a>
 
       <a class="lien_icon" href="/Kephale/?url=listevente">
-          <img class="icon_menu" src="public/asset/_icone/notification.svg" alt="">
+          <img class="icon_menu" src="public/asset/home_svg/notifications.svg" alt="">
           <?php  $infovante = infovante ($bd); 
            if($infovante !== false){
             ?>
@@ -118,11 +130,6 @@ if($infoCategorie === 'null'){
           <?php 
            }
            ?>
-
-      </a>
-
-
-      <a class="lien_icon" href="">
-          <img class="icon_menu" src="public/asset/_icone/panye.svg" alt="">
+<p>Ventes</p>
       </a>
   </section>

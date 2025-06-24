@@ -1,15 +1,19 @@
 <?php
+require_once ('../transactions/config.php');
+require_once ('../transactions/autoload.php');
 function info_user ($bd){
-    $id_user = $_SESSION["id"];
-    $stmt = $bd->prepare("SELECT * FROM user WHERE id = ? ");
-    $stmt->execute([ $id_user ]);
-    if ($stmt->rowCount() > 0){
-        $info_stmt = $stmt->fetch(PDO::FETCH_ASSOC);
-        $nom = $info_stmt["nom"];
-        $img = $info_stmt["img"];
-        $tel = $info_stmt["tel"];
-        $sexe = $info_stmt["sexe"];
-        $code =  $info_stmt["code"]; 
+    
+$Cookie = (new cookie())->validateSecureCookie();
+$user_id = $Cookie ["user_id"];
+
+  if($user_id === $_SESSION["id"]){
+     $uuid_5 = $Cookie ["user_key"];
+     $infoUsers = (new infoUsers())->infoUsers($uuid_5);
+        $nom = $infoUsers["nom"];
+        $img = $infoUsers["img"];
+        $tel = $infoUsers["telephone"];
+        $sexe = $infoUsers["sexe"];
+        $code =  $infoUsers["password_user"]; 
 if($sexe === 'homme'){
     $sex = 'Homme';
 }elseif($sexe === 'femme'){
@@ -30,7 +34,7 @@ if($sexe === 'homme'){
 }
 
 function new_nom_user($bd, $new_nom){
-    $stmt = $bd->prepare('UPDATE user SET nom = ? WHERE id = ? ');
+    $stmt = $bd->prepare('UPDATE users SET nom = ? WHERE id = ? ');
     $stmt->execute(array($new_nom, $_SESSION["id"]));
 
     if ($stmt->rowCount() === 0) {
@@ -42,7 +46,13 @@ function new_nom_user($bd, $new_nom){
 }
 
 function new_tel_user($bd, $new_tel){
-    $stmt = $bd->prepare('UPDATE user SET tel = ? WHERE id = ? ');
+
+    $stmt = $bd->prepare("SELECT COUNT(*) FROM users WHERE telephone = :phone");
+    $stmt->execute([':phone' => $new_tel]);
+    $cleExiste = (bool)$stmt->fetchColumn();
+
+    if (!$cleExiste) {
+  $stmt = $bd->prepare('UPDATE users SET telephone = ? WHERE id = ? ');
     $stmt->execute(array($new_tel, $_SESSION["id"]));
 
     if ($stmt->rowCount() === 0) {
@@ -51,11 +61,15 @@ function new_tel_user($bd, $new_tel){
         $stmt->closeCursor();
         header("refresh:1");
     }
+    }else{
+        
+    }
+  
 }
 
 function new_code_user($bd, $new_password_user){
 
-    $stmt = $bd->prepare('UPDATE user SET code = ? WHERE id = ? ');
+    $stmt = $bd->prepare('UPDATE users SET password_user = ? WHERE id = ? ');
     $stmt->execute(array($new_password_user, $_SESSION["id"]));
 
     if ($stmt->rowCount() === 0) {
@@ -67,7 +81,7 @@ function new_code_user($bd, $new_password_user){
 }
 
 function new_img_user_final($bd, $new_img_user_finale){
-    $stmt = $bd->prepare('UPDATE user SET img = ? WHERE id = ? ');
+    $stmt = $bd->prepare('UPDATE users SET img = ? WHERE id = ? ');
     $stmt->execute(array($new_img_user_finale, $_SESSION["id"]));
 
     if ($stmt->rowCount() === 0) {

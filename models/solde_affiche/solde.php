@@ -28,21 +28,21 @@ function solde ( $montant_user ) {
             $carataire = (string)$montant_user;
             $unPremierChifre = substr($carataire, 0, 1);
             $deuxDernierChiffre = substr($carataire, 1);
-            $resule_p = $unPremierChifre . ' ' . $deuxDernierChiffre;
+            $resule_p = $unPremierChifre . '.' . $deuxDernierChiffre;
             $resule_finale = $resule_p  . $prefix;
             return $resule_finale;
         } elseif ($nonbre === $_05_caractaure) {
             $carataire = (string)$montant_user;
             $unPremierChifre = substr($carataire, 0, 2);
             $deuxDernierChiffre = substr($carataire, 2);
-            $resule_p = $unPremierChifre . ' ' . $deuxDernierChiffre;
+            $resule_p = $unPremierChifre . '.' . $deuxDernierChiffre;
             $resule_finale = $resule_p  . $prefix;
             return $resule_finale;
         } elseif ($nonbre === $_06_caractaure) {
             $carataire = (string)$montant_user;
             $unPremierChifre = substr($carataire, 0, 3);
             $deuxDernierChiffre = substr($carataire, 3);
-            $resule_p = $unPremierChifre . ' ' . $deuxDernierChiffre;
+            $resule_p = $unPremierChifre . '.' . $deuxDernierChiffre;
             $resule_finale = $resule_p  . $prefix;
             return $resule_finale;
         } elseif ($nonbre === $_07_caractaure) {
@@ -50,7 +50,7 @@ function solde ( $montant_user ) {
             $unPremierChifre = substr($carataire, 0, 1);
             $TroideuxiemeDernierChiffre = substr($carataire, 1, 3);
             $TroiTroisiemeDernierChiffre = substr($carataire, 4, 4);
-            $resule_p = $unPremierChifre . ' ' . $TroideuxiemeDernierChiffre . ' ' . $TroiTroisiemeDernierChiffre;
+            $resule_p = $unPremierChifre . '.' . $TroideuxiemeDernierChiffre . ' ' . $TroiTroisiemeDernierChiffre;
             $resule_finale = $resule_p  . $prefix;
             return $resule_finale;
         }elseif($nonbre === $_08_caractaure){
@@ -58,7 +58,7 @@ function solde ( $montant_user ) {
             $unPremierChifre = substr($carataire, 0, 2);
             $TroideuxiemeDernierChiffre = substr($carataire, 2, 3);
             $TroiTroisiemeDernierChiffre = substr($carataire, 5, 5);
-            $resule_p = $unPremierChifre . ' ' . $TroideuxiemeDernierChiffre . ' ' . $TroiTroisiemeDernierChiffre;
+            $resule_p = $unPremierChifre . '.' . $TroideuxiemeDernierChiffre . ' ' . $TroiTroisiemeDernierChiffre;
             $resule_finale = $resule_p  . $prefix;
             return $resule_finale;
             
@@ -67,7 +67,7 @@ function solde ( $montant_user ) {
             $unPremierChifre = substr($carataire, 0, 3);
             $TroideuxiemeDernierChiffre = substr($carataire, 2, 3);
             $TroiTroisiemeDernierChiffre = substr($carataire, 6, 6);
-            $resule_p = $unPremierChifre . ' ' . $TroideuxiemeDernierChiffre . ' ' . $TroiTroisiemeDernierChiffre;
+            $resule_p = $unPremierChifre . '.' . $TroideuxiemeDernierChiffre . ' ' . $TroiTroisiemeDernierChiffre;
             $resule_finale = $resule_p  . $prefix;
             return $resule_finale;
         }

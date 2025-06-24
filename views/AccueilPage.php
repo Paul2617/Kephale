@@ -3,56 +3,65 @@
     <section class="bloc_nave">
 
     <section class='bloc_logo'>
-        <img class="img_logo" src="public/asset/logo/logo_kephale.png" alt="">
+        <p class='bloc_logo_p'>Kephalé</p>
     </section>
-    <h5>Kephalé</h5>
-        <a class ='lin_connect'href= "/Kephale/user" >
-        <img class="<?= $lala ;?>" src="<?= $icon ;?>" alt="">
-        </a>
+
+    <section class='forme_recherche' >
+        <input class='input_reche' type="text"  id="searchInput" placeholder="Rechercher..." >
+        <button class='button_reche' type=""><img class="img_reche" src="public/asset/home_svg/loupe.svg" alt=""></button>
+    </section>
     </section>
 
 </div>
 <div style="padding-top: 60px;" ></div>
-
-<section class="section_pub">
-        <img class="img_anim" src="public/asset/logo/anim_kephal.gif" alt="" >
-</section>
-
 <section class="bloc_scrole_menu">
         <section class="scrole">
         <a class="slider" href="/Kephale/listeboutique&rc=Homme">
-            <img class="slider_img" src="public/asset/_img_page/Homme.png" alt="">
+            <img class="slider_img" src="public/asset/_img_page/Homme.jpg" alt="">
+            <p>Hommes</p>
         </a>
 
         <a class="slider" href="/Kephale/listeboutique&rc=Femme">
-        <img class="slider_img" src="public/asset/_img_page/Femme.png" alt="">
+        <img class="slider_img" src="public/asset/_img_page/Femme.jpg" alt="">
+        <p>Femmes</p>
         </a>
 
         <a class="slider" href="/Kephale/listeboutique&rc=Enfant">
-        <img class="slider_img" src="public/asset/_img_page/Enfant.png" alt="">
+        <img class="slider_img" src="public/asset/_img_page/Enfant.jpg" alt="">
+        <p>Enfants</p>
         </a>
 
         <a class="slider" href="/Kephale/listeboutique&rc=Électronique">
-        <img class="slider_img" src="public/asset/_img_page/Électronique.png" alt="">
+        <img class="slider_img" src="public/asset/_img_page/Électronique.jpg" alt="">
+        <p>Électroniques</p>
         </a>
 
         <a class="slider" href="">
-        <img class="slider_img" src="public/asset/_img_page/Cosmétique.png" alt="">
+        <img class="slider_img" src="public/asset/_img_page/Cosmétique.jpg" alt="">
+        <p>Cosmétiques</p>
         </a>
     
+          <a class="slider" href="">
+        <img class="slider_img" src="public/asset/_img_page/Restaurant.jpg" alt="">
+        <p>Restosr</p>
+        </a>
+
         </section>
     </section>
+    <section class='dkdddjk'>
+<h1>Nouveaux Articles</h1>
 
-    <section class="section_reste_info">
-        <a class="lien_produit_reste" href="">
-            <img  src="public/asset/_img_page/Resto.png" alt="">
-        </a>
-
-        <a class="lien_produit_reste" href="">
-            <img  src="public/asset/_img_page/Boisson.png" alt="">
-        </a>
-
-        <a class="lien_produit_reste" href="">
-            <img  src="public/asset/_img_page/Voiture_retse.png" alt="">
-        </a>
     </section>
+
+    <section class="bloc_scrole_menu">
+           <div class="scrole" id="new_article"></div>
+    </section>
+
+   <div  id="resdults"></div>
+
+    <div class='lvgkdjshjgh'>
+          <div class="eelllfllekkf" id="articles"></div>
+    </div>
+
+<script src="js/liste_new_articles_home/fetchNewArticle.js" ></script>
+<script src="js/liste_article_home/fetchArticles.js" ></script>

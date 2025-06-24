@@ -5,14 +5,12 @@
 //voir la session est id_user est declare
 if(isset($_SESSION["id"])){
     //Inporte le doc dans model pour tout les recquet de la basse de done
-
         require_once ('../models/solde_affiche/solde.php');
         //recupere les info de ulitilisteur
-        $infoUser = infoUser($bd);
-        //Verifie si l'utilisateur a une boutique
-        $userBoutiqueEtat = infoUserBoutiqu($bd);
+        require_once ('../transactions/infoUser.php');
+        
         // bodie lafissage du solde
-        $userSolde = solde ($infoUser["solde"]) ;
+       $userSolde = solde ($infoUsers["solde"]) ;
 }else{
     $_SESSION = array();
     session_destroy();
@@ -43,6 +41,10 @@ if (isset($_POST["recherche"]) and !empty($_POST["recherche"])) {
 
     $sql  = $sql_Q . $dhhd;
 }
+
+
+
+
 // recherche en fonction de la boutique
 if(isset($sql)){
     $stmt = $bd->query($sql);

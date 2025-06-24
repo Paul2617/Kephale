@@ -1,15 +1,8 @@
 <?php
 
 if(isset($_SESSION["id"])){
-
-   
         $recupListAbonnement = recupListAbonnement($bd);
     
-
-
-
-
-
 //importe page 
 
 }else{

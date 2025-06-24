@@ -1,14 +1,4 @@
 
-
-<div class='nav_bare'>
-    <section class="bloc_nave">
-    <a class ='lin_connect'href= "/Kephale/accueil" >
-        <img class='retoure' src="public/asset/_icone/retoure.svg" alt="">
-        </a>
-    <h5></h5>
-    </section>
-
-</div>
 <div class='bloc_form'>
 
 <section class='block_info_boutique flex'>

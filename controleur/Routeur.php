@@ -1,4 +1,22 @@
 <?php
+$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$requestUri = explode('/', trim($requestUri, '/'));
+$resource = isset($requestUri[1]) ? $requestUri[1] : null;
+
+if(!isset($_SESSION["id"])){
+        if (isset($_COOKIE[COOKIE_NAME])){
+        require_once '../transactions/cookie.php';
+    }else{
+if($resource !== 'connection' AND $resource !== 'inscription'){
+        $cookie = new cookie();
+        $verifi_coukie =  $cookie->verifie_cookie();
+        if($verifi_coukie === false){ header ('Location: /Kephale/connection');}
+}
+    }
+}
+
+
+
 class Routeur
 {
     public function routePublic(){
@@ -9,6 +27,7 @@ class Routeur
                 // on recuper le premie parametre de url et mes la premier letre en maguscule
                 $nomFiche = ucfirst(strtolower( $url[0]));
                 // definir le nom du controleur
+
                 $controleurFiche = "Controleur".$nomFiche;
                 $modelsFiche = $nomFiche."Manager";
                 $viewsFiche =  $nomFiche."Page";
@@ -21,18 +40,6 @@ class Routeur
                     require_once ("../models/bd/Cntbd.php");
                     $Cntbd = new Cntbd();
                     $bd = $Cntbd->bd();
-
-                    if(isset($_SESSION["id"])){
-                        $userimg = $bd->prepare("SELECT img FROM user WHERE id = ? ");
-                        $userimg->execute(array($_SESSION["id"]));
-                        $imgUser = $userimg->fetch();
-                        $imgUserK = $imgUser["img"]; 
-                        $lala = 'icon_user';
-                        $icon = 'public/asset/img_user/'.$imgUserK;
-                    }else{
-                        $lala = 'retouree';
-                        $icon = 'public/asset/_icone/connection.svg';
-                    }
                     require_once ("../models/bd/Model.php");
                     require_once ($models);
                 }
@@ -42,7 +49,7 @@ class Routeur
                     if(file_exists($views)){
                         require_once ($views);
                     }else{
-                        echo 'Page introuveble';
+                       // echo 'Page introuveble';
                     }
                 }else{
                     header ('Location: /Kephale/accueil'  );
@@ -54,5 +61,4 @@ class Routeur
         
     }
 }
-
     ?>

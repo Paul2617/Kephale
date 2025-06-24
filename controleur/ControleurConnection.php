@@ -1,5 +1,4 @@
 <?php
-
 // methode poste connections
 if (isset($_POST["conection"]) and !empty($_POST["conection"])){
     if (isset($_POST["telephone"]) and !empty($_POST["telephone"])){
@@ -15,18 +14,12 @@ if (isset($_POST["conection"]) and !empty($_POST["conection"])){
 
 //Inporte le doc dans model pour tout les recquet de la basse de done
 
-    if (isset( $telephone ) and !empty($passwor_usre )){
-        if (isset( $telephone ) and !empty($passwor_usre )){
-        $connection =  connection ($bd,$telephone, $passwor_usre);
-        
-        if($connection === 'numero_inconu'){
-            $erreur = 'Numéro introuvable.';
-        }elseif($connection === 'code_inconu'){
-            $erreur = 'Mot de passe incorrect !';
-        }elseif($connection === 'valide'){
-            header ('Location: /Kephale/user'  );
-        }
-    }
+    if (isset($telephone) and !empty($passwor_usre )){
+        require_once '../transactions/index.php';
+       // $connection =  connection ($bd, $telephone, $passwor_usre);
+        //if($connection === 'numero_inconu'){$erreur = 'Numéro introuvable.';}
+        //elseif($connection === 'code_inconu'){$erreur = 'Mot de passe incorrect !';}
+       // elseif($connection === 'valide'){ $cookie = new cookie();}
     }
 
     ?>

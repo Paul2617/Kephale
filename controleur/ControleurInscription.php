@@ -22,15 +22,14 @@ if (isset($_POST["inscrire"]) and !empty($_POST["inscrire"])){
                                     $direction = "asset/img_user/";
                                     $imgNom = $resultImg;
                                     $imgDirection = $direction.$imgNom;
-                                    $category = htmlspecialchars($_POST["category"]);
+                                    $sexe = htmlspecialchars($_POST["category"]);
                                     $veirif = true;
                                 }
-                
                         }else{
                              $direction = "asset/img_user/";
                             $imgNom = 'logo.png';
                             $imgDirection = $direction.$imgNom;
-                            $category = htmlspecialchars($_POST["category"]);
+                            $sexe = htmlspecialchars($_POST["category"]);
                             $veirif = true;
                         }
                         }else{
@@ -58,15 +57,16 @@ if (isset($_POST["inscrire"]) and !empty($_POST["inscrire"])){
 
 // si tout les informentions son inquique
     if(isset($veirif )){
+        require '../transactions/inscription.php';
         //inser les informations
-    $resulte = inscription($bd, $nom_user, $numerau_user, $password_user, $category, $imgNom  );
-
+   // $resulte = inscription($bd, $nom_user, $numerau_user, $password_user, $category, $imgNom  );
+      $resulte = null;
     if($resulte === 'numero_existe'){
         $erreur = "Veuillez indiquer un autre numéro de téléphone.";
     }elseif($resulte === 'ok'){
         if($imgNom !== 'logo.png'){
         if(move_uploaded_file($_FILES["img_demande"]["tmp_name"], $imgDirection)){
-            header ('Location: /Kephale/connection'  );
+            header ('Location: /Kephale/connection');
         }
         }else{
              header ('Location: /Kephale/connection');
