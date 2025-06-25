@@ -2,9 +2,9 @@
 require_once ('../models/bd/Model.php');
 
 function verifiCode($bd, $passwor_usre){
-   $codeUser = recTableId($bd, 'user', 'id',$_SESSION["id"]);
+   $codeUser = recTableId($bd, 'users', 'id',$_SESSION["id"]);
    $codeUserRec = sha1($passwor_usre);
-   if($codeUser["code"] === $codeUserRec ){
+   if($codeUser["password_user"] === $codeUserRec ){
     return true;
    }else{
     return false;

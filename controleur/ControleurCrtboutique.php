@@ -1,6 +1,5 @@
 <?php
 if(isset($_SESSION["id"])){
-
     if (isset($_POST["boutique"]) and !empty($_POST["boutique"])){
         if (isset($_POST["nomBoutique"]) and !empty($_POST["nomBoutique"])){
             $nomBoutique = htmlspecialchars($_POST["nomBoutique"]);
@@ -33,9 +32,11 @@ if(isset($_SESSION["id"])){
 
         if(isset( $imgDirection )){
             if(move_uploaded_file($_FILES["img_demande"]["tmp_name"], $imgDirection)){
-              $inserdata = ajouteBoutique ($bd, $nomBoutique, $imgNom, $paye);
+              $abn = $_GET["abn"];
+              $id_abt = $_GET["id_abt"];
+              $inserdata = ajouteBoutique ($bd, $id_abt, $abn, $nomBoutique, $imgNom, $paye);
               if($inserdata === true){
-                header ('Location: /Kephale/boutique'  );
+                header ('Location: /Kephale/boutique' );
               }
             }
         }

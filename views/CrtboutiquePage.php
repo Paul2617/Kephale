@@ -34,20 +34,22 @@
             <h4>Ajouter</h4>
             </label>
             </section>
+
             <section class='bloc_form_input'>
-            <section class ='info_radio'>
-                        <label>
-                            <input type="radio" name="paye" value='Mali'>
-                            Mali
-                        </label>
-                        <label>
-                            <input type="radio" name="paye" value='Bourkina'>
-                            Bourkina
-                        </label>
-                        <label>
-                            <input type="radio" name="paye" value='Niger'>
-                            Niger
-                        </label>
+            <section class ='bloc_taille'>
+   <div class="form-element-plus">
+            <input type="radio" name="paye" value="Mali" id="Mali">
+            <label for="Mali">
+            <div class="title">Mali</div>
+            </label>
+            </div>
+            <div class="form-element-plus">
+            <input type="radio" name="paye" value="Chine" id="Chine">
+            <label for="Chine">
+            <div class="title">Chine</div>
+            </label>
+            </div>
+          
                     </section>
             </section>
         

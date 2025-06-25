@@ -19,29 +19,49 @@ CREATE TABLE marques (
 -- 3. Table des vendeurs
 CREATE TABLE vendeurs (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE,
+    id_users INT UNIQUE,
+    uuid_cle VARCHAR(32) INT UNIQUE,
+    telephone VARCHAR(8) UNIQUE,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    comptes ENUM('actif', 'suspendu') DEFAULT 'actif',
+    statut ENUM('certifie', 'standard') DEFAULT 'standard',
+    psa ENUM('vendeurs', 'client', 'null' ) DEFAULT 'null',
+);
+
+ALTER TABLE `boutique` ADD `statut` ENUM('certifie', 'standard') DEFAULT 'standard' AFTER `pays`;
+ALTER TABLE `boutique` ADD `comptes` ENUM('actif', 'suspendu') DEFAULT 'actif' AFTER `statut`;
+ALTER TABLE `boutique` ADD `psa` ENUM('boutique', 'client', 'null') DEFAULT 'null' AFTER `comptes`;
+
+
+ALTER TABLE `article` ADD  statut ENUM('brouillon', 'publie', 'archive') DEFAULT 'publie',
+
+
+ALTER TABLE `article` ADD CONSTRAINT `id_categori` FOREIGN KEY (`id_categorie`) REFERENCES `categorie`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+-- 4. Table des clients
+
+CREATE TABLE solde_vendeurs (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id_vendeurs INT UNIQUE,
+    solde INT DEFAULT 0,
     statut ENUM('actif', 'suspendu') DEFAULT 'actif'
 );
 
--- 4. Table des clients
-CREATE TABLE clients (
+CREATE TABLE endre_vendeurs (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    mot_de_passe VARCHAR(255) NOT NULL,
-    date_inscription DATETIME DEFAULT CURRENT_TIMESTAMP
+    id_commande INT UNIQUE,
+    solde INT DEFAULT 0,
+    statut ENUM('actif', 'suspendu') DEFAULT 'actif'
 );
 
 -- 5. Table des articles
 CREATE TABLE articles (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     titre VARCHAR(255) NOT NULL,
-    description TEXT,
-    prix DECIMAL(10, 2) NOT NULL,
-    ancien_prix DECIMAL(10, 2),
+    descriptions TEXT,
+    prix INT NOT NULL,
+    promo VARCHAR(100) DEFAULT 0,
     en_stock BOOLEAN DEFAULT TRUE,
-    quantite_stock INT DEFAULT 0,
+    quantite_stock INT DEFAULT 1,
 
     categorie_id BIGINT,
     marque_id BIGINT,
@@ -63,7 +83,7 @@ CREATE TABLE articles (
 CREATE TABLE images_articles (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     article_id BIGINT,
-    url_image VARCHAR(500),
+    img VARCHAR(500),
     ordre INT DEFAULT 1,
     FOREIGN KEY (article_id) REFERENCES articles(id)
 );
@@ -83,7 +103,9 @@ CREATE TABLE avis (
 -- 8. Table des attributs personnalisés (ex: taille, couleur)
 CREATE TABLE attributs (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(100) NOT NULL
+    article_id BIGINT,
+    nom ENUM('taille', 'couleur', 'null') DEFAULT 'null',
+    FOREIGN KEY (article_id) REFERENCES articles(id)
 );
 
 -- 9. Valeurs des attributs (ex: M, L, Rouge)
@@ -125,9 +147,11 @@ CREATE TABLE lignes_panier (
 CREATE TABLE commandes (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     client_id BIGINT,
+    statut ENUM('en_attente', 'valide', 'annule') DEFAULT 'en_attente',
+    livraison ENUM('en_attente', 'livre', 'annule') DEFAULT 'en_attente',
+    montant_livraison INT,
+    montant_total INT,
     date_commande DATETIME DEFAULT CURRENT_TIMESTAMP,
-    statut ENUM('en_attente', 'expedie', 'livre', 'annule') DEFAULT 'en_attente',
-    montant_total DECIMAL(10, 2),
     FOREIGN KEY (client_id) REFERENCES clients(id)
 );
 
@@ -137,7 +161,10 @@ CREATE TABLE lignes_commande (
     commande_id BIGINT,
     article_id BIGINT,
     quantite INT,
-    prix_unitaire DECIMAL(10, 2),
+    prix_unitaire INT,
+    total INT,
+    taille VARCHAR(20) DEFAULT NULL,
+    couleur VARCHAR(20) DEFAULT NULL,
     FOREIGN KEY (commande_id) REFERENCES commandes(id),
     FOREIGN KEY (article_id) REFERENCES articles(id)
 );
