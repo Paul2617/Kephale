@@ -11,15 +11,20 @@ $input = json_decode(file_get_contents("php://input"), true);
 $recherche = isset($_GET['recherche']) ? trim($_GET['recherche']) : '';
     try {
 if ($recherche === '') {
-  $stmt = $bd->prepare('SELECT 
+  $stmt = $bd->prepare("SELECT 
   article.id as id_article, 
   article.nom as nom, 
   article.prix as prix,
   article.descriptions as descriptions, 
   images_article.article_id as article_id,
   images_article.nom_image as nom_image  
-  
-  FROM article INNER JOIN images_article ON article.id = images_article.article_id ');
+  FROM article 
+  INNER JOIN images_article ON article.id = images_article.article_id
+  INNER JOIN boutique ON article.id_boutique = boutique.id 
+  WHERE boutique.pays LIKE 'Mali' 
+  AND ( boutique.comptes LIKE 'actif')
+  AND ( article.statut LIKE 'publie')
+  ORDER BY RAND() LIMIT 50; ");
   $stmt->execute([]);
 
   $article = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -40,10 +45,60 @@ if ($recherche === '') {
   article.descriptions as descriptions, 
   images_article.article_id as article_id,
   images_article.nom_image as nom_image  
-   FROM article INNER JOIN images_article ON article.id = images_article.article_id 
-   WHERE article.nom LIKE '%$recherche%' OR article.descriptions LIKE '%$recherche%'  LIMIT 50 ");
+  FROM article 
+  INNER JOIN images_article ON article.id = images_article.article_id 
+  INNER JOIN boutique ON article.id_boutique = boutique.id 
+  WHERE article.statut LIKE 'publie' 
+  AND ( boutique.pays LIKE 'Mali' )
+  AND ( boutique.comptes LIKE 'actif')
+  AND ( article.nom LIKE '%$recherche%' OR article.descriptions LIKE '%$recherche%' ) 
+  ORDER BY RAND()   LIMIT 50 ");
+  $stmt->execute([]);
+  if($stmt->rowCount() >= 1){
+  $article = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }else{
+     $stmt = $bd->prepare("SELECT 
+  article.id as id_article, 
+  article.nom as nom, 
+  article.prix as prix,
+  article.descriptions as descriptions, 
+  images_article.article_id as article_id,
+  images_article.nom_image as nom_image  
+  FROM article 
+  INNER JOIN images_article ON article.id = images_article.article_id 
+  INNER JOIN boutique ON article.id_boutique = boutique.id 
+  INNER JOIN categorie ON article.id_categorie = categorie.id 
+  WHERE article.statut LIKE 'publie' 
+  AND ( boutique.pays LIKE 'Mali' )
+  AND ( boutique.comptes LIKE 'actif')
+  AND ( categorie.nom LIKE '%$recherche%' OR categorie.types LIKE '%$recherche%' ) 
+  ORDER BY RAND()   LIMIT 50 ");
+  $stmt->execute([]);
+  if($stmt->rowCount() >= 1){
+  $article = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }else{
+  $stmt = $bd->prepare("SELECT 
+  article.id as id_article, 
+  article.nom as nom, 
+  article.prix as prix,
+  article.descriptions as descriptions, 
+  images_article.article_id as article_id,
+  images_article.nom_image as nom_image  
+  FROM article 
+  INNER JOIN images_article ON article.id = images_article.article_id 
+  INNER JOIN boutique ON article.id_boutique = boutique.id 
+  INNER JOIN produit ON article.id_produit = produit.id 
+  WHERE article.statut LIKE 'publie' 
+  AND ( boutique.pays LIKE 'Mali' )
+  AND ( boutique.comptes LIKE 'actif')
+  AND ( produit.nom LIKE '%$recherche%' OR produit.types LIKE '%$recherche%' ) 
+  ORDER BY RAND()   LIMIT 50 ");
   $stmt->execute([]);
   $article = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  }
+
 foreach ( $article as  &$articles ) {
       $articles ['prix'] = solde($articles ['prix']);
   }

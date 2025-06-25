@@ -32,7 +32,7 @@
       <section class="clock_re_re">
           <section class='infoAbonnement'>
               <h4><?= $tecko  ?></h4>
-              <p><?= $tecka  ?></p>
+              <p><?= $tecka ?></p>
           </section>
           <a href=""><img src="public/asset/_icone/retrais.svg" alt=""></a>
 

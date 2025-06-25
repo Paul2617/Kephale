@@ -8,8 +8,14 @@ if(isset($_SESSION["id"])){
     
             $infoCategorie = infoCategorie($bd);
             $boutiqueSolde = solde ($infoBoutique["solde"]) ;
-        
-        
+            $psa = $infoBoutique["psa"];
+              if($psa === 'boutique' ){
+                    $tecko = 'psa';
+                    $tecka = 'Sur boutique';
+                  }elseif($psa === 'client' ){
+                    $tecko = 'psa';
+                    $tecka = 'Sur client';
+                  }
 
 
 

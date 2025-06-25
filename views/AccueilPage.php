@@ -14,7 +14,8 @@
 
 </div>
 <div style="padding-top: 60px;" ></div>
-<section class="bloc_scrole_menu">
+<div id="contenu" class="bloc_scrole_menu">
+
         <section class="scrole">
         <a class="slider" href="/Kephale/listeboutique&rc=Homme">
             <img class="slider_img" src="public/asset/_img_page/Homme.jpg" alt="">
@@ -47,13 +48,13 @@
         </a>
 
         </section>
-    </section>
-    <section class='dkdddjk'>
+    </div>
+
+    <div  class='dkdddjk'>
 <h1>Nouveaux Articles</h1>
+    </div>
 
-    </section>
-
-    <section class="bloc_scrole_menu">
+    <section id="contenuTrois" class="bloc_scrole_menu">
            <div class="scrole" id="new_article"></div>
     </section>
 
@@ -65,3 +66,16 @@
 
 <script src="js/liste_new_articles_home/fetchNewArticle.js" ></script>
 <script src="js/liste_article_home/fetchArticles.js" ></script>
+
+  <script>
+    const input = document.getElementById('searchInput');
+    const contenu = document.getElementById('contenu');
+    const contenuDeux = document.getElementById('contenuDeux');
+    const contenuTrois = document.getElementById('contenuTrois');
+
+    input.addEventListener('input', () => {
+      contenu.style.display = input.value.length > 0 ? 'none' : 'block';
+      contenuDeux.style.display = input.value.length > 0 ? 'none' : 'block';
+      contenuTrois.style.display = input.value.length > 0 ? 'none' : 'block';
+    });
+  </script>
