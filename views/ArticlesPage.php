@@ -39,12 +39,13 @@ while ($img = $rec->fetch(PDO::FETCH_ASSOC)){
       ?>
 
                 <a class="uegeeyg"
-                    href="/Kephale/articles<?php if(isset($_GET['rc'])){ echo '&rc='.$_GET['rc']; }?>&id_categorie=<?= $_GET['id_categorie']?>&id_produit=<?= $_GET['id_produit']?>&id_article=<?= $_GET['id_article']?>&image=<?= $img["nom_image"] ?>">
+                    href="/Kephale/articles<?php if(isset($_GET['rc'])){ echo '&rc='.$_GET['rc']; }?><?php if(isset($_GET['id_categorie'])){echo '&id_categorie='.$_GET['id_categorie']; } ?><?php if(isset($_GET['id_produit'])){echo '&id_produit='.$_GET['id_produit']; }?>&id_article=<?= $_GET['id_article']?>&image=<?= $img["nom_image"] ?>">
                     <img style=" <?php if(isset($_GET['image'])){ if($_GET['image'] === $img["nom_image"] ){?>border: 2px solid #94C123;<?php } }?>"
                         class="hdudjdgdg" src="public/asset/img_article/<?php echo $img["nom_image"]  ?>" alt="">
                 </a>
                 <?php
-}}
+}
+}
             ?>
 
 

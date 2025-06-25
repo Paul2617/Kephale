@@ -7,7 +7,7 @@ $Cntbd = new Cntbd();
 $bd = $Cntbd->bd();
 
     try {
-  $stmt = $bd->prepare('SELECT 
+  $stmt = $bd->prepare("SELECT 
   article.id as id_article, 
   article.nom as nom, 
   article.prix as prix,
@@ -15,7 +15,13 @@ $bd = $Cntbd->bd();
   images_article.article_id as article_id,
   images_article.nom_image as nom_image  
   
-  FROM article INNER JOIN images_article ON article.id = images_article.article_id ORDER BY article.date_creations DESC LIMIT 7');
+  FROM article 
+  INNER JOIN images_article ON article.id = images_article.article_id 
+  INNER JOIN boutique ON article.id_boutique = boutique.id 
+  WHERE boutique.pays LIKE 'Mali' 
+  AND ( boutique.comptes LIKE 'actif')
+  AND ( article.statut LIKE 'publie')
+  ORDER BY article.date_creations DESC LIMIT 7");
   $stmt->execute([]);
 
   $article = $stmt->fetchAll(PDO::FETCH_ASSOC);

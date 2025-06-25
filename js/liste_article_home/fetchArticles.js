@@ -14,7 +14,7 @@ function fetchArticles(query = '') {
 
       data.forEach(article => {
         const articleHTML = `
-          <a href="" class='sskddjdj'>
+          <a href="/Kephale/articles&id_article=${article.id_article}" class='sskddjdj'>
             <img class="lvgkdjshjgh_img" src="public/asset/img_article/${article.nom_image}" alt="">
             <p><span>${article.descriptions}</span></p>
             <h2>${article.prix}</h2>

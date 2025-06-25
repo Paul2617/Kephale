@@ -49,11 +49,11 @@ function img_article ($bd, $id_article){
 function psa ($bd, $id_boutique, $prix_finale){
     $boutique = 'boutique';
     $client = 'client';
-    $psa = $bd->prepare("SELECT etat FROM psa WHERE id_boutique = ? ");
+    $psa = $bd->prepare("SELECT psa FROM boutique WHERE id = ? ");
     $psa->execute([$id_boutique]);
     if ($psa->rowCount() > "0" ){
         $resulte = $psa->fetch(PDO::FETCH_ASSOC);
-        $etat =  $resulte ['etat'];
+        $etat =  $resulte ['psa'];
         if($prix_finale  <= 10000){
             $pourcentages = 6;
         }elseif($prix_finale  <= 50000 AND $prix_finale > 10000){
@@ -90,7 +90,10 @@ function psa ($bd, $id_boutique, $prix_finale){
 function verifiCode ($bd, $passwor_usre, $totale_achat){
     $code = sha1($passwor_usre);
     $id_user = $_SESSION["id"];
-    $req_user = $bd->prepare("SELECT * FROM user WHERE code = ? AND id LIKE '$id_user' ");
+    $req_user = $bd->prepare(
+        "SELECT users_solde.solde as solde FROM users 
+        INNER JOIN users_solde ON users.uuid_cle = users_solde.uuid_cle 
+        WHERE users.password_user = ? AND users.id LIKE '$id_user' ");
     $req_user->execute([$code]);
     if ($req_user->rowCount() > "0" ){
         $resule = $req_user->fetch(PDO::FETCH_ASSOC);
@@ -140,7 +143,10 @@ function achat_article ( $bd, $prix_article, $psa_enregistre, $id_boutique, $id_
      }
    
      // Retirer le montant totale dans le solde de user
-     $stmt = $bd->prepare('UPDATE user SET solde = solde - ? WHERE id = ? ');
+     $stmt = $bd->prepare(
+    'UPDATE users_solde INNER JOIN users ON users_solde.uuid_cle = users.uuid_cle  
+     SET users_solde.solde = users_solde.solde - ? 
+     WHERE users.id = ? ');
      $stmt->execute(array($new_solde_retrait_client, $_SESSION["id"]));
   
 
@@ -177,7 +183,7 @@ function achat_article ( $bd, $prix_article, $psa_enregistre, $id_boutique, $id_
      $stmt->execute(array($id_boutique,  $id_achat, $new_solde_boutique, $motife , $date_transaction));
     
      // historique retrait de du compte
-     $stmt = $bd->prepare("INSERT INTO achat_user (id_user, id_article, id_boutique, id_achat, prix_article, prix_promo, psa, total_retire, date_achat ) VALUES (?,?,?,?,?,?,?,?,?)");
+     $stmt = $bd->prepare("INSERT INTO users_achat (id_user, id_article, id_boutique, id_achat, prix_article, prix_promo, psa, total_retire, date_achat ) VALUES (?,?,?,?,?,?,?,?,?)");
      $stmt->execute(array($_SESSION["id"], $id_article, $id_boutique, $id_achat , $prix_article, $promo_final, $new_psa_client, $new_solde_retrait_client, time() ));
 
      if ($stmt->rowCount() === 0) {

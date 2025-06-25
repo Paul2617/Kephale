@@ -1,8 +1,7 @@
 <?php
 
-            if( !empty($_GET["id_categorie"]) AND !empty($_GET["id_produit"]) AND !empty($_GET["id_article"])){
+            if(!empty($_GET["id_article"])){
                $id_article = $_GET["id_article"];
-
                $infoArticle =  articles($bd, $id_article);
                require_once ('../models/solde_affiche/solde.php');
                $soldeArticle = solde ($infoArticle["prix"]) ;
@@ -41,7 +40,7 @@
                if(isset($_SESSION["id"])){
                $etat = $infoArticle['etat']; 
                $infoPanier = panier ($bd, $id_article);
-               if($etat === 1){
+               if($etat === '1'){
                if($infoPanier === 0){
                 $panier = "<input class='boutton_inpute' style = ' background-color: #95C11F;'  type='submit' value='Ajouter au Panier' name='ajouter'>";
                }elseif($infoPanier === 1){
