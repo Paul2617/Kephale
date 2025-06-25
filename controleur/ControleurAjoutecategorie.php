@@ -31,12 +31,18 @@ if(isset($_SESSION["id_boutique"])){
 
 
         if(isset($imgDirection)){
+           $verifieCategori =  verifieCategori ($bd,  $type_categorie);
+           if($verifieCategori === true){
             if(move_uploaded_file($_FILES["img_demande"]["tmp_name"], $imgDirection)){
             $ajoute_categori = ajoute_categori($bd, $nomCategorie, $type_categorie,$imgNom );
             if($ajoute_categori === true){
                 header ('Location: /Kephale/boutique'  );
             }
         }
+           }else{
+            $erreur = "La catégorie pour ".$type_categorie." existe déjà.";
+           }
+
         }
     
 

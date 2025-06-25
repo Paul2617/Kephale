@@ -24,7 +24,10 @@
             value="<?php if (isset($nomCategorie)) {echo $nomCategorie;} ?>">
                 <h5 class='h5d'>Type de la categorie</h5>
         <section class='info_radio_djs'>
-            <select class="form_input_ddj" name="type_categorie">
+            <?php 
+            if($_SESSION["abonnement"]  === 'grand'){
+                ?>
+                <select class="form_input_ddj" name="type_categorie">
                 <option value="">Sélectionne</option>
                 <option value="Homme">Homme</option>
                 <option value="Femme">Femme</option>
@@ -33,6 +36,45 @@
                 <option value="Cosmétique">Cosmétique</option>
                 <option value="Boissons">Boissons</option>
             </select>
+                <?php 
+            }elseif($_SESSION["abonnement"]  === 'standard'){
+                ?>
+                <select class="form_input_ddj" name="type_categorie">
+                <option value="">Sélectionne</option>
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
+                <option value="Enfant">Enfant</option>
+            </select>
+                <?php 
+            }elseif($_SESSION["abonnement"]  === 'electro'){
+                ?>
+                <select class="form_input_ddj" name="type_categorie">
+                <option value="">Sélectionne</option>
+                <option value="Électronique">Électronique</option>
+               </select>
+                <?php 
+            }elseif($_SESSION["abonnement"]  === 'resto'){
+                ?>
+                <select class="form_input_ddj" name="type_categorie">
+                <option value="">Sélectionne</option>
+                <option value="Restaurant">Restaurant</option>
+            </select>
+                <?php 
+            }elseif($_SESSION["abonnement"]  === 'imo'){
+                ?>
+                 <select class="form_input_ddj" name="type_categorie">
+                <option value="">Sélectionne</option>
+                <option value="Immobilier">Immobilier</option>
+            </select>
+                <?php 
+            }elseif($_SESSION["abonnement"]  === 'auto'){
+                ?>
+                 <select class="form_input_ddj" name="type_categorie">
+                <option value="">Sélectionne</option>
+                <option value="Automobile">Automobile</option>
+                <?php 
+            }
+            ?>
         </section>
         <input class='ddjfkff' type="submit" value="Ajouter la catégorie" name="ajouter">
         <?php if (isset($erreur)) { ?> <h2 class="erreur"><?php echo $erreur ?></h1> <?php } ?>

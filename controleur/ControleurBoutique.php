@@ -16,17 +16,8 @@ if(isset($_SESSION["id"])){
                     $tecko = 'psa';
                     $tecka = 'Sur client';
                   }
-
-
-
-
-
-
-
-
-
-
-
+                  
+                  $_SESSION["abonnement"] = $infoBoutique["abonnement"];
     }else{
         header ('Location: /Kephale/look');
     }
