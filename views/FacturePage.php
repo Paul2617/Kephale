@@ -50,12 +50,7 @@
                     <h3><?= $nom_boutique ?></h3>
                 </section>
             </section>
-            <form action="" method="POST" enctype="multipart/form-data">
-                <button class='dddufduud' name="parame" value="Connexion">
-                    <h1>:</h1>
-                </button>
 
-            </form>
         </section>
         <section class='infoAchata'>
             <h1>Facture</h1> 
@@ -97,12 +92,21 @@
 <section class='bloc_form_p'>
     <form method="POST" enctype="multipart/form-data">
         <section class='bloc_form_input'>
-            <h5>Mot de passe</h5>
             <input type="password" placeholder="Mot de passe" name="password_user">
         </section>
-        <input class="boutton_inpute" class="submit" type="submit" value="Confirme" name="confirme">
+        <input class="boutton_inputee" class="submit" type="submit" value="Confirme l'achat" name="confirme">
         <?php if (isset($erreur)) { ?> <h2 class="erreur"><?php echo $erreur ?></h1> <?php } ?>
     </form>
 </section>
 </section>
+
+<div class='bloocke'>
+    <p class='p'>Si vous souhaitez recharger votre compte et effectuer des achats sur <span>Kephale</span>, n'hésitez pas à contacter le service de livraison au <span>"+223 97 01 97 80"</span> via WhatsApp.</p>
+    <p class='verte p'>Vous avez également la possibilité de retirer de l'argent depuis votre compte <span>Kephale</span>.</p>
+</div>
+<div class='bloockee'>
+    <p class='rouge p'><span>À noter</span></p>
+    <p class='rouge p'>Si vous êtes victime d'une arnaque avec un numéro de téléphone différent de celui mentionné sur le site, nous ne serons pas en mesure de vous rembourser votre argent.</p>
+
+</div>
 <?php ?> 

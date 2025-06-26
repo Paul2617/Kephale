@@ -12,11 +12,19 @@ $bd = $Cntbd->bd();
   article.nom as nom, 
   article.prix as prix,
   article.descriptions as descriptions, 
-  images_article.article_id as article_id,
-  images_article.nom_image as nom_image  
-  
-  FROM article 
-  INNER JOIN images_article ON article.id = images_article.article_id 
+  ia.nom_image as nom_image  
+  FROM article
+    LEFT JOIN (
+    SELECT ia1.article_id, ia1.nom_image
+    FROM images_article ia1
+    INNER JOIN (
+        SELECT article_id, MIN(id) AS min_id
+        FROM images_article
+        GROUP BY article_id
+    ) ia2 ON ia1.id = ia2.min_id
+) ia ON article.id = ia.article_id
+
+
   INNER JOIN boutique ON article.id_boutique = boutique.id 
   WHERE boutique.pays LIKE 'Mali' 
   AND ( boutique.comptes LIKE 'actif')

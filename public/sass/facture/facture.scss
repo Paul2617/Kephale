@@ -9,7 +9,6 @@
 .blockFac{
     width: 90%;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,7 +84,8 @@ h1{
         }
     }
     p{
-        font-size: 10px;
+        margin-top: 10px;
+        font-size: 11px;
         color: #95C11F;
     }
 }
@@ -133,6 +133,17 @@ h1{
     align-items: center;
     margin-top: 10px;
 }
+.boutton_inputee{
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: #1D71B8;
+    color: #ffffff;
+    border-radius: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 700;
+}
 .boutton_inpute{
     width: auto;
     height: 50px;
@@ -173,4 +184,57 @@ h1{
         padding: 10px;
         border-radius: 13px;
     }
+}
+.bloocke{
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 90%;
+    background-color: #96c11f2f;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 13px;
+    p{
+        width: 90%;
+        font-size: 11px;
+        span{
+            font-weight: 700;
+        }
+    }
+    .verte{
+        margin-top: 10px;
+        color: #96c11f;
+    }
+  .rouge{
+    color: #E94E1B;
+  }
+}
+
+.bloockee{
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 13px;
+    .p{
+        width: 90%;
+        font-size: 12px;
+        span{
+            font-weight: 700;
+        }
+    }
+
+  .rouge{
+    color: #E94E1B;
+  }
 }

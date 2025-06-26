@@ -25,7 +25,7 @@ function info_article ($bd, $id_article, $id_produit, $id_categorie){
          require_once ('../models/BoutiqueManager.php');
          //etat de la boutique 
 
-          $etatAbonnement = etatAbonnement($bd);
+          $etatAbonnement = 'ok';
 
          // info finalle
         $info = 

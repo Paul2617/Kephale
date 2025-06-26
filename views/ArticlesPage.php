@@ -1,5 +1,9 @@
-<?php  require_once ('../controleur/cookie/historique_page_retoure.php');  ?>
-<div class='nav_bare'>
+<?php 
+ require_once ('../controleur/cookie/historique_page_retoure.php'); 
+$requestUri = $_SERVER['REQUEST_URI'];
+ 
+ ?>
+<div class='nav_bare plus_nav'>
     <section class="bloc_nave">
         <a class='lin_connect' href="<?php echo getLastPage(); ?>"><img class='retoure'
                 src='public/asset/_icone/retoure.svg'></a>
@@ -8,7 +12,7 @@
         </a>
     </section>
 </div>
-<div style="padding-top: 60px;"></div>
+
 <?php
 $id_article = $infoArticle ["id"];
 $rec = $bd->prepare('SELECT nom_image FROM images_article WHERE article_id = ? ORDER BY id ASC ');
@@ -16,10 +20,10 @@ $rece = $bd->prepare('SELECT nom_image FROM images_article WHERE article_id = ? 
 $rec->execute(array($id_article));
 $rece->execute(array($id_article));
 
-$requestUri = $_SERVER['REQUEST_URI'];
         ?>
-<div class='blockehdte'>
+
     <section class='blockarticle'>
+
         <section class='blocImg'>
             <img src="public/asset/img_article/<?= $_GET['image'] ?>" alt="">
         </section>
@@ -33,11 +37,9 @@ $requestUri = $_SERVER['REQUEST_URI'];
                 if(isset($_GET['image'])){ }else{
                     header("Location: ".$requestUri.'&image='.$imges );
                     exit;
-                }
-
-while ($img = $rec->fetch(PDO::FETCH_ASSOC)){
-      ?>
-
+                } 
+                while ($img = $rec->fetch(PDO::FETCH_ASSOC)){
+                    ?>
                 <a class="uegeeyg"
                     href="/Kephale/articles<?php if(isset($_GET['rc'])){ echo '&rc='.$_GET['rc']; }?><?php if(isset($_GET['id_categorie'])){echo '&id_categorie='.$_GET['id_categorie']; } ?><?php if(isset($_GET['id_produit'])){echo '&id_produit='.$_GET['id_produit']; }?>&id_article=<?= $_GET['id_article']?>&image=<?= $img["nom_image"] ?>">
                     <img style=" <?php if(isset($_GET['image'])){ if($_GET['image'] === $img["nom_image"] ){?>border: 2px solid #94C123;<?php } }?>"
@@ -47,9 +49,6 @@ while ($img = $rec->fetch(PDO::FETCH_ASSOC)){
 }
 }
             ?>
-
-
-
             </section>
         </section>
 
@@ -58,25 +57,56 @@ while ($img = $rec->fetch(PDO::FETCH_ASSOC)){
             <h2><?= $infoArticle ["descriptions"] ?></h2>
             <h3><?= $soldeArticle ?> </h3>
         </section>
-        <section class='sectionBloc'>
+</section>
+        
 
-        <form style = 'flex-direction: column; width: 100%;' method="POST" enctype="multipart/form-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             <section class='sectionBloc'>
+           <form style = 'flex-direction: column; width: 100%;' method="POST" enctype="multipart/form-data">
 
             <?php
             if($infoArticle["tailles"] !== 'null'){
                 if($i  < count($tailless)){
                     ?>
-                    <section  style = ' margin-left : 10px ' >
 
-                                              <h5 class="ddhfj">Sélectionnées les tailles disponibles</h5>
-                    </section>
+                     <?php 
+                     if (isset($erreur)) 
+                     { ?> <h5 class="ddhfj plus"><?php echo $erreur ?></h5> <?php 
+                     }else{
+                        ?> <h5 class="ddhfj">Tailles disponibles </h5><?php 
+                     }
+                     ?>
+                   
 
                   <div class="bloc_taille" >
 
                       <?php
                     foreach($tailless as $taillesse){
                         ?>
-                            <div class="form-element">
+                            <div style= 'z-index: 4;' class="form-element">
                                 <input type="radio" name="options" value="<?= $taillesse ?>" id="<?= $taillesse ?>">
                                 <label for="<?= $taillesse ?>">
                                     <div class="title"><?= $taillesse ?></div>
@@ -85,23 +115,58 @@ while ($img = $rec->fetch(PDO::FETCH_ASSOC)){
                             <?php
                     }
                 }
-            }else{
-                ?>
-<div class="bloc_taille">
+                  ?>
+                    </div>
       
-
           <?php
             }
-
 ?>
-        </div>
-
-        <section class='sectionBloc'>
+            <div class='blocBoto_style'>
+        <div  class='blocBoto_style_bloke'>
             <?= $botoneInfo?>
-
-        </section>
+            <a class="icon_mms_link"  href="">
+            <img class="icon_mms" src="public/asset/home_svg/message.svg" alt="">
+            </a>
+        </div>
+    </div>
         </form>
-        </section>
-        <?php if (isset($erreur)) { ?> <h2 class="erreur"><?php echo $erreur ?></h1> <?php } ?>
+       
 
-    </section>
+        </section>
+
+
+   
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1447,7 +1447,7 @@ body::-webkit-scrollbar {
 }
 .lvgkdjshjgh .eelllfllekkf .sskddjdj .lvgkdjshjgh_img {
   width: 100%;
-  height: 170px;
+  height: 270px;
   object-fit: cover;
   border-radius: 13px;
 }
@@ -1480,12 +1480,14 @@ body::-webkit-scrollbar {
 }
 
 .scrole_img {
+  z-index: 3;
   width: 100%;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5px;
+  padding-left: 10px;
 }
 .scrole_img .scrol_img_s {
   display: flex;
@@ -1616,66 +1618,68 @@ body::-webkit-scrollbar {
   color: #494949;
 }
 
-.blockehdte {
+.blockarticle {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 200px;
-}
-.blockehdte .blockarticle {
-  width: 90%;
   height: auto;
-  border: 1px solid #1D71B8;
-  border-radius: 13px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.blockehdte .ddhfj {
-  margin-bottom: 10px;
+
+.ddhfj {
+  margin-left: 15px;
+  margin-bottom: 5px;
 }
-.blockehdte .bloc_taille {
-  width: 97%;
-}
-.blockehdte .blocImg {
+
+.bloc_taille {
   width: 100%;
-  height: 300px;
 }
-.blockehdte .blocImg img {
+
+.blocImg {
+  width: 100%;
+  height: 400px;
+}
+.blocImg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 13px 13px 0px 0px;
 }
-.blockehdte .blocInfoArticle {
+
+.blocInfoArticle {
   width: 95%;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding-left: 10px;
 }
-.blockehdte .blocInfoArticle h1 {
+.blocInfoArticle h1 {
   font-size: 22px;
 }
-.blockehdte .blocInfoArticle h2 {
+.blocInfoArticle h2 {
   font-size: 12px;
   font-weight: 300;
   margin-bottom: 10px;
 }
-.blockehdte .sectionBloc {
+
+.sectionBloc {
   width: 100%;
+  height: 100vh;
   display: flex;
-  margin-bottom: 10px;
-  justify-content: space-around;
+  position: absolute;
+  z-index: 1;
+  flex-direction: column;
+  justify-content: flex-end;
 }
-.blockehdte .sectionBloc form {
+.sectionBloc form {
   width: 100%;
+  height: 100vh;
   display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  position: fixed;
 }
-.blockehdte .sectionBloc form input {
-  width: auto;
+.sectionBloc form input {
+  width: 140px;
   padding-left: 10px;
   padding-right: 10px;
   height: 50px;
@@ -1683,7 +1687,49 @@ body::-webkit-scrollbar {
   border: none;
   background-color: #1D71B8;
   color: #ffffff;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 13px;
+  margin-right: 10px;
+}
+.sectionBloc .icon_mms_link {
+  width: 45px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sectionBloc .icon_mms {
+  width: 45px;
+}
+
+.plus {
+  color: #E94E1B;
+}
+
+.plus_nav {
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+.bloc_taille {
+  margin-left: 10px;
+  width: 90%;
+}
+
+.blocBoto_style {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.blocBoto_style_bloke {
+  width: 95%;
+  display: flex;
+  align-items: center;
 }
 
 .blockFacture {
@@ -1698,7 +1744,6 @@ body::-webkit-scrollbar {
 .blockFac {
   width: 90%;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1776,7 +1821,8 @@ body::-webkit-scrollbar {
   font-weight: 400;
 }
 .infoAchata p {
-  font-size: 10px;
+  margin-top: 10px;
+  font-size: 11px;
   color: #95C11F;
 }
 
@@ -1826,6 +1872,18 @@ body::-webkit-scrollbar {
   margin-top: 10px;
 }
 
+.boutton_inputee {
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: #1D71B8;
+  color: #ffffff;
+  border-radius: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 700;
+}
+
 .boutton_inpute {
   width: auto;
   height: 50px;
@@ -1869,6 +1927,57 @@ body::-webkit-scrollbar {
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 13px;
+}
+
+.bloocke {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 90%;
+  background-color: rgba(150, 193, 31, 0.1843137255);
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 13px;
+}
+.bloocke p {
+  width: 90%;
+  font-size: 11px;
+}
+.bloocke p span {
+  font-weight: 700;
+}
+.bloocke .verte {
+  margin-top: 10px;
+  color: #96c11f;
+}
+.bloocke .rouge {
+  color: #E94E1B;
+}
+
+.bloockee {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 13px;
+}
+.bloockee .p {
+  width: 90%;
+  font-size: 12px;
+}
+.bloockee .p span {
+  font-weight: 700;
+}
+.bloockee .rouge {
+  color: #E94E1B;
 }
 
 .block_info_boutique {

@@ -1,41 +1,33 @@
-.blockehdte {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 200px;
+
     .blockarticle {
-        width: 90%;
+        width: 100%;
         height: auto;
-        border: 1px solid #1D71B8;
-        border-radius: 13px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
     .ddhfj {
-        margin-bottom: 10px;
+        margin-left: 15px;
+        margin-bottom: 5px;
     }
     .bloc_taille {
-        width: 97%;
+        width: 100%;
     }
     .blocImg {
         width: 100%;
-        height: 300px;
+        height: 400px;
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 13px 13px 0px 0px;
         }
     }
     .blocInfoArticle {
         width: 95%;
         margin-top: 10px;
         margin-bottom: 10px;
+        padding-left: 10px;
         h1 {
             font-size: 22px;
         }
@@ -47,15 +39,21 @@
     }
     .sectionBloc {
         width: 100%;
+        height: 100vh;
         display: flex;
-        margin-bottom: 10px;
-        justify-content: space-around;
-
-        form {
+        position: absolute;
+        z-index: 1;
+        flex-direction: column;
+        justify-content: flex-end;        
+         form {
             width: 100%;
+            height: 100vh;
             display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            position: fixed;
             input {
-                width: auto;
+                width: 140px;
                 padding-left: 10px;
                 padding-right: 10px;
                 height: 50px;
@@ -63,8 +61,52 @@
                 border: none;
                 background-color: #1D71B8;
                 color: #ffffff;
-                font-size: 16px;
+                font-weight: 600;
+                font-size: 13px;
+                margin-right: 10px;
             }
         }
+        .icon_mms_link{
+            width: 45px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .icon_mms{
+            width: 45px;
+        }
+
     }
+
+
+    
+
+.plus{
+    color: #E94E1B;
+}
+.plus_nav{
+     z-index: 2;
+    background-color: #ffffff00;
+    border: none;
+}
+.bloc_taille{
+    margin-left: 10px;
+    width: 90%;
+}
+
+.blocBoto_style{
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+
+.blocBoto_style_bloke{
+    width: 95%;
+    display: flex;
+    align-items: center;
 }

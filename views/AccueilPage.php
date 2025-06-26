@@ -3,7 +3,7 @@
     <section class="bloc_nave">
 
     <section class='bloc_logo'>
-        <p class='bloc_logo_p'>Kephalé</p>
+        <p class='bloc_logo_p' ><img style='width: 50px;  height: 50px;' src="public/icon_192x192.png" alt=""></p>
     </section>
 
     <section class='forme_recherche' >
