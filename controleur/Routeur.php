@@ -35,6 +35,9 @@ class Routeur
                 $controleur = "../controleur/".$controleurFiche.".php";
                 $models = "../models/".$modelsFiche.".php";
                 $views = "../views/".$viewsFiche.".php";
+
+                // tous les infot user
+                require_once ('../transactions/infoUser.php');
                 
                 if(file_exists($models)){
                     require_once ("../models/bd/Cntbd.php");
@@ -48,12 +51,16 @@ class Routeur
                     require_once ($controleur);
                     if(file_exists($views)){
                         require_once ($views);
+
                     }else{
                        // echo 'Page introuveble';
                     }
                 }else{
                     header ('Location: /Kephale/accueil'  );
                 }
+
+                     require_once ('../views/navBare.php');
+
              }else{
                 header ('Location: /Kephale/accueil' );
              }

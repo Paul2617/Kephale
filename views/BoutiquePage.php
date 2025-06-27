@@ -99,26 +99,19 @@ if($infoCategorie === 'null'){
 
   <!--bloce icone de base -->
   <section class="section_menu_icon">
-      <a class="lien_icon" href="/Kephale/?url=boutiqueparametre">
-          <img class="icon_menu" src="public/asset/home_svg/parametre.svg" alt="">
-          <p>Paramètre</p>
-      </a>
 
        <a class="lien_icon" href="">
-          <img class="icon_menu" src="public/asset/home_svg/restaurant.svg" alt="">
-           <p>Restaurants</p>
+          <img class="icon_menu" src="public/asset/home_svg/home.svg" alt="">
+           <p>Kephale</p>
+      </a>
+      <a class="lien_icon" href="">
+          <img class="icon_menu" src="public/asset/home_svg/message.svg" alt="">
+            <p>Discussions</p>
       </a>
       <a class="lien_icon" href="/Kephale/user">
           <img class="icon_menu" src="public/asset/home_svg/user.svg" alt="">
           <p>Profil</p>
       </a>
-
-
-      <a class="lien_icon" href="">
-          <img class="icon_menu" src="public/asset/home_svg/message.svg" alt="">
-            <p>Discussions</p>
-      </a>
-
       <a class="lien_icon" href="/Kephale/?url=listevente">
           <img class="icon_menu" src="public/asset/home_svg/notifications.svg" alt="">
           <?php  $infovante = infovante ($bd); 
@@ -131,5 +124,10 @@ if($infoCategorie === 'null'){
            }
            ?>
 <p>Ventes</p>
+      </a>
+
+            <a class="lien_icon" href="/Kephale/?url=boutiqueparametre">
+          <img class="icon_menu" src="public/asset/home_svg/parametre.svg" alt="">
+          <p>Paramètre</p>
       </a>
   </section>

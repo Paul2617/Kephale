@@ -43,9 +43,7 @@ if(empty($_POST["ferme"])){
     ?>
 <div class='nav_bare'>
     <section class="bloc_nave">
-    <a class ='lin_connect'href= "/Kephale/user" >
-        <img class='retoure' src="public/asset/_icone/retoure.svg" alt="">
-        </a>
+
     <h5>Liste  achats</h5>
     </section>
 </div>
@@ -235,8 +233,61 @@ if(isset($liste_achats)){
         <?php
     }
 }
+$_GET['url'];
+if($_GET['url'] === "userachat"){
+    $achaticon = 'home_3.svg';
+}else{
+     $achaticon = 'home_2.svg';
+}
 ?>
 
 
 </section>
 <div style="padding-top: 80px;"></div>
+
+ <section class="section_menu_icon">
+
+    <a class="lien_icon" href="/Kephale/accueil">
+        <img class="icon_menu" src="public/asset/home_svg/home.svg" alt="">
+        <p>Kephale</p>
+    </a>
+    <a class="lien_icon" href="/Kephale/listepanier">
+        <img class="icon_menu" src="public/asset/home_svg/panie.svg" alt="">
+                <?php
+        if($panierInfo > 0){
+            ?>
+        <section class="alerte_conteur">
+            <p class="conteur"><?= $panierInfo  ?></p>
+        </section>
+            <?php
+        }
+        ?>
+        <p>Panie</p>
+    </a>
+
+    <a class="lien_icon" href="/Kephale/user">
+        <img class="icon_menu" src="public/asset/home_svg/user.svg" alt="">
+        <p>Profil</p>
+    </a>
+    <a class="lien_icon" href="/Kephale/?url=userachat">
+        <img class="icon_menu" src="public/asset/home_svg/<?= $achaticon  ?>" alt="">
+              <?php
+
+        if($achatInfo > 0){
+
+            ?>
+        <section class="alerte_conteur">
+            <p class="conteur"><?php echo $achatInfo  ?></p>
+        </section>
+            <?php
+        }
+        ?>
+        <p>Achats</p>
+    </a>
+
+    <a class="lien_icon" href="/Kephale/userparametre">
+        <img class="icon_menu" src="public/asset/home_svg/parametre.svg" alt="">
+
+        <p>Paramètre</p>
+    </a>
+</section>

@@ -7,8 +7,6 @@ if(isset($_SESSION["id"])){
     //Inporte le doc dans model pour tout les recquet de la basse de done
         require_once ('../models/solde_affiche/solde.php');
         //recupere les info de ulitilisteur
-        require_once ('../transactions/infoUser.php');
-        
         // bodie lafissage du solde
        $userSolde = solde ($infoUsers["solde"]) ;
 }else{

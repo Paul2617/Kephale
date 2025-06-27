@@ -24,5 +24,19 @@ class infoUsers
         $stmt->execute([$uuid_5]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    function panierInfo (){
+         $data = $this->data();
+         
+         $stmt = $data->prepare("SELECT * FROM panie WHERE id_user = ?  ");
+         $stmt->execute([$_SESSION["id"]]);
+         return $stmt->rowCount();
+    }
+     function achatInfo (){
+        $data = $this->data();
+        $stmt = $data->prepare("SELECT id_user FROM liste_achat WHERE id_user = ? AND etat_livraison LIKE 'non'  ");
+        $stmt->execute([$_SESSION["id"]]);
+         return $stmt->rowCount();
+    }
 }
 ?>
