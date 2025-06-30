@@ -22,11 +22,12 @@
         <h5 class='h5d'>Nom de la categorie</h5>
         <input class='ddfkdmjfkff' type="text" placeholder="Nom de la catégorie" name="nomCategorie"
             value="<?php if (isset($nomCategorie)) {echo $nomCategorie;} ?>">
-                <h5 class='h5d'>Type de la categorie</h5>
+               
         <section class='info_radio_djs'>
             <?php 
             if($_SESSION["abonnement"]  === 'grand'){
                 ?>
+                 <h5 class='h5d'>Type de la categorie</h5>
                 <select class="form_input_ddj" name="type_categorie">
                 <option value="">Sélectionne</option>
                 <option value="Homme">Homme</option>
@@ -39,6 +40,7 @@
                 <?php 
             }elseif($_SESSION["abonnement"]  === 'standard'){
                 ?>
+                 <h5 class='h5d'>Type de la categorie</h5>
                 <select class="form_input_ddj" name="type_categorie">
                 <option value="">Sélectionne</option>
                 <option value="Homme">Homme</option>
@@ -48,6 +50,7 @@
                 <?php 
             }elseif($_SESSION["abonnement"]  === 'electro'){
                 ?>
+                 <h5 class='h5d'>Électronique</h5>
                 <select class="form_input_ddj" name="type_categorie">
                 <option value="">Sélectionne</option>
                 <option value="Électronique">Électronique</option>
@@ -55,13 +58,14 @@
                 <?php 
             }elseif($_SESSION["abonnement"]  === 'resto'){
                 ?>
+                 <h5 class='h5d'>Restaurant</h5>
                 <select class="form_input_ddj" name="type_categorie">
-                <option value="">Sélectionne</option>
                 <option value="Restaurant">Restaurant</option>
             </select>
                 <?php 
             }elseif($_SESSION["abonnement"]  === 'imo'){
                 ?>
+                 <h5 class='h5d'>Immobilier</h5>
                  <select class="form_input_ddj" name="type_categorie">
                 <option value="">Sélectionne</option>
                 <option value="Immobilier">Immobilier</option>
@@ -69,6 +73,7 @@
                 <?php 
             }elseif($_SESSION["abonnement"]  === 'auto'){
                 ?>
+                 <h5 class='h5d'>Automobile</h5>
                  <select class="form_input_ddj" name="type_categorie">
                 <option value="">Sélectionne</option>
                 <option value="Automobile">Automobile</option>
@@ -76,7 +81,7 @@
             }
             ?>
         </section>
-        <input class='ddjfkff' type="submit" value="Ajouter la catégorie" name="ajouter">
+        <input style="margin-top: 50px;" class='ddjfkff' type="submit" value="Ajouter la catégorie" name="ajouter">
         <?php if (isset($erreur)) { ?> <h2 class="erreur"><?php echo $erreur ?></h1> <?php } ?>
     </form>
 </section>

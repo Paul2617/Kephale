@@ -248,21 +248,12 @@ if($_GET['url'] === "userachat"){
  <section class="section_menu_icon">
 
     <a class="lien_icon" href="/Kephale/accueil">
-        <img class="icon_menu" src="public/asset/home_svg/home.svg" alt="">
+        <img class="icon_menu" src="public/asset/home_svg/kephale.svg" alt="">
         <p>Kephale</p>
     </a>
-    <a class="lien_icon" href="/Kephale/listepanier">
-        <img class="icon_menu" src="public/asset/home_svg/panie.svg" alt="">
-                <?php
-        if($panierInfo > 0){
-            ?>
-        <section class="alerte_conteur">
-            <p class="conteur"><?= $panierInfo  ?></p>
-        </section>
-            <?php
-        }
-        ?>
-        <p>Panie</p>
+    <a class="lien_icon" href="/Kephale/chine">
+        <img class="icon_menu" src="public/asset/home_svg/chine.svg" alt="">
+        <p>Chine</p>
     </a>
 
     <a class="lien_icon" href="/Kephale/user">

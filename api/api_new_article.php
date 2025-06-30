@@ -28,7 +28,14 @@ $bd = $Cntbd->bd();
   INNER JOIN boutique ON article.id_boutique = boutique.id 
   WHERE boutique.pays LIKE 'Mali' 
   AND ( boutique.comptes LIKE 'actif')
+  AND ( boutique.abonnement LIKE 'standard' 
+  OR  boutique.abonnement LIKE 'grand'
+  OR  boutique.abonnement LIKE 'auto'
+  OR  boutique.abonnement LIKE 'cosmetique'
+  OR  boutique.abonnement LIKE 'imo' 
+  OR  boutique.abonnement LIKE 'electro')
   AND ( article.statut LIKE 'publie')
+  
   ORDER BY article.date_creations DESC LIMIT 7");
   $stmt->execute([]);
 

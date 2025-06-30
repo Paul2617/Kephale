@@ -29,7 +29,7 @@ if ($recherche === '') {
 ) ia ON article.id = ia.article_id
 
   INNER JOIN boutique ON article.id_boutique = boutique.id 
-  WHERE boutique.pays LIKE 'Mali' 
+  WHERE boutique.pays LIKE 'Chine' 
   AND ( boutique.comptes LIKE 'actif')
   AND ( boutique.abonnement LIKE 'standard' 
   OR  boutique.abonnement LIKE 'grand'
@@ -71,9 +71,9 @@ if ($recherche === '') {
 
   INNER JOIN boutique ON article.id_boutique = boutique.id 
   WHERE article.statut LIKE 'publie' 
-  AND ( boutique.pays LIKE 'Mali' )
+  AND ( boutique.pays LIKE 'Chine' )
   AND ( boutique.comptes LIKE 'actif')
-  AND ( boutique.abonnement LIKE 'standard' 
+    AND ( boutique.abonnement LIKE 'standard' 
   OR  boutique.abonnement LIKE 'grand'
   OR  boutique.abonnement LIKE 'auto'
   OR  boutique.abonnement LIKE 'cosmetique'
@@ -105,9 +105,9 @@ if ($recherche === '') {
   INNER JOIN boutique ON article.id_boutique = boutique.id 
   INNER JOIN categorie ON article.id_categorie = categorie.id 
   WHERE article.statut LIKE 'publie' 
-  AND ( boutique.pays LIKE 'Mali' )
+  AND ( boutique.pays LIKE 'Chine' )
   AND ( boutique.comptes LIKE 'actif')
-  AND ( boutique.abonnement LIKE 'standard' 
+    AND ( boutique.abonnement LIKE 'standard' 
   OR  boutique.abonnement LIKE 'grand'
   OR  boutique.abonnement LIKE 'auto'
   OR  boutique.abonnement LIKE 'cosmetique'
@@ -138,9 +138,9 @@ if ($recherche === '') {
   INNER JOIN boutique ON article.id_boutique = boutique.id 
   INNER JOIN produit ON article.id_produit = produit.id 
   WHERE article.statut LIKE 'publie' 
-  AND ( boutique.pays LIKE 'Mali' )
+  AND ( boutique.pays LIKE 'Chine' )
   AND ( boutique.comptes LIKE 'actif')
-  AND ( boutique.abonnement LIKE 'standard' 
+    AND ( boutique.abonnement LIKE 'standard' 
   OR  boutique.abonnement LIKE 'grand'
   OR  boutique.abonnement LIKE 'auto'
   OR  boutique.abonnement LIKE 'cosmetique'
@@ -172,10 +172,6 @@ foreach ( $article as  &$articles ) {
 } catch (PDOException $e) {
         echo json_encode(['success' => false, 'message' => $e->getMessage()]);
     }
-
-
-
-
 
 
 

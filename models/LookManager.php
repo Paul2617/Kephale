@@ -15,6 +15,7 @@ function activeSessionBoutique ($bd){
     $idBoutique = recTableId($bd, 'boutique', 'id_user',$_SESSION["id"]);
     $_SESSION["id_boutique"] = $idBoutique["id"];
     $_SESSION["paye_boutique"] = $idBoutique["pays"];
+    $_SESSION["type_boutique"] = $idBoutique["abonnement"];
     return true;
    }
 ?>

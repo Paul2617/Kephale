@@ -9,6 +9,9 @@ if($user_id === $_SESSION["id"]){
 $uuid_5 = $Cookie ["user_key"];
 $infoUsers = (new infoUsers())->infoUsers($uuid_5);
 
+require_once ('../models/solde_affiche/solde.php');
+$solde_user = solde($infoUsers["solde"] );
+
 $panierInfo = (new infoUsers())->panierInfo();
 $achatInfo = (new infoUsers())->achatInfo();
 

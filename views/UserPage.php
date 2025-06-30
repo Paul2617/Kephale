@@ -21,9 +21,37 @@ $greeting = getGreeting();
     <section class="bloc_nave">
 
     <h5><span style = 'font-weight: 200;    margin-left: 20px;' ><?= $greeting ?> ! </span><?= $infoUsers["nom"]?></h5>
-    <a class='lin_connect' href="/Kephale/userparametre">
-        <img class="icon_user" src="public/asset/img_user/<?= $infoUsers["img"] ?>" alt="">
+    <div style = "display: flex; width: 90px;">
+        <a class="lien_icon" href="/Kephale/listepanier">
+        <img class="icon_menu" src="public/asset/home_svg/panie.svg" alt="">
+                <?php
+        if($panierInfo > 0){
+            ?>
+        <section class="alerte_conteur" style='margin-top: -12px;'>
+            <p class="conteur"><?= $panierInfo  ?></p>
+        </section>
+            <?php
+        }
+        ?>
     </a>
+
+ <a class="lien_icon" href="/Kephale/?url=userachat">
+        <img class="icon_menu" src="public/asset/home_svg/home_2.svg" alt="">
+              <?php
+
+        if($achatInfo > 0){
+
+            ?>
+        <section class="alerte_conteur" style='margin-top: -12px;'>
+            <p class="conteur"><?php echo $achatInfo  ?></p>
+        </section>
+            <?php
+        }
+        ?>
+    </a>
+    </div>
+
+
     </section>
 
 </div>
@@ -43,16 +71,7 @@ $greeting = getGreeting();
 </section>
 <!-- -->
 
-<div class='blockeT'>
-    <div class='blockeB'>
-        <a href="" class='sectionA'>
-            <h1>Block 1</h1>
-        </a>
-        <a href="" class='sectionA'>
-             <h1>Block 2</h1>
-        </a>
-    </div>
-</div>
+
 <?php ?>
 <!-- -->
 
@@ -66,4 +85,18 @@ $greeting = getGreeting();
 <!-- -->
 <!-- -->
 <!--bloce icone de base -->
+
+
+
+ <!-- <div class='blockeT'>
+    <div class='blockeB'>
+        <a href="" class='sectionA'>
+            <h1>Block 1</h1>
+        </a>
+        <a href="" class='sectionA'>
+             <h1>Block 2</h1>
+        </a>
+    </div>
+</div>
+ -->
 

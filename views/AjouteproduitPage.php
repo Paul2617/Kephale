@@ -17,11 +17,63 @@
                         <h4>Image</h4>
                     </label>
                 </section> 
-        <h5 class='h5d'>Nom du produit</h5>
+        <h5 class='h5d'>Nom </h5>
         <input class='ddfkdmjfkff' type="text" placeholder="Nom du produit" name="nom_produit"
                     value="<?php if (isset($nomProduit)) {echo $nomProduit;} ?>">
-                <h5 class='h5d'>Type du Produit</h5>
-        <section class='info_radio_djs'>
+<?php 
+if( $_SESSION["type_boutique"] === 'resto'){
+?>
+<h5 class='h5d'>Sélectionne</h5>
+   <section class='info_radio_djs'>
+            <select class="form_input_ddj" name="type_categorie">
+              <option value="">Sélectionne</option>
+                        <option value="Menu">Menu</option>
+                        <option value="Réservation">Réservation</option>
+            </select>
+        </section>
+<?php 
+}elseif( $_SESSION["type_boutique"] ==='cosmetique'){
+    ?>
+   <section class='info_radio_djs'>
+            <select class="form_input_ddj" name="type_categorie">
+              <option value="">Sélectionne</option>
+                        <option value="Cosmétique">Cosmétique</option>
+            </select>
+        </section>
+<?php 
+}elseif( $_SESSION["type_boutique"] ==='electro'){
+    ?>
+   <section class='info_radio_djs'>
+            <select class="form_input_ddj" name="type_categorie">
+              <option value="">Sélectionne</option>
+                        <option value="Électronique">Électronique</option>
+            </select>
+        </section>
+<?php 
+}elseif( $_SESSION["type_boutique"] ==='imo'){
+    ?>
+   <section class='info_radio_djs'>
+            <select class="form_input_ddj" name="type_categorie">
+              <option value="">Sélectionne</option>
+                        <option value="Immobilier">Immobilier</option>
+            </select>
+        </section>
+<?php 
+}elseif( $_SESSION["type_boutique"] ==='auto'){
+    ?>
+   <section class='info_radio_djs'>
+            <select class="form_input_ddj" name="type_categorie">
+              <option value="">Sélectionne</option>
+                        <option value="Automobile">Automobile</option>
+            </select>
+        </section>
+<?php 
+}
+
+else{
+    ?>
+    <h5 class='h5d'>Type du Produit</h5>
+            <section class='info_radio_djs'>
             <select class="form_input_ddj" name="type_categorie">
               <option value="">Sélectionne</option>
                         <option value="Chaussure">Chaussure</option>
@@ -29,6 +81,9 @@
                         <option value="Autre">Autre</option>
             </select>
         </section>
+    <?php 
+}
+?>
         <input class='ddjfkff' type="submit"  value="Ajouter le produit" name="ajouter">
         <?php if (isset($erreur)) { ?> <h2 class="erreur"><?php echo $erreur ?></h1> <?php } ?>
     </form>

@@ -2,14 +2,14 @@
 
 function info_psa($bd) {
     $id_boutique = $_SESSION["id_boutique"];
-    $stmts = $bd->prepare("SELECT * FROM psa WHERE id_boutique = ? ");
+    $stmts = $bd->prepare("SELECT psa FROM boutique WHERE id = ? ");
     $stmts->execute([ $id_boutique ]);
     $rowCount = $stmts->rowCount() ;
     if ( $rowCount > 0){
     $info_stmt = $stmts->fetch(PDO::FETCH_ASSOC);
     $client = 'client';
     $boutique = 'boutique';
-    $etat = $info_stmt["etat"]; 
+    $etat = $info_stmt["psa"]; 
     return  $etat ;
     }else{
     return false;
@@ -17,7 +17,7 @@ function info_psa($bd) {
 }
 function inser_new_psa($bd,$new_psa ){
 
-    $stmt = $bd->prepare('UPDATE psa SET etat = ? WHERE id_boutique = ? ');
+    $stmt = $bd->prepare('UPDATE boutique SET psa = ? WHERE id = ? ');
     $stmt->execute(array($new_psa, $_SESSION["id_boutique"]));
 
     if ($stmt->rowCount() === 0) {

@@ -22,16 +22,18 @@ if($userBoutiqueEtat !== 'boutique'){
 <img src="public/asset/img_user/<?= $infoUsers ["img"]; ?>" alt="">
 <section class='block_info_prame'>
 <h1><?= $infoUsers ["nom"]; ?></h1>
-<h2>+223 <?= $infoUsers ["telephone"]; ?></h2>
-<h3><?= $infoUsers ["sexe"]; ?></h3>
+<h3 style="font-size: 13px;" >Solde: <span style="font-weight: 600;" ><?= $solde_user ; ?></span></h3>
+<!-- <h2>+223 <?= $infoUsers ["telephone"]; ?></h2> -->
+
 </section>
     </a>
 </div>
 <div style="padding-top: 40px;" ></div>
 <div class='block_info_boutique flex'>
 
+    <a class='ddjfkff' href="/Kephale/?url=usermodif">Modifier Profile</a>
     <a class='ddjfkff' href="/Kephale/<?= $userBoutiqueEtat; ?>"><?=  $texe_btn; ?></a>
-    <a class='ddjfkff' href=""> Vente annulée</a>
-    <a class='ddjfkff' href=""> Transfer </a>
+    <a class='ddjfkff' href="">Rechargez mon compte Kephalé</a>
+    <a class='ddjfkff' href="">Retraits d'argent</a>
     <a class='ddjfkff deconet' href="/Kephale/deconnection"> Déconnexion </a>
 </div>

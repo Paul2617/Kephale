@@ -1,14 +1,8 @@
   <!-- -->
   <!--nave bare-->
   <div class='nav_bare'>
-      <section class="bloc_nave">
-          <a class='bloc_logo' style = 'width: 40px;  height: 40px;  background-color:  padding-left: 10px;' href="/Kephale/accueil">
-              <img class="icon_user" style = '   width: 30px;  height: 30px; border-radius: 2px;  ' src="public/asset/home_svg/home.svg" alt="">
-          </a>
+      <section style="justify-content: center;" class="bloc_nave">
           <h5><?= $infoBoutique["nom"] ?></h5>
-          <a class='lin_connect' href="/Kephale/user">
-              <img class="<?= $lala ;?>" src="<?= $icon ;?>" alt="">
-          </a>
       </section>
 
   </div>
@@ -100,13 +94,13 @@ if($infoCategorie === 'null'){
   <!--bloce icone de base -->
   <section class="section_menu_icon">
 
-       <a class="lien_icon" href="">
-          <img class="icon_menu" src="public/asset/home_svg/home.svg" alt="">
+       <a class="lien_icon" href="/Kephale/accueil">
+          <img class="icon_menu" src="public/asset/home_svg/kephale.svg" alt="">
            <p>Kephale</p>
       </a>
-      <a class="lien_icon" href="">
-          <img class="icon_menu" src="public/asset/home_svg/message.svg" alt="">
-            <p>Discussions</p>
+      <a class="lien_icon" href="/Kephale/chine">
+          <img class="icon_menu" src="public/asset/home_svg/chine.svg" alt="">
+            <p>Chine</p>
       </a>
       <a class="lien_icon" href="/Kephale/user">
           <img class="icon_menu" src="public/asset/home_svg/user.svg" alt="">
