@@ -14,6 +14,7 @@ function navebare($resource, $achatInfo, $panierInfo ){
     if($resource ==='user'){$user = '_';}
      if($resource ==='chine'){$panie = '_';}
      if($resource ==='userparametre'){$parametre = '_';}
+      if($resource ==='restaurant'){$restaurant = '_';}
    ?> 
    <section class="section_menu_icon">
 
@@ -33,7 +34,7 @@ function navebare($resource, $achatInfo, $panierInfo ){
         <p>Profil</p>
     </a>
     <a class="lien_icon" href="/Kephale/restaurant">
-        <img class="icon_menu" src="public/asset/home_svg/restaurant.svg" alt="">
+        <img class="icon_menu" src="public/asset/home_svg/restaurant<?= $restaurant ?>.svg" alt="">
         <p>Restaurant</p>
     </a>
 
@@ -51,7 +52,7 @@ $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $requestUri = explode('/', trim($requestUri, '/'));
 $resource = isset($requestUri[1]) ? $requestUri[1] : null;
 
-$page = [ 'accueil', 'user', 'userparametre', 'listepanier', 'chine'];
+$page = [ 'accueil', 'user', 'userparametre', 'listepanier', 'chine', 'restaurant'];
 
 if (in_array($resource, $page)){
 navebare($resource, $achatInfo, $panierInfo);

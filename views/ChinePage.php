@@ -2,12 +2,12 @@
     <section class="bloc_nave">
 
     <section class='bloc_logo'>
-        <p class='bloc_logo_p' ><img style='width: 40px;  height: 40px;' src="public/asset/home_svg/chine_.svg" alt=""></p>
+        <p class='bloc_logo_p' ><img style='width: 30px;  height: 30px;' src="public/asset/home_svg/chine_.svg" alt=""></p>
     </section>
 
     <section class='forme_recherche' >
         <input class='input_reche' type="text"  id="searchInput" placeholder="Rechercher..." >
-        <button class='button_reche' type=""><img class="img_reche" src="public/asset/home_svg/loupe.svg" alt=""></button>
+       <img class="img_reche" src="public/asset/home_svg/loupe.svg" alt="">
     </section>
     </section>
 
