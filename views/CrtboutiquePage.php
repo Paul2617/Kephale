@@ -34,22 +34,38 @@
             <h4>Ajouter</h4>
             </label>
             </section>
+                <p>Choisissez le pays où se situe votre boutique</p>
 
             <section class='bloc_form_input'>
             <section class ='bloc_taille'>
+
    <div class="form-element-plus">
             <input type="radio" name="paye" value="Mali" id="Mali">
             <label for="Mali">
             <div class="title">Mali</div>
             </label>
             </div>
+
             <div class="form-element-plus">
+            <input type="radio" name="paye" value="Burkina" id="Burkina">
+            <label for="Burkina">
+            <div class="title">Burkina</div>
+            </label>
+            </div>
+          
+                <div class="form-element-plus">
+            <input type="radio" name="paye" value="Niger" id="Niger">
+            <label for="Niger">
+            <div class="title">Niger</div>
+            </label>
+            </div>
+
+                       <div class="form-element-plus">
             <input type="radio" name="paye" value="Chine" id="Chine">
             <label for="Chine">
             <div class="title">Chine</div>
             </label>
             </div>
-          
                     </section>
             </section>
         

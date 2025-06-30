@@ -1,5 +1,42 @@
 
             <div class="bloc_taille">
+
+                    <div class="form-element">
+            <input type="checkbox" name="options[]" value="30" id="30">
+            <label for="30">
+            <div class="title">30</div>
+            </label>
+            </div>
+
+
+              <div class="form-element">
+            <input type="checkbox" name="options[]" value="31" id="31">
+            <label for="31">
+            <div class="title">31</div>
+            </label>
+            </div>
+
+              <div class="form-element">
+            <input type="checkbox" name="options[]" value="32" id="32">
+            <label for="32">
+            <div class="title">32</div>
+            </label>
+            </div>
+
+              <div class="form-element">
+            <input type="checkbox" name="options[]" value="33" id="33">
+            <label for="33">
+            <div class="title">33</div>
+            </label>
+            </div>
+
+              <div class="form-element">
+            <input type="checkbox" name="options[]" value="34" id="34">
+            <label for="34">
+            <div class="title">34</div>
+            </label>
+            </div>
+
             <div class="form-element">
             <input type="checkbox" name="options[]" value="35" id="35">
             <label for="35">
@@ -86,4 +123,31 @@
             </label>
             </div>
             
+             <div class="form-element">
+            <input type="checkbox" name="options[]" value="47" id="47">
+            <label for="47">
+            <div class="title">47</div>
+            </label>
+            </div>
+
+             <div class="form-element">
+            <input type="checkbox" name="options[]" value="48" id="48">
+            <label for="48">
+            <div class="title">48</div>
+            </label>
+            </div>
+
+             <div class="form-element">
+            <input type="checkbox" name="options[]" value="49" id="49">
+            <label for="49">
+            <div class="title">49</div>
+            </label>
+            </div>
+
+             <div class="form-element">
+            <input type="checkbox" name="options[]" value="50" id="50">
+            <label for="50">
+            <div class="title">50</div>
+            </label>
+            </div>
             </div>

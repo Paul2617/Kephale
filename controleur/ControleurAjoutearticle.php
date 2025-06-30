@@ -3,7 +3,7 @@
 if(isset($_SESSION["id"]) and isset($_SESSION["id_boutique"]) and isset($_GET["id_categorie"]) and isset($_GET["id_produit"]) ){
 
            // $listeProduit = listeArticle($bd);
-          $modeBoutique = modeBoutique ($bd);
+          $statut = modeBoutique ($bd);
           $typesProduit = typesProduit ($bd);
       
 
@@ -18,6 +18,11 @@ if(isset($_SESSION["id"]) and isset($_SESSION["id_boutique"]) and isset($_GET["i
                         $descriptions_article = htmlspecialchars($_POST["descriptions_article"]);
                         if($typesProduit === "Vêtement" || $typesProduit === "Chaussure"){
                             if (isset($_POST["options"]) and !empty($_POST["options"])){
+                                if (isset($_POST["commandes_minimales"]) and !empty($_POST["commandes_minimales"])){
+                                    $commandes_minimales = htmlspecialchars($_POST["commandes_minimales"]);
+                                }else{
+                                     $commandes_minimales = null;
+                                }
                                 if (!empty($_FILES["images"]["name"][0])){
                                 $selectedOptions = implode(' ', $_POST['options']);
                                 $tailles = str_replace(' ', '+', $selectedOptions);

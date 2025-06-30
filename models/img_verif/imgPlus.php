@@ -41,8 +41,14 @@ if(isset($trur)){
     $etat = 1;
     $inser = $bd->prepare("INSERT INTO article ( id_boutique, id_categorie, id_produit, nom, descriptions, tailles, img, prix, date_livraison, date_creations, etat ) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
     $inser->execute(array($_SESSION["id_boutique"], $_GET["id_categorie"], $_GET["id_produit"], $nomArticle, $descriptions_article, $tailles, $imgNom, $prixArticle, $date_livraison, $date_creations, $etat));
-    
     $articleId = $bd->lastInsertId();
+
+    if($_SESSION["paye_boutique"] === 'Chine'){
+if(  $commandes_minimales !== null){
+    $inser = $bd->prepare("INSERT INTO info_article_chine ( id_article, commandes_minimales) VALUES (?,?)");
+    $inser->execute(array( $articleId, $commandes_minimales ));
+    }
+    }
     }
 
 if(isset($articleId)){

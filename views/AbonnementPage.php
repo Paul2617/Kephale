@@ -37,7 +37,6 @@ if($recupListAbonnements["statut"]  === 'actif'){
 
 </section>
 </section>
-
 </section>
     <?php
 }

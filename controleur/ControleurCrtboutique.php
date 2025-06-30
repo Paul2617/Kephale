@@ -5,7 +5,9 @@ if(isset($_SESSION["id"])){
             $nomBoutique = htmlspecialchars($_POST["nomBoutique"]);
             if (isset($_POST["paye"]) and !empty($_POST["paye"])){
                 $paye = htmlspecialchars($_POST["paye"]);
-           
+           if( $paye === 'Mali'){
+
+        
             if (!empty($_FILES["img_demande"]["tmp_name"])) {
                 require_once "../models/img_verif/img_verif.php";
                 $resultImg = img_verif();
@@ -19,10 +21,14 @@ if(isset($_SESSION["id"])){
                     $imgDirection = $direction.$imgNom;
                 }
             }else{
-                $erreur = "Ajoutez le logo de la boutique";
+                $erreur = "Ajoutez le logo de la boutique.";
             }
+   }else{
+       $erreur = "Le ".$paye." a été temporairement suspendu.";
+   }
+
         }else{
-            $erreur =  "Veuillez indiquer votre paye";
+            $erreur =  "Veuillez indiquer votre paye.";
         }
         }else{
             $erreur =  "Veuillez indiquer le nom de la boutique.";

@@ -37,12 +37,22 @@
         <input class='ddfkdmjfkff' type="number" placeholder="Prix de l'article" name="prixArticle"
             value="<?php if (isset($prixArticle)) {echo $prixArticle;} ?>">
 
+          <?php 
+          if($_SESSION["paye_boutique"] === 'Chine'){
+?>
+  <h5 class='h5d'>Commandes minimales</h5>
+        <input class='ddfkdmjfkff' type="number" placeholder="0 - 100" name="commandes_minimales"
+            value="<?php if (isset($commandes_minimales)) {echo $commandes_minimales;} ?>">
+  <?php 
+          }
+         ?>
+
         <h5 class='h5d'>Nom de l'article</h5>
         <textarea class="doldkdmslls"  name="descriptions_article" placeholder="Descriptions"
                     rows="5"><?php if (isset($descriptions_article)) {echo $descriptions_article;} ?></textarea>
         <?php
                 // si la boutique est payen par mois
-                if($modeBoutique === 'P'){
+                if($statut  === 'certifie'){
                     ?>
         <h5 class='h5d'>Si l'artcle est sur commande vous pouvez déterminer un délai de livraison.</h5>
         <section class='info_radio_djs'>
@@ -53,12 +63,15 @@
                 <option value="864000">(10) jours</option>
                 <option value="1296000">(15) jours</option>
                 <option value="1728000">(20) jours</option>
+                <option value="2592000">(30) jours 1 mois</option>
+                <option value="5184000">(60) jours 2 mois</option>
+                <option value="6912000">(80) jours 2 mois 20 jr</option>
             </select>
         </section>
         <?php
                 }
                 ?>
-        <h5 class='h5d'>Type du aticle</h5>
+        <h5 class='h5d'>Choisissez les tailles disponibles dans votre magasin</h5>
         <?php
                      if($typesProduit === 'Vêtement'){
                         require_once "../views/taille/taille_vetement.php";
@@ -71,3 +84,4 @@
         <?php if (isset($erreur)) { ?> <h2 class="erreur"><?php echo $erreur ?></h1> <?php } ?>
     </form>
 </section>
+<div style="padding-top: 100px;"></div>

@@ -2,14 +2,9 @@
 require_once ('../models/bd/Model.php');
 
 function modeBoutique ($bd){
-   $recTableId = recTableId($bd, 'abonnement', 'id_user', $_SESSION["id"] );
-   $id_offre  =  $recTableId ["id_offre"];
-
-   $infoOffre = recTableId($bd, 'offre', 'id',  $id_offre );
-
-   $modeOffre = $infoOffre ["mode"];
-
-   return $modeOffre ;
+   $recTableId = recTableId($bd, 'boutique', 'id', $_SESSION["id_boutique"] );
+   $statut  =  $recTableId ["statut"];
+   return $statut ;
  }
 
  function typesProduit ($bd){
