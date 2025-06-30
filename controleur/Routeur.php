@@ -15,8 +15,6 @@ if($resource !== 'connection' AND $resource !== 'inscription'){
     }
 }
 
-
-
 class Routeur
 {
     public function routePublic(){
@@ -37,7 +35,9 @@ class Routeur
                 $views = "../views/".$viewsFiche.".php";
 
                 // tous les infot user
+                if(isset($_SESSION["id"])){
                 require_once ('../transactions/infoUser.php');
+                }
                 
                 if(file_exists($models)){
                     require_once ("../models/bd/Cntbd.php");

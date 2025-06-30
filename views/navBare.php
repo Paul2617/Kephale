@@ -12,7 +12,7 @@ function navebare($resource, $achatInfo, $panierInfo ){
     $panie = '';
     $parametre = '';
     if($resource ==='user'){$user = '_';}
-     if($resource ==='userachat'){$panie = '_';}
+     if($resource ==='listepanier'){$panie = '_';}
      if($resource ==='userparametre'){$parametre = '_';}
    ?> 
    <section class="section_menu_icon">
@@ -22,7 +22,7 @@ function navebare($resource, $achatInfo, $panierInfo ){
         <p>Kephale</p>
     </a>
     <a class="lien_icon" href="/Kephale/listepanier">
-        <img class="icon_menu" src="public/asset/home_svg/panie.svg" alt="">
+        <img class="icon_menu" src="public/asset/home_svg/panie<?= $panie ?>.svg" alt="">
                 <?php
         if($panierInfo > 0){
             ?>

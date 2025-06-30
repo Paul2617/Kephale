@@ -170,15 +170,41 @@ h2{
                 -webkit-box-orient: vertical;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                margin-bottom: 5px;
                 color: rgb(134, 134, 134);
                  line-height: 1.2;
+                 height: 30px;
              }
                 h2{
+                display: -webkit-box;
+                -webkit-line-clamp: 1; 
+                 -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
                 font-size: 15px;
-                  color: rgb(25, 25, 25);
-                  margin-top: -3px;
+                color: rgb(25, 25, 25);
+                margin-top: -3px;
+                margin-bottom: 5px;
+
              }
+             .form_panier{
+                display: flex;
+                justify-content: space-between;
+                input{
+                    margin-right: 5px;
+                    width: 90px;
+                    height: 40px;
+                    border: none;
+                    border-radius: 13px;
+                    background-color: rgb(212, 212, 212);
+                    color: rgb(30, 30, 30);
+                }
+                .suppe{
+                    background-color: rgb(199, 51, 51);
+                    color: rgb(255, 255, 255);
+                }
+             }
+
+
         }
     }
 }

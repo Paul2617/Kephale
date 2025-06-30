@@ -46,16 +46,28 @@ class security {
     
     // Valider user key
     public static function valide_user_Key($user_key, $user_id, $data) {
-        $rec = "SELECT id_user FROM id_user WHERE cle = ? ";
-        $stmt = $data->prepare($rec);
+
+        $stmt = $data->prepare("SELECT uuid_cle FROM uuid WHERE uuid_cinq = ? ");
         $stmt->execute([$user_key]);
 
          if($stmt->rowCount() === 1){
             $resulte = $stmt->fetch(PDO::FETCH_ASSOC);
-            $user_id_ = $resulte ['id_user'];
-            if($user_id_ ===   $user_id){
-            return  $user_id_ ;
+            $uuid_cle = $resulte ['uuid_cle'];
+             $stmt = $data->prepare("SELECT id FROM users WHERE uuid_cle = ? ");
+             $stmt->execute([$uuid_cle]);
+            if($stmt->rowCount() === 1){
+            $resulte = $stmt->fetch(PDO::FETCH_ASSOC);
+            $id_users = $resulte ['id'];
+
+            if($id_users ===   $user_id){
+            return  $id_users ;
+            }else{
+                 return  false;
             }
+                }else{
+                     return  false;
+                }
+          
              return  false;
          }
           return  false;
