@@ -32,13 +32,13 @@
          <h5 class='h5d'>Sexe</h5>
       <div class="bloc_taille">
             <div class="form-element-plus">
-            <input type="radio" name="category" value="homme" id="homme">
+            <input type="radio" name="category" value="Homme" id="homme">
             <label for="homme">
             <div class="title">Homme</div>
             </label>
             </div>
              <div class="form-element-plus">
-            <input type="radio" name="category" value="femme" id="femme">
+            <input type="radio" name="category" value="Femme" id="femme">
             <label for="femme">
             <div class="title">Femme</div>
             </label>

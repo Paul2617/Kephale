@@ -7,6 +7,8 @@
 
 <?php
 if($listePanie !== null){
+      require_once ('../models/solde_affiche/solde.php');
+
     foreach($listePanie  as $listePanies){
            $id_panie = $listePanies["id_panie"];
            if(isset($_POST["achete"])){
@@ -21,7 +23,7 @@ if($listePanie !== null){
             <div  class='sskddjdj'>
             <img class="lvgkdjshjgh_img" src="public/asset/img_article/<?= $listePanies["nom_image"]?>" alt="">
             <p><span></span><?= $listePanies["descriptions"]?></p>
-            <h2><?= $listePanies["prix"]?></h2>
+            <h2><?=  solde ($listePanies["prix"])?></h2>
             <form class='form_panier'  method="POST" enctype="multipart/form-data" >
             <input type="hidden" value="<?= $listePanies["id_article"] ?>" name="id_article_post" >
              <input type="hidden" value="<?= $listePanies["id_panie"] ?>" name="id_panie_post" >

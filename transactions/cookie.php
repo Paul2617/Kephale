@@ -22,25 +22,36 @@ $valide_user_Key = $security->valide_user_Key($user_key, $user_id, $data);
 
     if($valide_user_Key !== false){
 if($cookie_expire > time()){
-
     if(!isset($_SESSION["id"])){
-        $_SESSION["id"] = $valide_user_Key ;
+        $_SESSION["id"] = $valide_user_Key;
     }
     return true;
      }else{
         // renouve la cookie
        $cookie->renouvele_secureCooki($user_id, $user_key) ;
-       return true;
+        if(!isset($_SESSION["id"])){
+        $_SESSION["id"] = $valide_user_Key;
+         }
+        return true;
      }
         }else{
 
             $nom_cookie = COOKIE_NAME;
             $cookie->deleteSecureCookie($nom_cookie);
-            return true;
+            return false;
      }
 
 
     } }
+
+
 $verifie_cookie_user = new verifie_cookie_user();
 $verifie_cookie = $verifie_cookie_user ->verifie_cookie();
+
+if($verifie_cookie === true){
+header ('Location: /Kephale/accueil');
+}else{
+    header ('Location: /Kephale/connection');
+}
+
 ?>

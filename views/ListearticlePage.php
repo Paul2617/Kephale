@@ -15,8 +15,8 @@
 <h1 class='h1' >Liste Articles</h1>
 <?php 
 if(is_array($infoArticle) and !empty($infoArticle)){
-    foreach($infoArticle as $infoArticles){
         require_once ('../models/solde_affiche/solde.php');
+    foreach($infoArticle as $infoArticles){
         $Solde = solde ($infoArticles["prix"]) ;
         $id_article = $infoArticles["id"];
         $rec = $bd->prepare('SELECT nom_image FROM images_article WHERE article_id = ? LIMIT 1');
