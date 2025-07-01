@@ -1,0 +1,5 @@
+Latitude: ddddddd, Longitude: ddddddd, Pays: ddddddd, Ville: ddddddd, Quartier: ddddddd, Adresse: ddddddd
+Latitude: ddddddd, Longitude: ddddddd, Pays: ddddddd, Ville: ddddddd, Quartier: ddddddd, Adresse: ddddddd
+Latitude: 12.625649966684742, Longitude: -8.025510527478335, Pays: Mali, Ville: Bamako, Quartier: ACI 2000, Adresse: Rue 250, ACI 2000, Para Djicoroni, Bamako, Mali
+Latitude: 12.625649966684742, Longitude: -8.025510527478335, Pays: Mali, Ville: Bamako, Quartier: ACI 2000, Adresse: Rue 250, ACI 2000, Para Djicoroni, Bamako, Mali
+Latitude: 12.625813184546908, Longitude: -8.025445094784558, Pays: Mali, Ville: Bamako, Quartier: ACI 2000, Adresse: Rue 250, ACI 2000, Para Djicoroni, Bamako, Mali

@@ -38,5 +38,17 @@ class infoUsers
         $stmt->execute([$_SESSION["id"]]);
          return $stmt->rowCount();
     }
+    function localInfo (){
+       $data = $this->data();
+        $stmt = $data->prepare("SELECT adresse FROM localisations WHERE id_local = ? AND local LIKE 'users'  ");
+        $stmt->execute([$_SESSION["id"]]);
+        if($stmt->rowCount() === 1){
+         $stmts = $stmt->fetch(PDO::FETCH_ASSOC);
+         $adresse = $stmts ["adresse"];
+         return $adresse;
+        }else{
+          return false;
+        }
+    }
 }
 ?>

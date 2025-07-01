@@ -12,4 +12,5 @@ if($user_id === $_SESSION["id"]){
      $userBoutiqueEtat = 'abonnement';
    }
  }
+
 ?>

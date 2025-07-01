@@ -8,7 +8,7 @@
 
     <section class='forme_recherche ' >
         <input class='input_reche input_rechePlus' type="text"  id="searchInput" placeholder="Rechercher..." >
-       <img class="img_reche " src="public/asset/home_svg/loupe.svg" alt="">
+       <img class="img_reche" src="public/asset/home_svg/loupe.svg" alt="">
     </section>
     </section>
 
@@ -22,6 +22,7 @@
     <div class='lvgkdjshjgh'>
           <div class="eelllfllekkf" id="articles"></div>
     </div>
+    
     <script src="js/liste_restau/liste_restau.js" ></script>
 
       <script>

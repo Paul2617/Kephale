@@ -12,6 +12,7 @@ $infoUsers = (new infoUsers())->infoUsers($uuid_5);
 require_once ('../models/solde_affiche/solde.php');
 $solde_user = solde($infoUsers["solde"] );
 
+$localInfo = (new infoUsers())->localInfo();
 $panierInfo = (new infoUsers())->panierInfo();
 $achatInfo = (new infoUsers())->achatInfo();
 

@@ -48,4 +48,17 @@ function info_boutique ($bd){
     }
 }
 
+function local_boutique ($bd){
+    $id_boutique = $_SESSION["id_boutique"];
+     $local = 'boutique';
+    $stmt = $bd->prepare("SELECT adresse FROM localisations WHERE id_local = ? AND local LIKE 'boutique' ");
+    $stmt->execute([ $id_boutique ]);
+    if ($stmt->rowCount() === 1){
+        $info_stmt = $stmt->fetch(PDO::FETCH_ASSOC);
+        $adresse = $info_stmt["adresse"];
+        return $adresse ;
+    }else{
+         return false;
+    }
+}
             ?>

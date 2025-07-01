@@ -18,6 +18,10 @@ if(isset($_SESSION["id"])){
                   }
                   
                   $_SESSION["abonnement"] = $infoBoutique["abonnement"];
+
+                  $local_boutique = local_boutique ($bd); 
+
+             
     }else{
         header ('Location: /Kephale/look');
     }

@@ -125,3 +125,78 @@ if($infoCategorie === 'null'){
           <p>Paramètre</p>
       </a>
   </section>
+
+ <?php 
+       if($local_boutique === false){
+
+?>
+<script>
+
+    function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPositionBoutique, showError);
+    navigator.geolocation.getCurrentPosition(showPositionBoutique, error, {
+      enableHighAccuracy: true,
+      timeout: 10000
+    });
+  } 
+}
+
+function showPositionBoutique(position) {
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
+
+     // Appel au service de reverse geocoding (OpenStreetMap via Nominatim)
+  fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`, {
+    headers: {
+      'Accept-Language': 'fr' // Pour obtenir l’adresse en français si dispo
+    }
+  }).then(response => response.json())
+    .then(data => {
+    const addr = data.address;
+
+  // Optionnel : envoyer les coordonnées au serveur PHP
+  fetch("localisation/save_location_boutique.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: "lat=" + lat + "&lon=" + lon + "&pays=" + addr.country + "&ville=" + addr.city + "&quartier=" + addr.suburb  + "&adresse=" + data.display_name
+  });
+  })
+    .catch(() => {
+    document.getElementById("position").textContent = "Erreur lors du géocodage.";
+  });
+
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      alert("L'utilisateur a refusé la demande de géolocalisation.");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      alert("Les informations de localisation ne sont pas disponibles.");
+      break;
+    case error.TIMEOUT:
+      alert("La demande de localisation a expiré.");
+      break;
+    case error.UNKNOWN_ERROR:
+      alert("Une erreur inconnue est survenue.");
+      break;
+  }
+}
+
+function error(err) {
+  alert("Erreur : " + err.message);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  getLocation(); 
+   
+});
+</script>
+ <?php 
+
+                  }
+?>

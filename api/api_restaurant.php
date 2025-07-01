@@ -14,6 +14,7 @@ if ($recherche === '') {
   $stmt = $bd->prepare("SELECT 
   article.id as id_article, 
   article.nom as nom, 
+  boutique.nom as resto_nom,
   article.prix as prix,
   article.descriptions as descriptions, 
   ia.nom_image as nom_image  
