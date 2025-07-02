@@ -43,8 +43,6 @@ class  eLocalisations
         $stmt->closeCursor();
         return true;
     }
-
-
      public  function nLocalisationsBoutique ($lat, $lon, $pays, $ville, $quartier, $adresse ){
         $local = 'boutique';
         $id_local =  $_SESSION["id_boutique"];
