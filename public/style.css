@@ -1643,11 +1643,13 @@ body::-webkit-scrollbar {
 
 .blockarticle {
   width: 100%;
-  height: auto;
+  height: 100vh;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  overflow-y: scroll;
+  padding-bottom: 200px;
 }
 
 .ddhfj {
@@ -1682,6 +1684,18 @@ body::-webkit-scrollbar {
   font-size: 12px;
   font-weight: 300;
   margin-bottom: 10px;
+}
+.blocInfoArticle h2 span {
+  font-weight: 600;
+}
+
+.local_h2 {
+  display: flex;
+  align-items: center;
+}
+
+.local_ {
+  width: 30px;
 }
 
 .sectionBloc {
@@ -1741,12 +1755,13 @@ body::-webkit-scrollbar {
 }
 
 .blocBoto_style {
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
 }
 
 .blocBoto_style_bloke {

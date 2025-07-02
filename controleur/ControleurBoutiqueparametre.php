@@ -23,7 +23,7 @@ if(isset($_SESSION["id"]) and isset($_SESSION["id_boutique"])){
         }
 
         $info_boutique = info_boutique ($bd); 
-        $local_boutique = local_boutique ($bd); 
+        $local_boutique = local_boutique ($bd);
 }else{
     $_SESSION = array();
     session_destroy();

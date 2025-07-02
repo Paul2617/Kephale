@@ -13,6 +13,7 @@ require_once ('../models/solde_affiche/solde.php');
 $solde_user = solde($infoUsers["solde"] );
 
 $localInfo = (new infoUsers())->localInfo();
+$localInfos = $localInfo ["adresse"]; 
 $panierInfo = (new infoUsers())->panierInfo();
 $achatInfo = (new infoUsers())->achatInfo();
 

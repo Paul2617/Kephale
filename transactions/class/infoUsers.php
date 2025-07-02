@@ -40,12 +40,11 @@ class infoUsers
     }
     function localInfo (){
        $data = $this->data();
-        $stmt = $data->prepare("SELECT adresse FROM localisations WHERE id_users = ? AND local LIKE 'users'  ");
+        $stmt = $data->prepare("SELECT * FROM localisations WHERE id_users = ? AND local LIKE 'users'  ");
         $stmt->execute([$_SESSION["id"]]);
         if($stmt->rowCount() === 1){
          $stmts = $stmt->fetch(PDO::FETCH_ASSOC);
-         $adresse = $stmts ["adresse"];
-         return $adresse;
+         return $stmts;
         }else{
           return false;
         }

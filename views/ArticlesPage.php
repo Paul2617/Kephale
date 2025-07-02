@@ -55,8 +55,34 @@ $rece->execute(array($id_article));
         <section class='blocInfoArticle'>
             <h1><?= $infoArticle ["nom"] ?></h1>
             <h2><?= $infoArticle ["descriptions"] ?></h2>
-            <h3><?= $soldeArticle ?> </h3>
+            <h3 class='local_h2' style=' color: #95C11F;' > <img class='local_' src="public/asset/home_svg/cfa.svg" alt=""> <?= $soldeArticle ?> </h3>
+            <h2>La livraison est effectuée par tout au Mali.<br> Seulement <span>200 FCFA</span> par kilomètre sont facturés pour la livraison.</h2>
+            <?php 
+            if(isset($ok)){
+
+             if( $ok === true){
+                ?>
+                <h2>Livraison:  <span><?= $frais   ?> </span></h2>
+                <h2 class='local_h2'><img class='local_' src="public/asset/home_svg/local1.svg" alt=""> <?= "Vous êtes à ".$km?> </h2>
+                <?php 
+             }else{
+                    ?>
+                <h2>Pour enregistrer votre lieu de livraison, il vous suffit de vous rendre dans le <span>paramètre</span> et de cliquer sur <span>Obtenir ma position.</span><span> </span></h2>
+                <?php 
+             }
+            }else{
+                if( $adresse_u === false ){
+                 ?>
+                <h2>Pour enregistrer votre lieu de livraison, il vous suffit de vous rendre dans le <span>paramètre</span> et de cliquer sur <span>Obtenir ma position.</span><span></span></h2>
+                <?php 
+                }
+       
+            }
+
+            ?>
         </section>
+
+
 </section>
         
 

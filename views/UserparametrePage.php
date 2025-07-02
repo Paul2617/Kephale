@@ -22,7 +22,7 @@ if($userBoutiqueEtat !== 'boutique'){
 <section class='block_info_prame'>
 <h1><?= $infoUsers ["nom"]; ?></h1>
 <h3 style="font-size: 13px;" >Solde: <span style="font-weight: 600;" ><?= $solde_user ; ?></span></h3>
-<?php if($localInfo !== false){ ?> <h3 style="font-size: 9px;" ><?= $localInfo ; ?></h3>  <?php } ?> 
+<?php if($localInfos !== false){ ?> <h3 style="font-size: 9px;" ><?= $localInfos ; ?></h3>  <?php } ?> 
 <!-- <h2>+223 <?= $infoUsers ["telephone"]; ?></h2> -->
 
 </section>

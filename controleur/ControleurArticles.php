@@ -1,9 +1,41 @@
 <?php
+               require_once ('../models/solde_affiche/solde.php');
 
             if(!empty($_GET["id_article"])){
                $id_article = $_GET["id_article"];
                $infoArticle =  articles($bd, $id_article);
-               require_once ('../models/solde_affiche/solde.php');
+               $id_boutique =  $infoArticle["id_boutique"];
+               $infoLocalisations = infoLocalisations ($bd, $id_boutique);
+               $infoBoutiqueType = infoBoutiqueType ($bd, $id_boutique);
+                  if($infoBoutiqueType !== false){
+                     if($infoBoutiqueType === 'resto'){
+                     $boutiqueType = 'du restauran';
+                     }else{
+                         $boutiqueType = 'de la boutique';
+                     }
+                  }
+               if($infoLocalisations !== false){
+                  $lat = $infoLocalisations["latitude"];
+                  $lon = $infoLocalisations["longitude"];
+                  $quartier = $infoLocalisations["quartier"];
+                  $adresse = $infoLocalisations["adresse"];
+               }
+               if( $localInfo !== false){
+                  $lat_u = $localInfo["latitude"];
+                  $lon_u = $localInfo["longitude"];
+                  $adresse_u = $localInfo["adresse"];
+                  if(isset($lat)){
+                     $ok = true;
+                  }
+               }
+               if( $ok === true){
+                  require_once ('../localisation/haversineDistance.php');
+                 $distancekm = haversineDistance($lat, $lon, $lat_u, $lon_u );
+                 $km = round($distancekm, 2).' km '.$boutiqueType  ;
+                 $fraisLivraison = calculerFraisLivraison(round($distancekm, 2));
+                 $frais = solde ($fraisLivraison);
+               }
+
                $soldeArticle = solde ($infoArticle["prix"]) ;
                if($infoArticle["tailles"] === 0){
                }else{

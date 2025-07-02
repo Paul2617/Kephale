@@ -25,20 +25,16 @@ function haversineDistance($lat1, $lon1, $lat2, $lon2, $unit = 'km') {
     return $distance;
 }
 
-// Exemple d’utilisation
-$lat1 = 48.8566; // Paris
-$lon1 = 2.3522;
-$lat2 = 51.5074; // Londres
-$lon2 = -0.1278;
-
-$distanceKm = haversineDistance($lat1, $lon1, $lat2, $lon2);
-echo "Distance : " . round($distanceKm, 2) . " km<br>";
-
-$distanceMi = haversineDistance($lat1, $lon1, $lat2, $lon2, 'mi');
-echo "Distance : " . round($distanceMi, 2) . " miles";
 
 
-function calculerFraisLivraison($distanceKm, $tarifParKm = 150) {
+ //$distanceKm = haversineDistance($lat1, $lon1, $lat2, $lon2);
+ //echo "Distance : " . round($distanceKm, 2) . " km<br>";
+
+ //$distanceMi = haversineDistance($lat1, $lon1, $lat2, $lon2, 'mi');
+ //echo "Distance : " . round($distanceMi, 2) . " miles";
+
+
+function calculerFraisLivraison($distanceKm, $tarifParKm = 200) {
     // Minimum 1 km facturé
     $distance = max($distanceKm, 1);
 
@@ -50,9 +46,9 @@ function calculerFraisLivraison($distanceKm, $tarifParKm = 150) {
 }
 
 // Exemple d’utilisation
-$distance = 12.4; // en kilomètres (résultat de haversineDistance)
-$frais = calculerFraisLivraison($distance);
-echo "Frais de livraison : " . $frais . " FCFA";
+ //$distance = 12.4; // en kilomètres (résultat de haversineDistance)
+ //$frais = calculerFraisLivraison($distance);
+ //echo "Frais de livraison : " . $frais . " FCFA";
 
 
 function fraisParPalier($distanceKm) {
@@ -70,8 +66,8 @@ function fraisParPalier($distanceKm) {
 }
 
 // Exemple d’utilisation
-$distance = 25;
-$frais = fraisParPalier($distance);
-echo "Frais de livraison : " . $frais . " FCFA";
+ //$distance = 25;
+ //$frais = fraisParPalier($distance);
+ //echo "Frais de livraison : " . $frais . " FCFA";
 
 ?>

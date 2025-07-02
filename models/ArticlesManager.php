@@ -22,4 +22,27 @@
       header("Location: ".$requestUri);
       exit;
      }
+
+     function infoLocalisations ($bd, $id_boutique){
+      $stmt = $bd->prepare("SELECT * FROM localisations WHERE id_boutique = ? AND local LIKE 'boutique' ");
+      $stmt->execute([ $id_boutique ]);
+    if ($stmt->rowCount() === 1){
+       $info_stmt = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $info_stmt ;
+    }else{
+      return false;
+    }
+     }
+
+     function infoBoutiqueType ($bd, $id_boutique){
+          $stmt = $bd->prepare("SELECT abonnement FROM boutique WHERE id = ?  ");
+      $stmt->execute([ $id_boutique ]);
+    if ($stmt->rowCount() === 1){
+       $info_stmt = $stmt->fetch(PDO::FETCH_ASSOC);
+       $abonnement = $info_stmt['abonnement'];
+        return $abonnement;
+    }else{
+      return false;
+    }
+     }
 ?>

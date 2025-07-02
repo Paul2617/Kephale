@@ -156,12 +156,12 @@ function  annule_achat ($bd, $id_achat ){
 
      // sorti boutique 
      $motif_boutique = 'La vante a été annulée par le client à cause du retard de livraison.';
-     $stmt = $bd->prepare("INSERT INTO sorti_boutique (id_boutique, id_user, id_achat, montant, motif, date_transaction ) VALUES (?,?,?,?,?,?)");
+     $stmt = $bd->prepare("INSERT INTO boutique_sorti (id_boutique, id_user, id_achat, montant, motif, date_transaction ) VALUES (?,?,?,?,?,?)");
      $stmt->execute(array($info_achat['id_boutique'], $id_user_client , $id_achat, $montan_ranbouse, $motif_boutique, $date_transaction));
 
       // entre client
       $motif_user = 'Vous avez annulé un achat pour cause de livraison en retard.';
-      $stmt = $bd->prepare("INSERT INTO entre_user (id_user, id_boutique, id_achat, motif, montant, date_transaction ) VALUES (?,?,?,?,?,?)");
+      $stmt = $bd->prepare("INSERT INTO users_entre (id_user, id_boutique, id_achat, motif, montant, date_transaction ) VALUES (?,?,?,?,?,?)");
       $stmt->execute(array( $id_user_client,  $info_achat['id_boutique'], $id_achat, $motif_user,  $montan_ranbouse, $date_transaction));
 
       //achat annule
@@ -193,7 +193,7 @@ function  annule_achat ($bd, $id_achat ){
     
       // entre client
       $motif_user = 'Vous avez annulé un achat pour cause de livraison en retard.';
-      $stmt = $bd->prepare("INSERT INTO entre_user (id_user, id_boutique, id_achat, motif, montant, date_transaction ) VALUES (?,?,?,?,?,?)");
+      $stmt = $bd->prepare("INSERT INTO users_entre (id_user, id_boutique, id_achat, motif, montant, date_transaction ) VALUES (?,?,?,?,?,?)");
       $stmt->execute(array( $id_user_client,  $info_achat['id_boutique'], $id_achat, $motif_user,  $montan_ranbouse, $date_transaction));
 
       // insere la boutique dont il le reste de l'argant
@@ -226,7 +226,7 @@ function  annule_achat ($bd, $id_achat ){
 
         // entre client
         $motif_user = 'Vous avez annulé un achat pour cause de livraison en retard.';
-        $stmt = $bd->prepare("INSERT INTO entre_user (id_user, id_boutique, id_achat, motif, montant, date_transaction ) VALUES (?,?,?,?,?,?)");
+        $stmt = $bd->prepare("INSERT INTO users_entre (id_user, id_boutique, id_achat, motif, montant, date_transaction ) VALUES (?,?,?,?,?,?)");
         $stmt->execute(array( $id_user_client,  $info_achat['id_boutique'], $id_achat, $motif_user,  $montan_ranbouse, $date_transaction));
   
         // insere la boutique dont il le reste de l'argant
