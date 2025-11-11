@@ -6,7 +6,6 @@ git remote add origin https://github.com/Paul2617/Kephale.git
 git push -u origin main
 
 
-
 git push 
 
 // metre en jour du serveur en locale
@@ -19,3 +18,15 @@ rm -rf .git
 ls -la | grep git
 git status 2>&1 || echo "Le dépôt Git a été complètement supprimé"
 // fin
+
+// Metre a jour 
+// Vérification de l'état du dépôt Git.
+git status
+
+// Un fichier est déjà en staging. Vérification des changements non suivis, puis commit et push.
+git diff --cached 
+git log --oneline -5
+
+git commit -m "Mise à jour: ajout de commandes Git supplémentaires"
+
+git push
