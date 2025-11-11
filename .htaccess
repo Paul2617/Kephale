@@ -1,0 +1,78 @@
+# --------------------------------------------------
+# 🔐 Sécurité : Masquer les infos serveur
+# --------------------------------------------------
+
+ #<IfModule mod_headers.c>
+    # Supprime les headers qui révèlent la version de PHP et du serveur
+    # Header unset X-Powered-By
+   #  Header unset Server
+ #</IfModule>
+
+# (À noter : pour que "Header unset Server" fonctionne, Apache doit être compilé avec ce support
+# ou passer par un reverse proxy comme Nginx.)
+
+# --------------------------------------------------
+# 🛡️ Sécurité : Désactiver l'affichage des erreurs Apache
+# (À compléter dans apache2.conf : ServerTokens/ServerSignature)
+# --------------------------------------------------
+
+# Ces directives doivent être dans la config Apache principale :
+# ServerTokens Prod
+# ServerSignature Off
+
+# --------------------------------------------------
+# 📦 Cache navigateur pour les fichiers statiques
+# --------------------------------------------------
+
+
+<IfModule mod_headers.c>
+  #  SetEnvIf Origin "https://kephale.free.nf/Kephale/"  AccessControlAllowOrigin=$0
+   # Header set Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+    Header set Access-Control-Allow-Methods "GET, POST"
+    Header set Access-Control-Allow-Headers "Content-Type"
+    Header set Access-Control-Allow-Credentials "true"
+</IfModule>
+
+
+   <IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /public/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Images - 1 mois
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 month"
+
+    # Fonts - 1 mois
+    ExpiresByType font/woff2 "access plus 1 month"
+
+    # CSS & JS - 1 mois
+    # ExpiresByType text/css "access plus 1 month"
+    # ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Ajoute aussi un cache-control pour renforcer la directive
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|woff2|css|js)$">
+        Header set Cache-Control "public, max-age=2592000, immutable"
+    </FilesMatch>
+</IfModule>
+
+
+# --------------------------------------------------
+# 🚫 Sécurité : Empêcher l'accès aux fichiers sensibles
+# --------------------------------------------------
+
+<FilesMatch "\.(htaccess|htpasswd|env|ini|log|conf)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>

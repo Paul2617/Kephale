@@ -1,0 +1,54 @@
+ 
+ <IfModule mod_headers.c>
+     Supprime les headers qui révèlent la version de PHP et du serveur
+     Header unset X-Powered-By
+     Header unset Server
+ </IfModule>
+ 
+RewriteEngine On
+
+# Bloquer le fichier data.php
+RewriteRule ^data\.php$ - [F,L]
+
+# Bloquer tous les fichiers du dossier
+RewriteRule ^.*$ - [F,L]
+
+
+# Empêcher l'accès direct au fichier
+<Files "data.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Bloquer tout accès à tous les ips
+
+<Files "*">
+    Order deny,allow
+    Deny from all
+    Allow from 192.168.1.16
+</Files>
+
+
+# Empêche l'accès à tous les fichiers du dossier
+<Files "*">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<IfModule mod_headers.c>
+    # Ajoute aussi un cache-control pour renforcer la directive
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|woff2|css|js)$">
+        Header set Cache-Control "public, max-age=2592000, immutable"
+    </FilesMatch>
+</IfModule>
+
+# --------------------------------------------------
+# 🚫 Sécurité : Empêcher l'accès aux fichiers sensibles
+# --------------------------------------------------
+<FilesMatch "\.(htaccess|htpasswd|env|ini|log|conf|pem|pem)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Désactiver l'index du dossier (évite de voir la liste des fichiers)
+Options -Indexes

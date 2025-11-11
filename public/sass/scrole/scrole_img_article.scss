@@ -1,0 +1,38 @@
+.scrole_img {
+    z-index: 3;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    padding-left: 10px;
+    .scrol_img_s {
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        width: 100%;
+        height: 60px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+    .uegeeyg {
+        height: 30px;
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+        margin: 0px 5px;
+        scroll-snap-align: start;
+        background-color: aqua;
+    }
+    .hdudjdgdg {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+.uegeeyg::-webkit-scrollbar {
+    display: none;
+}

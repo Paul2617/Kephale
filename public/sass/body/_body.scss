@@ -1,0 +1,772 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", serif;
+  text-decoration: none;
+  list-style: none;
+
+// 10. Transitions globales
+  box-sizing: border-box;
+// transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+// 1. Variables de base (mode clair par défaut)
+$bg-color-light: #f9fafc;
+$text-color-light: #111111;
+$primary-color-light: #d48a1b;
+$secondary-color-light: #f0f0f0;
+$border-color-light: #dddddd;
+$input-bg-light: #ededed;
+$input-text-light: #000000;
+$button-text-light: #ededed;
+$navbare-color-light: #ededed;
+$icon-color-light: #3b4043;
+$icon-lamp-light: #272727;
+
+// Variables pour le mode sombre
+$bg-color-dark: #1e1e1e;
+$text-color-dark: #f0f0f0;
+$primary-color-dark: #ffc56d;
+$secondary-color-dark: #2e2e2e;
+$border-color-dark: #444444;
+$input-bg-dark: #2a2a2a;
+$input-text-dark: #ededed;
+$button-text-dark: #000000;
+$navbare-color-dark: #2e2e2e;
+$icon-color-dark: #3b4043;
+$icon-lamp-dark: #efefef;
+
+// Mixin thème
+@mixin theme($bg, $text, $primary, $secondary, $border, $input-bg, $input-text, $button-text, $navbare-color, $icon-color, $icon-lamp) {
+  --bg-color: #{$bg};
+  --text-color: #{$text};
+  --primary-color: #{$primary};
+  --secondary-color: #{$secondary};
+  --border-color: #{$border};
+  --input-bg: #{$input-bg};
+  --input-text: #{$input-text};
+  --button-bg: #{$primary};
+  --button-text: #{$button-text};
+  --navbare-color: #{$navbare-color};
+  --icon-color: #{$icon-color};
+  --icon-lamp: #{$icon-lamp};
+}
+
+// 2. Thème par défaut (clair)
+:root {
+  @include theme($bg-color-light,
+    $text-color-light,
+    $primary-color-light,
+    $secondary-color-light,
+    $border-color-light,
+    $input-bg-light,
+    $input-text-light,
+    $button-text-light,
+    $navbare-color-light,
+    $icon-color-light,
+    $icon-lamp-light );
+}
+
+// 3. Mode sombre automatique
+@media (prefers-color-scheme: light) {
+  :root {
+  @include theme($bg-color-light,
+    $text-color-light,
+    $primary-color-light,
+    $secondary-color-light,
+    $border-color-light,
+    $input-bg-light,
+    $input-text-light,
+    $button-text-light,
+    $navbare-color-light,
+    $icon-color-light,
+    $icon-lamp-light );
+}
+}
+
+// 4. Forcer le mode sombre/claire avec une classe
+html.dark {
+  @include theme($bg-color-dark,
+    $text-color-dark,
+    $primary-color-dark,
+    $secondary-color-dark,
+    $border-color-dark,
+    $input-bg-dark,
+    $input-text-dark,
+    $button-text-dark,
+    $navbare-color-dark,
+    $icon-color-dark,
+    $icon-lamp-dark );
+}
+
+html.light {
+  @include theme($bg-color-light,
+    $text-color-light,
+    $primary-color-light,
+    $secondary-color-light,
+    $border-color-light,
+    $input-bg-light,
+    $input-text-light,
+    $button-text-light,
+    $navbare-color-light,
+    $icon-color-light,
+    $icon-lamp-light );
+}
+
+// 5. Styles globaux
+html,body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  overflow: scroll;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  //transition: all 0.3s ease;
+   scrollbar-width: none;
+  -ms-overflow-style: none;
+
+}
+body::-webkit-scrollbar {
+  display: none;
+  /* ❌ Masque scrollbar sur Chrome/Safari/Edge */
+}
+.div_blok{
+  padding: 10px 20px 10px 20px;
+  width: 100%;
+}
+.div_blok_tenter {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section_width{
+  width: 100%;
+}
+.link{
+  color: #13ae25;
+}
+
+
+p {
+  font-size: 0.70rem;
+}
+
+.boutton_inputee {
+  padding: 1rem 1.5rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// 6. Sections & div
+.section,
+.div {
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+// 7. Boutons
+button,
+input[type="submit"],
+input[type="button"],
+.submit {
+  padding: 1rem 1.5rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+    
+    &::before {
+      width: 300px;
+      height: 300px;
+    }
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    
+    &:hover {
+      transform: none;
+      filter: none;
+    }
+  }
+}
+
+.a {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+
+.formTexte {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  display: block;
+  line-height: 1.4;
+}
+
+// 8. Formulaires
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+// 9. Champs de formulaire
+input,
+textarea,
+select {
+  padding: 1rem 1.25rem;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 16px; // Empêcher le zoom sur iOS
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  &::placeholder {
+    color: rgba(var(--input-text-rgb, 0, 0, 0), 0.5);
+    opacity: 0.6;
+  }
+  
+  &:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb, 212, 138, 27), 0.1);
+    transform: translateY(-1px);
+    background-color: var(--input-bg);
+  }
+  
+  &:hover:not(:focus) {
+    border-color: rgba(var(--border-color-rgb, 221, 221, 221), 0.8);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: rgba(var(--input-bg-rgb, 237, 237, 237), 0.5);
+  }
+}
+
+// Input spécifiques
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"] {
+  cursor: text;
+}
+
+input[type="number"] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    opacity: 1;
+    height: auto;
+    cursor: pointer;
+  }
+}
+
+input[type="password"] {
+  letter-spacing: 0.1em;
+  font-family: 'Courier New', monospace;
+}
+
+// Select personnalisé
+select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  
+  &:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d48a1b' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  }
+}
+
+// Textarea
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.6;
+  cursor: text;
+  
+  &:focus {
+    min-height: 140px;
+  }
+}
+.a_linc_botton{
+  padding: 0.8rem;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--border-color);
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  margin-top: 100px;
+}
+a{
+  color: var(--input-text);
+  text-align: center;
+}
+// Icônes dynamiques qui suivent le thème
+.icon-theme {
+  color: var(--icon-lamp); // adaptatif clair/sombre
+  cursor: pointer;
+  transition: color 0.3s;
+
+}
+
+// Icônes statiques : couleur fixe (ex. rouge)
+.icon-delete {
+  color: #e4140d; // reste rouge en clair ou sombre
+  stroke: #e4140d;
+}
+.red{
+  color: #e4140d; 
+}
+.erreur {
+  font-size: 0.85rem;
+  color: #e4140d;
+  stroke: #e4140d;
+  margin-bottom: 0.5rem;
+  margin-top: 0.25rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(228, 20, 13, 0.1);
+  border: 1px solid rgba(228, 20, 13, 0.3);
+  border-radius: 8px;
+  display: block;
+  line-height: 1.5;
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+
+.icon {
+  color: var(--icon-color);
+  font-size: 1.10rem;
+  transition: color 0.3s;
+}
+
+.icon a {
+  padding: 5px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.40rem;
+}
+
+
+
+.button {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// fil image
+.blocfil {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  border: 2px dashed var(--border-color);
+  background-color: var(--input-bg);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(var(--primary-color-rgb, 212, 138, 27), 0.05);
+  }
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  font-weight: 500;
+
+  h2 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+label img {
+  margin-right: 0.5rem;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+// Conteneur de mot de passe
+.password-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  
+  input {
+    padding-right: 3rem;
+  }
+  
+  .toggle-password,
+  .toggle-passwordNew {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: #666;
+    transition: all 0.3s ease;
+    z-index: 10;
+    user-select: none;
+    background: transparent;
+    border: none;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover {
+      color: var(--primary-color);
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    &:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+  }
+}
+
+// Éléments de formulaire radio
+.bloc_taille {
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.form-element {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  
+  input {
+    display: none;
+  }
+  
+  label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+    border: 2px solid var(--border-color);
+    background: var(--secondary-color);
+    text-align: center;
+    transition: all 200ms ease-in-out;
+    border-radius: 5px;
+  }
+  
+  .icon {
+    margin-top: 10px;
+    font-size: 30px;
+    color: #555;
+    transition: all 200ms ease-in-out;
+  }
+  
+  .title {
+    font-size: 15px;
+    color: var(--icon-lamp);
+    padding: 5px 0px;
+    transition: all 200ms ease-in-out;
+  }
+  
+  label:before {
+    content: "✓";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: -1px;
+    left: -1px;
+    background: #1D70B7;
+    color: #fff;
+    text-align: center;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 200ms ease-in-out;
+  }
+  
+  input:checked + label:before {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  input:checked + label .icon {
+    color: #1D70B7;
+  }
+  
+  input:checked + label .title {
+    color: #1D70B7;
+  }
+  
+  input:checked + label {
+    border: 2px solid #1D70B7;
+  }
+}
+
+.form-element-plus {
+  position: relative;
+  width: auto;
+  height: 40px;
+  margin: 4px;
+  margin-right: 15px;
+  
+  input {
+    display: none;
+  }
+  
+  label {
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+    border: 2px solid var(--border-color);
+    background: var(--secondary-color);
+    text-align: center;
+    transition: all 200ms ease-in-out;
+    border-radius: 5px;
+  }
+  
+  .icon {
+    margin-top: 0;
+    margin-right: 5px;
+    font-size: 30px;
+    color: #555;
+    transition: all 200ms ease-in-out;
+  }
+  
+  .title {
+    font-size: 15px;
+    color: var(--icon-lamp);
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    transition: all 200ms ease-in-out;
+    white-space: nowrap;
+  }
+  
+  label:before {
+    content: "✓";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: -2px;
+    left: -2px;
+    background: #1D70B7;
+    color: #fff;
+    text-align: center;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 200ms ease-in-out;
+  }
+  
+  input:checked + label:before {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  input:checked + label .icon {
+    color: #1D70B7;
+  }
+  
+  input:checked + label .title {
+    color: #1D70B7;
+  }
+  
+  input:checked + label {
+    border: 2px solid #1D70B7;
+  }
+}
+
+.bloc_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.link_liste{
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color) ;
+}
+.retoure{
+  font-size: 1.5rem;
+  color: var(--input-text);
+}

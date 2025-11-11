@@ -1,0 +1,98 @@
+.image-gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--card-bg);
+   z-index: 10;
+
+}
+
+.image-gallery img {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+    z-index: 10;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.03);
+}
+
+.image-gallery::-webkit-scrollbar {
+  display: none;
+  /* ❌ Masque scrollbar sur Chrome/Safari/Edge */
+}
+.bloc_fix_parame{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    align-items: flex-end;
+}
+.bloc_fix_parame .bolkForme{
+    border-radius: 30px 20px 0px 0px;
+    width: 100%;
+    height: auto;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 20px rgba(107, 107, 107, 0.351);
+    padding-bottom: 20px;
+}
+.form_pad{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.sectionSuprimer{
+   width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconSuprimer{
+   width: 35px;
+  height: 35px;
+ }
+
+ .bolckImgArticleedite{
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+ }
+ .bolckImgArticleSp{
+  width: 30%;
+  height: 120px;
+  background-color: aqua;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-color);
+   background-color: var(--input-bg);
+    border-radius: 0.7rem;
+
+    .sectionSuprimer{
+      width: 100%;
+      .iconSuprimer{
+        width: 25px;
+        height: 25px;
+        object-fit: cover;
+      }
+    }
+
+ }
+  .img_articleSp{
+    width: 100%;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 0.7rem;
+  }

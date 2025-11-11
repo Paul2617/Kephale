@@ -1,0 +1,37 @@
+.inf_article{
+    display: flex;
+    justify-content: space-between;
+}
+.Img_articleinf_article{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-right: 10px;
+}
+.inf_article_dndddfjlfl{
+    h1{
+        font-size: 1.1rem;
+    }
+    h3{
+    font-weight: 500;
+    font-size: 0.7rem;
+    
+    }
+}
+.plusLinkAchat{
+    color: #91b52eff;
+}
+
+.parametrePlus{
+    z-index: 3;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(138, 138, 138, 0.7);
+    backdrop-filter: blur(7px); /* Effet de flou */
+    -webkit-backdrop-filter: blur(7px); /* Pour Safari */
+    padding-left: 70px;
+}

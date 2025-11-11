@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+vendor/
+
+# OS files
+.DS_Store
+Thumbs.db
+config/Twilio/Twilio.php
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+

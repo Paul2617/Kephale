@@ -1,0 +1,12 @@
+# Forcer le type MIME pour JS
+AddType application/javascript .js
+
+# Ne pas rediriger le SW vers index.php (si tu utilises un routeur PHP)
+RewriteCond %{REQUEST_URI} ^/js/sw\.js$ [NC]
+RewriteRule .* - [L]
+
+# Exemple : règles MVC (si tu en as besoin)
+# RewriteEngine On
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^ index.php [QSA,L]

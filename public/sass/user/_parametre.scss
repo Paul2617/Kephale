@@ -1,0 +1,29 @@
+.display_flex{
+    display: flex;
+    justify-content: space-between;
+
+}
+.display_flex_blok{
+    display: flex;
+    flex-direction: column;
+}
+.display_flex_justifi{
+    min-width: auto;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.user_img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 0.7rem;
+    margin-right: 7px;
+}
+.user_nom{
+    font-size: 1rem;
+}
+.icon_edite{
+    width: 30px;
+    margin-bottom: -7px;
+}

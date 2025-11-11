@@ -1,0 +1,79 @@
+ .listeAchat{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    padding: 0px 20px 0px 20px;
+ }
+ .card_achat {
+        width: 100%;
+        height: auto;
+        background: white;
+        border-radius: 15px;
+        padding: 1rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease;
+        display: grid;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .card_achat h3{
+        font-size: 0.9rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* Limite à 2 lignes */
+        -webkit-box-orient: vertical;
+    }
+    .blocimg_info{
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+    .blocimg_info_img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 15px;
+        max-width: 100px;
+        margin-right: 10px;
+    }
+    .linkVoir{
+        background-color: #49fb8a;
+        width: auto;
+        padding: 0.5rem;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        color: #032f13;
+    }
+    .section_livraison{
+        margin-top: 10px;
+        border-radius: 15px;
+        width: 100%;
+        height: auto;
+        background-color: #e6ffef;
+        padding: 0.8rem;
+    }
+    .backNoir{background-color: #181818ff; color: #ffffffff; border-radius: 100px;}
+    .backVert{background-color: rgb(63, 156, 0); color: #ffffffff; border-radius: 100px;}
+    .backRouge{background-color: rgb(156, 16, 0); color: #ffffffff; border-radius: 100px;}
+    .commentaire{
+        font-size: 0.6rem;
+    }
+    .ehekhh{
+        color: rgb(156, 16, 0); 
+        margin-top: 2px; 
+        font-size: 0.6rem;
+    }
+   
+    .map{
+        width: 100%; 
+        height: 200px; 
+        margin: 20px auto; 
+        border-radius: 12px;  
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }

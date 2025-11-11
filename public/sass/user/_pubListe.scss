@@ -1,0 +1,84 @@
+.infoProfilPub{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.infoProfilPub .img {
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.infoImgNom{
+    display: flex;
+    align-items: center;
+}
+.infoProfilPub p {
+    font-weight: 600;
+}
+.syganle {
+    padding: 0;
+    margin: 0;
+    width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(189, 189, 189);
+    border-radius: 100%;
+}
+
+.syganle .imgPoint{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+.affichePlus{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+.affichePlusButton{
+    padding: 0;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(1, 79, 114);
+    font-size: 0.6rem;
+    margin-right: 10px;
+}
+.footerPub{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 10px 10px;
+}
+.aimeButton{
+    padding: 0;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 40px;
+    }
+    p{
+        position: absolute;
+        font-size: 0.5rem;
+    }
+}
+
+  .text-container {
+      max-height: 3em; /* environ 2 lignes */
+      overflow: hidden;
+      position: relative;
+      font-size: 0.7rem;
+    }
+
+    .text-container.expanded {
+      max-height: none; /* texte complet */
+    }
+  

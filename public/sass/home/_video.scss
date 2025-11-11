@@ -1,0 +1,26 @@
+.nav_bare{
+    z-index: 1;
+}
+.nav_barepluse{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.video_source{
+    width: 100px;
+    height: 1000px;
+    object-fit: cover;
+}
+.video-wrap { 
+    position: relative; 
+    max-width: 900px; 
+    margin:auto; 
+    z-index: 0; }
+.unmute {
+    position: absolute;
+    bottom: 12px; left: 12px;
+    padding: 8px 12px; border: 0; cursor: pointer;
+    background: rgba(255,255,255,.85);
+  }

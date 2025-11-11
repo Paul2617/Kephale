@@ -1,0 +1,94 @@
+  .articles {
+    padding-left: 20px;
+    padding-right: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 100px;
+    }
+      .iconcertifie{
+        width: 70px;
+      }
+    .article {
+      background-color: var(--secondary-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s;
+    }
+
+    .article .img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+    .article_div{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+.furm_blocK{
+   padding-left: 20px;
+    padding-right: 20px;
+}
+
+.center_div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+        .content {
+      padding: 0.50rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1; /* Limite à 2 lignes */
+      -webkit-box-orient: vertical;
+    }
+
+    .prix {
+        margin-top: 5px;
+      font-size: 0.90rem;
+      font-weight: bold;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1; /* Limite à 2 lignes */
+      -webkit-box-orient: vertical;
+    }
+
+
+    .description {
+      font-size: 0.70rem;
+      color: var(--text-color);
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* Limite à 2 lignes */
+      -webkit-box-orient: vertical;
+    }
+.texte{
+  
+    margin-top: 5px;
+    font-size: 0.70rem;
+      color: var(--text-color);
+      overflow: hidden;
+}
+      span{
+        font-weight: 700;
+      }
+      
+    .descriptions {
+      font-size: 0.70rem;
+      color: var(--text-color);
+      overflow: hidden;
+    }

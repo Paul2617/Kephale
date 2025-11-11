@@ -1,0 +1,13 @@
+git init
+git branch -M main
+git add .
+git commit -m "Premier"
+git remote add origin https://github.com/Paul2617/Kephale.git
+git push -u origin main
+
+
+git push 
+
+metre en jour du serveur en locale
+git pull
+
