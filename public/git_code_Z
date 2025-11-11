@@ -6,8 +6,16 @@ git remote add origin https://github.com/Paul2617/Kephale.git
 git push -u origin main
 
 
+
 git push 
 
-metre en jour du serveur en locale
+// metre en jour du serveur en locale
 git pull
 
+// suprimer un depo git 
+git reset --soft HEAD~1
+git log --oneline
+rm -rf .git
+ls -la | grep git
+git status 2>&1 || echo "Le dépôt Git a été complètement supprimé"
+// fin
